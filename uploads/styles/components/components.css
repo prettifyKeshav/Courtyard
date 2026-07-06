@@ -1,0 +1,138 @@
+@keyframes shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  .hero-banner {
+    height: 80vh;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hero-banner {
+    height: 60vh;
+  }
+}
+.hero-banner .video-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.hero-banner .video-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0) 63.46%, rgba(0, 0, 0, 0.85) 100%), linear-gradient(270deg, rgba(0, 0, 0, 0.8) 24.57%, rgba(0, 0, 0, 0) 78.28%);
+  z-index: 1;
+  transform: scaleX(-1);
+}
+.hero-banner .video-wrapper video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: scaleX(-1);
+}
+.hero-banner .video-wrapper .bg-wrapper {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  left: 0;
+  bottom: 13%;
+  max-width: 93%;
+  margin: auto;
+}
+@media only screen and (max-width: 768px) {
+  .hero-banner .video-wrapper .bg-wrapper {
+    bottom: 30%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .hero-banner .video-wrapper .bg-wrapper {
+    bottom: 10%;
+    margin-left: 0;
+  }
+}
+.hero-banner .video-wrapper .bg-wrapper .swiper {
+  height: 104px;
+}
+@media only screen and (max-width: 540px) {
+  .hero-banner .video-wrapper .bg-wrapper .swiper {
+    height: 80px;
+  }
+}
+.hero-banner .video-wrapper .bg-wrapper h1 {
+  text-align: left;
+  font-family: Optima;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 62px;
+  max-width: 492px;
+}
+@media only screen and (max-width: 540px) {
+  .hero-banner .video-wrapper .bg-wrapper h1 {
+    max-width: 90%;
+    text-align: center;
+    margin: auto;
+    font-size: 55px;
+    line-height: 1;
+  }
+}
+.hero-banner .video-wrapper .bg-wrapper h5 {
+  color: var(--white);
+}
+@media only screen and (max-width: 540px) {
+  .hero-banner .video-wrapper .bg-wrapper h5 {
+    max-width: 80%;
+    margin: auto;
+  }
+}
+.hero-banner .video-wrapper .bg-wrapper p {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: var(--white);
+  max-width: 100%;
+  margin-top: 60px;
+  max-width: 445px;
+}
+@media only screen and (max-width: 540px) {
+  .hero-banner .video-wrapper .bg-wrapper p {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+}
+.hero-banner .video-wrapper .bg-wrapper p span:first-child {
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 100%;
+  margin-right: 15px;
+}
+@media only screen and (max-width: 540px) {
+  .hero-banner .video-wrapper .bg-wrapper p span:first-child {
+    margin-right: 0;
+  }
+}
+.hero-banner .video-wrapper .bg-wrapper p span:last-child {
+  font-weight: 400;
+  font-size: 20px;
+}/*# sourceMappingURL=components.css.map */

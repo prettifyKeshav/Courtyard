@@ -1,0 +1,1168 @@
+@import '../_var'
+
+.projects-banner
+    position: relative
+    overflow: hidden
+    height: 90vh
+    width: 100%
+    @include media(768)
+        height: 80vh
+    @include media(768)
+        height: 60vh
+    .video-wrapper
+        width: 100%
+        height: 100%
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14.42%, rgba(0, 0, 0, 0.65) 87.98%),linear-gradient(360deg, rgba(0, 0, 0, 0) 66.35%, rgba(0, 0, 0, 0.85) 100%)
+        video
+            width: 100%
+            height: 100%
+            object-fit: cover
+        .bg-wrapper
+            width: 100%
+            position: absolute
+            z-index: 2
+            text-align: center
+            left: 0
+            bottom: 13%
+            @include media(768)
+                bottom: 30%
+            @include media(540)
+                bottom: 10%
+                margin-left: 0
+            h1
+                margin: auto
+                font-size: 100px
+                color: $white
+                // font-family: Lato
+                font-weight: 400
+                font-size: 60px
+                text-align: center
+                text-transform: uppercase
+                @include media(540)
+                    max-width: 90%
+                    text-align: center
+                    margin: auto
+                    font-size: 45px
+                    line-height: 1
+                    margin-bottom: 10px
+            h5
+                color: $white
+            p
+                font-weight: 500
+                font-size: 20px
+                line-height: 100%
+                color: $white
+                max-width: 100%
+                margin-top: 60px
+                @include media(540)
+                    display: flex
+                    flex-direction: column
+                    gap: 10px
+                    margin-top: 20px
+                    font-size: 16px
+                span:first-child
+                    font-weight: 450
+                    font-size: 16px
+                    line-height: 100%
+                    margin-right: 15px
+                    @include media(540)
+                        margin-right: 0
+                span:last-child
+                    font-weight: 400
+                    font-size: 20px
+
+.projects-sec
+    .heading
+        padding: 50px 0
+        background: $white
+        position: relative
+        z-index: 1
+        @include media(540)
+            padding: 20px 0
+        figure
+            text-align: center
+            margin-bottom: 25px
+        h2
+            color: #000000
+            font-weight: 400
+            font-size: 48px
+            text-align: center
+            text-transform: uppercase
+            @include media(540)
+                font-size: 28px
+    .banner
+        position: relative
+        color: white
+        overflow: hidden
+        height: 100vh
+        // display: flex
+        // flex-direction: column
+        // justify-content: center
+        @include media(1024)
+            height: 80vh
+        @include media(768)
+            height: 70vh
+        @include media(540)
+            height: 80vh
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 37.04%, rgba(0, 0, 0, 0.65) 76.5%)
+            @include media(768)    
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 13.04%, rgba(0, 0, 0, 0.65) 62.5%)
+        .bg
+            height: 100%
+            video 
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                object-fit: cover
+                z-index: -1
+            .container 
+                // margin: 0 !important
+                @include media(540)
+                    padding: 0
+                .bg-wrapper
+                    position: absolute
+                    width: 90%
+                    left: 50%
+                    bottom: 8%
+                    transform: translate(-50%, -50%)
+                    z-index: 1
+                    display: flex
+                    justify-content: space-between
+                    align-items: end
+                    @include media(991)
+                        bottom: 10%
+                    @include media(768)
+                        bottom: -10%
+                        flex-direction: column
+                        text-align: center
+                        gap: 50px
+                    @include media(540)
+                        bottom: -5%
+                        gap: 10px
+                    .left-content
+                        @include media(768)
+                            margin: auto
+                        @include media(540)
+                            width: 100%
+                        h2
+                            font-family: $Optima
+                            font-weight: 400
+                            font-size: 40px
+                            color: $white
+                            margin-bottom: 15px
+                            @include media(540)
+                                font-size: 28px
+                        p
+                            font-family: Lato
+                            font-weight: 400
+                            font-size: 16px
+                            line-height: 100%
+                            color: $white
+                            @include media(768)
+                                margin: auto
+                            @include media(540)
+                                max-width: 100%
+                                line-height: 1.3
+
+                        .bottom-btn
+                            display: flex
+                            align-items: center
+                            justify-content: start
+                            gap: 10px
+                            width: fit-content
+                            padding:  10px 0
+                            margin-top: 20px
+                            position: relative
+                            transition: 0.5s ease
+                            @include media(768)
+                                margin: auto
+                                margin-top: 20px
+                            &::before
+                                content: ""
+                                position: absolute
+                                bottom: 0
+                                left: 0
+                                width: 100%
+                                height: 2px
+                                // background: $white
+                                background: white
+                                transition: 0.5s ease
+                                z-index: -1
+                            span
+                                font-family: $Poppins
+                                font-weight: 500
+                                font-size: 14px
+                                line-height: 24px
+                                text-transform: uppercase
+                                color: $white
+                                transition: 0.5s ease
+                            &:hover
+                                padding: 10px 14px
+                                span
+                                    color: $black
+                                svg
+                                    path
+                                        stroke: $black
+                                &::before
+                                    height: 100%
+                            figure
+                                width: 20px
+                                img
+                                    height: 100%
+                                    width: 100%
+                                    object-fit: contain
+                                svg
+                                    path
+                                        stroke: $white
+                                        transition: 0.5s ease
+                        .flex-box
+                            display: flex
+                            align-items: center
+                            gap: 20px
+                            margin-top: 20px
+                            @include media(540)
+                                gap: 10px
+                            span
+                                border-right: 1px solid white
+                                height: -webkit-fill-available
+                            .col
+                                display: flex
+                                align-items: center
+                                gap: 10px
+                                @include media(540)
+                                    flex-direction: column
+                                    flex: 0 1 50%
+                                figure
+                                    width: 26px
+                                    height: 26px
+                                    svg
+                                        width: 100%
+                                        height: 100%
+                                        object-fit: contain
+                                        path
+                                            stroke: white
+                                p
+                                    @include media(540)
+                                        font-size: 12px
+                    .right-content
+                        width: fit-content
+                        @include media(768)
+                            margin: auto
+                        .bottom-btn
+                            display: flex
+                            align-items: center
+                            justify-content: start
+                            gap: 10px
+                            width: fit-content
+                            padding:  10px 0
+                            margin-top: 20px
+                            position: relative
+                            transition: 0.5s ease
+                            @include media(768)
+                                margin: auto
+                                margin-top: 20px
+                            @include media(540)
+                                gap: 20px
+                            &::before
+                                content: ""
+                                position: absolute
+                                bottom: 0
+                                left: 0
+                                width: 100%
+                                height: 2px
+                                // background: $white
+                                background: white
+                                transition: 0.5s ease
+                                z-index: -1
+                            span
+                                font-family: $Poppins
+                                font-weight: 500
+                                font-size: 14px
+                                line-height: 24px
+                                text-transform: uppercase
+                                color: $white
+                                transition: 0.5s ease
+                            &:hover
+                                padding: 10px 14px
+                                span
+                                    color: $black
+                                svg
+                                    path
+                                        stroke: $black
+                                &::before
+                                    height: 100%
+                            figure
+                                width: 20px
+                                img
+                                    height: 100%
+                                    width: 100%
+                                    object-fit: contain
+                                svg
+                                    path
+                                        stroke: $white
+                                        transition: 0.5s ease
+
+.projects-detail-banner
+    position: relative
+    overflow: hidden
+    height: 100vh
+    width: 100%
+    @include media(768)
+        height: 80vh
+    @include media(768)
+        height: 60vh
+    .video-wrapper
+        width: 100%
+        height: 100%
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: linear-gradient(360deg, rgba(0, 0, 0, 0) 58.17%, rgba(0, 0, 0, 0.85) 100%),linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))
+        video
+            width: 100%
+            height: 100%
+            object-fit: cover
+        .bg-wrapper
+            width: 100%
+            position: absolute
+            z-index: 2
+            text-align: center
+            left: 0
+            bottom: 33%
+            @include media(768)
+                bottom: 30%
+            @include media(540)
+                bottom: 10%
+                margin-left: 0
+            h1
+                margin: auto
+                font-size: 100px
+                color: $white
+                text-align: center
+                text-transform: uppercase
+                font-family: Optima
+                font-weight: 400
+                font-size: 96px
+                @include media(540)
+                    max-width: 90%
+                    text-align: center
+                    margin: auto
+                    line-height: 1
+                    font-size: 45px
+                    font-weight: 700
+            p
+                font-family: Lato
+                font-weight: 500
+                font-size: 16px
+                line-height: 24px
+                text-align: center
+                color: white
+                max-width: 598px
+                margin: auto
+                @include media(540)
+                    display: flex
+                    flex-direction: column
+                    gap: 10px
+                    margin-top: 20px
+                    line-height: 1.3
+                    max-width: 95%
+                span:first-child
+                    font-weight: 450
+                    font-size: 16px
+                    line-height: 100%
+                    margin-right: 15px
+                    @include media(540)
+                        margin-right: 0
+                span:last-child
+                    font-weight: 400
+                    font-size: 20px
+
+.project-detail-secA
+    padding: 40px 0 
+    background: #FAECDF
+    .grid-box
+        display: grid
+        grid-template-columns: repeat(6,1fr)
+        @include media(768)
+            grid-template-columns: repeat(3,1fr)
+            .col:nth-child(3)
+                border-right: none
+        @include media(540)
+            grid-template-columns: repeat(2,1fr)
+            .col:nth-child(2),.col:nth-child(4)
+                border-right: none
+            .col:nth-child(3)
+                border-right: 0.91px solid #F1D6BB
+        .col:last-child
+            border-right: none
+        .col
+            border-right: 0.91px solid #F1D6BB
+            padding: 20px
+            text-align: center
+            figure
+                width: 49px
+                height: 49px
+                margin: auto
+                margin-bottom: 10px
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: contain
+            p
+                font-family: Lato
+                font-weight: 400
+                font-size: 14px
+                color: black
+                max-width: 151px
+                margin: auto
+
+.project-detail-secB
+    padding: 50px 0
+    border-bottom: 1px solid #E3E3E3
+    overflow: hidden
+    @include media(540)
+        padding: 50px 0 0 0 
+    .flex-box
+        display: flex
+        justify-content: space-between
+        @include media(768)
+            flex-direction: column
+            gap: 30px
+        .col:first-child
+            flex: 0 1 50%
+            @include media(768)
+                text-align: center
+            h2
+                font-family: Optima
+                font-weight: 400
+                font-size: 36px
+                color: black
+                margin-bottom: 10px
+            p
+                font-family: Lato
+                font-weight: 400
+                font-size: 16px
+                line-height: 24px
+                color: $text
+                margin-bottom: 40px
+                @include media(540)
+                    line-height: 1.3
+            a
+                padding: 10px 27px
+                border: 1px solid #EEBF91
+                color: black
+                font-family: Lato
+                font-weight: 700
+                font-size: 16px
+                line-height: 20px
+                text-align: center
+                background: #EEBF91
+                display: inline-block
+                &:hover
+                    background: transparent
+            a:last-child
+                padding: 10px 27px
+                border: 1px solid #EEBF91
+                color: black
+                font-family: Lato
+                font-weight: 700
+                font-size: 16px
+                line-height: 20px
+                text-align: center
+                background: transparent
+                display: inline-block
+                margin-left: 20px
+                &:hover
+                    background: #EEBF91
+
+        .col:last-child
+            flex: 0 1 50%
+            figure
+                margin-left: auto
+                width: 470px
+                height: 401px
+                padding: 20px
+                @include media(768)
+                    margin: auto
+                @include media(540)
+                    width: 100%
+                    height: auto
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+
+.project-detail-secC
+    padding: 40px 0 80px 0
+    h2
+        font-family: Optima
+        font-weight: 400
+        font-size: 36px
+        color: black
+        margin-bottom: 30px
+        @include media(768)
+            text-align: center
+    .grid-box
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        gap: 20px
+        @include media(768)
+            grid-template-columns: repeat(3, 1fr)
+        @include media(540)
+            grid-template-columns: repeat(2, 1fr)
+        .col
+            display: flex
+            align-items: center
+            border-bottom: 1px solid #EFEFEF
+            padding: 10px 0
+            gap: 10px
+            @include media(768)
+                &:last-child
+                    grid-column: 1 / -1
+                    margin: auto
+            @include media(540)
+                &:last-child
+                    grid-column: auto
+                    margin: auto
+            figure
+                width: 53px
+                height: 53px
+                padding: 12px
+                border-radius: 50%
+                border: 1px solid #D5D5D5
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: contain
+            p
+                font-family: Lato
+                font-weight: 400
+                font-size: 14px
+                color: black
+
+.project-detail-secD
+    position: relative
+    overflow: hidden
+    height: 100vh
+    width: 100%
+    @include media(768)
+        height: 80vh
+    @include media(768)
+        height: 60vh
+    @include media(540)
+        height: fit-content
+    .video-wrapper
+        width: 100%
+        height: 100%
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: none
+        video
+            width: 100%
+            height: 100%
+            object-fit: cover
+            
+.project-detail-secE
+    padding: 50px 0 
+    .heading
+        h2
+            font-family: Optima
+            font-weight: 400
+            font-size: 36px
+            line-height: 42px
+            text-align: center
+            color: black
+            @include media(540) 
+                font-size: 25px 
+                line-height: 1.1
+        p
+            font-family: Lato
+            font-weight: 700
+            font-size: 14px
+            line-height: 24px
+            letter-spacing: 20%
+            text-align: center
+            text-transform: uppercase
+            margin-bottom: 10px
+    .swiper
+        padding: 50px 0 90px 0
+        position: relative
+        @include media(540)
+            padding: 40px 0 60px 0
+        .swiper-slide
+            &.swiper-slide-active
+                width: 39% !important
+                @include media(768)
+                    width: 60% !important
+                @include media(540)
+                    width: 100% !important
+                figure
+                    .figinfo
+                        opacity: 1
+            figure
+                height: 442px
+                margin: auto
+                margin-bottom: 20px
+                position: relative
+                @include media(540)
+                    height: 320px
+                &::before
+                    content: ""
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 66.86%, rgba(0, 0, 0, 0.7) 87.67%)
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                .figinfo
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    padding: 0 0 30px 30px 
+                    opacity: 0 
+                    transition: 0.5s ease
+                    h3
+                        font-family: Optima
+                        font-weight: 400
+                        font-size: 32px
+                        line-height: 42px
+                        color: white
+        .custom-pagination  
+            position: absolute
+            bottom: 6%
+            left: 50%
+            transform: translate(-50%)
+            width: 30%
+            height: 20px
+            display: inline-flex
+            align-items: center
+            @include media(540)
+                width: 80%
+            .swiper-pagination-horizontal
+                position: absolute
+                top: inherit
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)
+                width: 80%
+            .swiper-pagination-progressbar
+                background: #E6E6E6
+                .swiper-pagination-progressbar-fill
+                    background: #EEBF91
+            .swiper-nav
+                display: flex
+                align-items: center
+                justify-content: space-between
+                width: 110%
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                button
+                    display: flex
+                    align-items: center
+                    transition: 0.5s ease
+                    border: 1px solid #D0A77F
+                    border-radius: 50%
+                    width: 40px
+                    height: 40px
+                    &:hover
+                        background: #D0A77F
+                        svg
+                            path
+                                stroke: white
+                    &.swiper-button-disabled
+                        opacity: 0.5
+                        cursor: no-drop
+                    svg
+                        vertical-align: middle
+                        width: 34px
+                        height: 40px
+                        path
+                            stroke: #D0A77F
+                            transition: 0.5s ease
+
+            
+        
+.project-detail-secF
+    .show-animation
+        .loc
+            animation: fadeInIn 0.6s ease-out forwards
+    .bg-wrapper
+        figure 
+            height: 100vh
+            width: 100%
+            position: relative
+            overflow: hidden
+            line-height: 0
+            @include media(768)
+                height: 50vh
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+                animation: zoomInOut 3s ease-in-out infinite
+            .loc
+                border-radius: 5px
+                background: $white
+                display: flex
+                justify-content: center
+                align-items: center
+                opacity: 0
+                transform: translateY(10px)
+                // animation: fadeInIn 0.6s ease-out forwards
+                &::hover
+                    background: #EEBF91
+                p
+                    position: relative
+                    span:first-child
+                        font-family: Lato
+                        font-weight: 400
+                        font-size: 16px
+                        line-height: 16px
+                        text-align: center
+                        color: $black
+                        padding: 15px 20px
+                        display: inline-block
+                        @include media(540)
+                            padding: 5px
+                            font-size: 12px
+                    span:last-child
+                        position: absolute
+                        bottom: -10%
+                        left: 50%
+                        transform: translate(-50%,50%) rotate(180deg)
+                        width: 0
+                        height: 0
+                        border-left: 9px solid transparent
+                        border-right: 9px solid transparent
+                        border-bottom: 13px solid $white
+            .loc1
+                position: absolute
+                bottom: 37%
+                left: 23%
+                animation-delay: 0.2s
+                @include media(540)
+                    bottom: 36%
+                    left: 1%
+            .loc2
+                position: absolute
+                bottom: 30%
+                left: 37%
+                animation-delay: 1s
+                @include media(540)
+                    bottom: 33%
+                    left: 24%
+            .loc3
+                position: absolute
+                bottom: 44%
+                left: 46%
+                animation-delay: 2s
+                @include media(540)
+                    left: 40%
+            .loc4
+                position: absolute
+                bottom: 82%
+                left: 47.7%
+                animation-delay: 3s
+            .loc5
+                position: absolute
+                bottom: 41%
+                left: 77%
+                animation-delay: 4s
+                @include media(540)
+                    bottom: 31%
+                    left: 59%
+    
+.project-detail-secG
+    background: $white
+    position: relative
+    z-index: 1
+    height: auto
+    padding: 70px 0
+    @include media(768)
+        height: auto
+        padding: 70px 0 
+    @include media(540)
+        padding: 40px 0
+    .heading
+        position: relative
+        p
+            color: $text
+            font-family: Lato
+            font-weight: 700
+            font-size: 14px
+            line-height: 24px
+            text-align: center
+            text-transform: uppercase
+            @include media(540)
+                margin-bottom: 10px
+        h2
+            text-align: center
+            @include media(540)
+                font-size: 25px 
+                line-height: 1.1
+        .swiper-nav
+            display: flex
+            align-items: center
+            gap: 10px
+            position: absolute
+            top: 10%
+            right: 0%
+            @include media(540)
+                display: none
+            button
+                border: 1px solid #D0A77F
+                width: 40px
+                height: 40px
+                border-radius: 50%
+                display: flex
+                justify-content: center
+                align-items: center
+                transition: 0.3s ease
+                &.swiper-button-disabled
+                    opacity: 0.4
+                    cursor: no-drop
+                &:hover
+                    background: #D0A77F
+                    svg path
+                        stroke: $white
+                    &.swiper-button-disabled
+                        background: $white
+                        svg path
+                            stroke: #D0A77F
+                svg 
+                    path
+                        stroke: #EEBF91
+                        transition: 0.5s ease
+    .floor-plans-swiper
+        .swiper-slide
+            border: 1px solid #F7DEC5
+            margin: 40px 0 0 0 
+            &:hover
+                figure img
+                    scale: 1.1
+            figure
+                overflow: hidden
+                position: relative
+                border-radius: 5px
+                padding: 30px
+                @include media(768)
+                    height: 400px
+                @include media(540)
+                    height: 300px
+                img
+                    height: 100%
+                    width: 100%
+                    object-fit: contain
+                    transition: 0.5s ease
+            figcaption
+                background: #F6D9BC
+                padding: 10px
+                display: flex
+                justify-content: space-between
+                align-items: center
+                p
+                    color: #000000
+                    font-family: Lato
+                    font-weight: 500
+                    font-size: 20px
+                button
+                    font-family: Lato
+                    font-weight: 500
+                    font-size: 16px
+                    line-height: 24px
+                    display: inline-block
+                    color: black
+                    padding: 7px 20px
+                    background: white
+
+.project-detail-secH
+    padding: 50px 0 
+    .container
+        max-width: 1080px
+    .heading
+        max-width: 40%
+        margin: auto
+        @include media(768)
+            max-width: 70%
+        @include media(540)
+            max-width: 100%
+        h2
+            font-family: Optima
+            font-weight: 400
+            font-size: 36px
+            line-height: 40px
+            text-align: center
+            color: black
+            @include media(540)
+                font-size: 25px 
+                line-height: 1.1
+        p
+            font-family: Lato
+            font-weight: 700
+            font-size: 14px
+            line-height: 24px
+            letter-spacing: 20%
+            text-align: center
+            text-transform: uppercase
+            @include media(540)
+                margin-bottom: 10px
+    .swiper
+        padding: 50px 0 90px 0
+        position: relative
+        .swiper-slide
+            border: 1px solid #DBDBDB
+            padding: 20px
+            text-align: center
+            figure
+                width: 42px
+                height: 42px
+                margin: auto
+                margin-bottom: 20px
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: contain
+            p
+                font-family: Lato
+                font-weight: 400
+                font-size: 16px
+                line-height: 14px
+                color: black
+                &:last-child
+                    font-weight: 700
+                    padding-top: 15px
+
+        .custom-pagination  
+            position: absolute
+            bottom: 10%
+            left: 50%
+            transform: translate(-50%)
+            width: 30%
+            height: 20px
+            display: inline-flex
+            align-items: center
+            @include media(768)
+                width: 60%
+            @include media(768)
+                width: 80%
+            .swiper-pagination-horizontal
+                position: absolute
+                top: inherit
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)
+                width: 80%
+                @include media(540)
+                    width: 70%
+            .swiper-pagination-progressbar
+                background: #E6E6E6
+                .swiper-pagination-progressbar-fill
+                    background: #EEBF91
+            .swiper-nav
+                display: flex
+                align-items: center
+                justify-content: space-between
+                width: 110%
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                button
+                    display: flex
+                    align-items: center
+                    transition: 0.5s ease
+                    border: 1px solid #D0A77F
+                    border-radius: 50%
+                    width: 40px
+                    height: 40px
+                    &:hover
+                        background: #D0A77F
+                        svg
+                            path
+                                stroke: white
+                    &.swiper-button-disabled
+                        opacity: 0.5
+                        cursor: no-drop
+                    svg
+                        vertical-align: middle
+                        width: 34px
+                        height: 40px
+                        path
+                            stroke: #D0A77F
+                            transition: 0.5s ease
+
+.project-detail-secI
+    overflow: hidden
+    height: auto
+    margin-bottom: -6.9px
+    position: relative
+    iframe
+        width: 100%
+        margin-bottom: 0
+        height: 635px
+        @include media(991)
+            height: 50vh
+        @include media(540)
+            height: 60vh
+        
+.project-detail-secJ
+    padding: 50px 0
+    .upper-sec
+        padding: 0 !important
+        h3
+            color: black
+            margin: 0
+            font-family: Optima
+            font-weight: 400
+            font-size: 36px
+            line-height: 64px
+            text-align: center
+        .swiper-nav
+            button
+                display: flex
+                align-items: center
+                transition: 0.5s ease
+                border: 1px solid #D0A77F
+                border-radius: 50%
+                width: 40px
+                height: 40px
+                &:hover
+                    background: #D0A77F
+                    svg
+                        path
+                            fill: white
+                &.swiper-button-disabled
+                    opacity: 0.5
+                    cursor: no-drop
+                svg
+                    vertical-align: middle
+                    path
+                        fill: #D0A77F
+                        transition: 0.5s ease
+    .swiper-wrapper
+        padding: 30px 0 0 0
+        .grid-box-item
+            border: 1px solid #BEBEBE
+            transition: 0.5s ease
+            &:hover
+                background: linear-gradient(180deg, #FFFFFF 27.79%, #FBEEE1 100%)
+                // border: 1px solid #FBEEE1
+                figure img
+                    scale: 1.1
+            figure
+                height: 253px
+                width: 100%
+                overflow: hidden
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    transition: 0.3s ease-in-out
+            figcaption
+                padding: 30px 20px
+                // span
+                //     font-weight: 500
+                //     color: #666666
+                //     font-size: 14px
+                h2
+                    color: $black
+                    margin-bottom: 10px
+                    font-family: Lato
+                    font-weight: 600
+                    font-size: 24px
+                p
+                    font-family: Lato
+                    color: $text
+                    font-weight: 400
+                    font-size: 16px
+                    line-height: 21.8px
+                .flex-box
+                    display: flex
+                    align-items: center
+                    gap: 20px
+                    margin-top: 20px
+                    @include media(540)
+                        flex-direction: column
+                        align-items: self-start
+                        gap: 10px
+                    span
+                        @include media(540)
+                            display: none
+                    .col
+                        display: flex
+                        align-items: center
+                        gap: 10px
+                        p
+                            font-family: Lato
+                            font-weight: 400
+                            font-size: 14px
+                            color: black
+                            line-height: 24px
+
+                        figure
+                            width: 26px
+                            height: 26px
+                            svg
+                                width: 100%
+                                height: 100%
+                                object-fit: contain
+                                path
+                                    stroke: black
+
+
+.photo-gallery-Swiper
+  width: 100%
+  padding: 30px 0
+
+.swiper-slide
+    width: 250px
+    height: 300px
+    overflow: hidden
+    transition: all 0.5s ease
+    cursor: pointer
+    position: relative
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        &.active
+            width: 450px !important
+            height: 380px
+    .caption
+        position: absolute
+        bottom: 10px
+        left: 15px
+        color: white
+        font-size: 18px
+        font-weight: 500

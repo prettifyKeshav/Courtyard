@@ -1,0 +1,267 @@
+@import '../_var'
+
+.contact-banner
+    position: relative
+    color: white
+    overflow: hidden
+    height: 80vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    @include media(1024)
+        height: 70vh
+    @include media(991)
+        height: 60vh
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 46.76%, rgba(0, 0, 0, 0.7) 78.83%),linear-gradient(0deg, rgba(0, 0, 0, 0) 69.01%, rgba(0, 0, 0, 0.5) 88.92%)
+    .bg
+        img 
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+            z-index: -1
+    .bg-wrapper
+        position: absolute
+        bottom: 5%
+        left: 50%
+        transform: translate(-50%, -50%)
+        text-align: center
+        width: 100%
+        @include media(540)
+            top: inherit
+            bottom: 10%
+        h1
+            font-weight: 400
+            font-size: 60px
+            text-align: center
+            text-transform: uppercase
+            color: white
+            @include media(540)
+                font-weight: 600
+                font-size: 33px
+
+.contact-secA
+    overflow: hidden
+    padding: 70px 0
+    position: relative
+    overflow: hidden
+    &::before
+        content: ""
+        position: absolute
+        width: 328px
+        height: 288px
+        top: 78px
+        right: -26px
+        background: url(../../images/footer-bg.png)
+        z-index: 1
+        @include media(768)
+            bottom: 0
+            top: inherit
+    .grid-box
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 20px
+        align-items: flex-start
+        justify-content: center
+        z-index: 2
+        position: relative
+        @include media(768)
+            grid-template-columns: repeat(2, 1fr)
+        @include media(540)
+            grid-template-columns: repeat(1, 1fr)
+            grid-gap: 40px
+        .grid-box-item
+            box-shadow: 0px 1px 4px 0px #00000029
+            height: 229px
+            padding: 20px
+            background: #FDF4EC
+            .flex
+                justify-content: space-between
+                margin-bottom: 25px
+                figure
+                    width: 28px
+                    svg
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                h3
+                    text-align: center
+                    color: #000000
+                    font-family: Lato
+                    font-weight: 500
+                    font-size: 18px
+            p
+                font-family: Lato
+                font-weight: 400
+                font-size: 16px
+                line-height: 24px
+                color: #000000B2
+                margin-bottom: 25px
+            a
+                display: flex
+                justify-content: start
+                align-items: center
+                gap: 10px
+                color: $black
+                font-family: Lato
+                font-weight: 500
+                font-size: 14px
+                margin-top: 20px
+                svg
+                    transition: 0.2s ease
+                    width: 22px
+                &:hover
+                    svg
+                        margin-left: 5px
+                        path
+                            stroke: $black
+        .grid-box-item:nth-child(1)
+            p
+                width: 274px
+
+        .grid-box-item:nth-child(3)
+            @include media(768)
+                grid-column: 1 / -1
+                text-align: center
+                height: auto
+            a
+                p
+                    font-size: 16px
+                    font-weight: 500
+        .grid-box-item:nth-child(3)
+            text-align: center
+            a:last-child
+                padding: 8px 27px
+                width: fit-content
+                background: #EEBF91
+                font-family: Lato
+                font-weight: 700
+                font-size: 16px
+                border: 1px solid #EEBF91
+                &:hover
+                    background: transparent
+                    border: 1px solid $black
+
+            
+//====================================================================>>>>>>
+.contact-secB
+    overflow: hidden
+    padding: 20px 0 100px 0
+    position: relative
+    overflow: hidden
+    @include media(540)
+        padding: 50px 0
+    .box
+        margin: auto
+        max-width: 779px
+        height: auto
+        .heading 
+            text-align: center
+            margin-bottom: 70px
+            @include media(540)
+                margin-bottom: 30px
+            h2
+                font-family: Optima
+                font-weight: 550
+                font-size: 40px
+                line-height: 1.1
+                text-align: center
+                max-width: 551px
+                margin: auto
+                margin-bottom: 20px
+                @include media(540)
+                    font-size: 25px !important
+                    margin-bottom: 10px
+                    line-height: 1.1
+            p
+                font-family: Lato
+                font-weight: 400
+                font-size: 16px
+                line-height: 1
+                text-align: center
+                @include media(540)
+                    max-width: 80%
+                    margin: 10px auto
+        .form
+            margin: auto
+            --item: 2
+            @include media(768)
+                max-width: 80%
+            @include media(540)
+                --item: 1
+                --gaptb: 22px
+                max-width: 90%
+            .form-group
+                &::before
+                    background: $text
+                .custom-select .current
+                    color: $white
+            label,textarea
+                color: $black
+                font-weight: 400
+                font-size: 16px
+                line-height: 24px
+                font-family: Lato
+            input,input~ label,textarea~ label
+                color: $black
+                font-weight: 400
+                font-size: 16px
+                line-height: 24px
+                font-family: Lato
+
+            .bottom-btn
+                text-align: center
+                button
+                    padding: 10px 27px
+                    font-family: Lato
+                    font-weight: 700
+                    font-size: 16px
+                    line-height: 20px
+                    text-align: center
+                    background: #EEBF91
+                    border: 1px solid #EEBF91
+                    transition: 0.5s ease
+                    &:hover
+                        border: 1px solid #000
+                        background: transparent
+                        
+
+
+            .dropdown-input
+                text-align: left
+                .list
+                    li
+                        color: $white
+                        transition: 0.5s ease
+                        &.focus
+                            color: white
+                        &:hover
+                            color: $white
+                            background: $white
+            .btn2
+                margin: 10px auto 0px auto
+                
+//====================================================================>>>>>>
+.contact-secC
+    overflow: hidden
+    height: auto
+    margin-bottom: -6.9px
+    position: relative
+    iframe
+        width: 100%
+        margin-bottom: 0
+        height: 536px
+        @include media(991)
+            height: 50vh
+        @include media(540)
+            height: 60vh
+   

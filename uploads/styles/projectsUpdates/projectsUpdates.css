@@ -1,0 +1,254 @@
+@keyframes shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+.project-update-banner {
+  position: relative;
+  color: white;
+  overflow: hidden;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media only screen and (max-width: 1024px) {
+  .project-update-banner {
+    height: 70vh;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .project-update-banner {
+    height: 60vh;
+  }
+}
+.project-update-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 46.76%, rgba(0, 0, 0, 0.7) 78.83%), linear-gradient(0deg, rgba(0, 0, 0, 0) 69.01%, rgba(0, 0, 0, 0.5) 88.92%);
+}
+.project-update-banner .bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+.project-update-banner .bg-wrapper {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+@media only screen and (max-width: 540px) {
+  .project-update-banner .bg-wrapper {
+    top: inherit;
+    bottom: 10%;
+  }
+}
+.project-update-banner .bg-wrapper h1 {
+  font-weight: 400;
+  font-size: 64px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+@media only screen and (max-width: 540px) {
+  .project-update-banner .bg-wrapper h1 {
+    font-weight: 600;
+    font-size: 33px;
+  }
+}
+
+.project-update-secA {
+  padding: 50px 0;
+}
+.project-update-secA .flex-box {
+  display: flex;
+  justify-content: right;
+  gap: 12px;
+  margin-bottom: 50px;
+}
+@media only screen and (max-width: 540px) {
+  .project-update-secA .flex-box {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+.project-update-secA .flex-box .col:first-child .form-group::before {
+  background: var(--text);
+}
+.project-update-secA .flex-box .col:first-child .form-group .custom-select {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 5px 15px 5px 15px;
+}
+@media only screen and (max-width: 540px) {
+  .project-update-secA .flex-box .col:first-child .form-group .custom-select {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+  }
+}
+.project-update-secA .flex-box .col:first-child .form-group .custom-select::before {
+  right: 10px;
+}
+.project-update-secA .flex-box .col:first-child .form-group .custom-select .current {
+  color: var(--text);
+}
+.project-update-secA .flex-box .col:first-child span {
+  font-family: Lato;
+}
+.project-update-secA .flex-box .col:first-child .bottom-btn {
+  margin: auto;
+}
+.project-update-secA .flex-box .col:first-child .dropdown-input {
+  text-align: left;
+}
+.project-update-secA .flex-box .col:first-child .dropdown-input .list li {
+  color: var(--text);
+  transition: 0.5s ease;
+  font-family: Lato;
+  white-space: nowrap;
+}
+.project-update-secA .flex-box .col:first-child .dropdown-input .list li.selected {
+  background: #EEBF91;
+}
+.project-update-secA .flex-box .col:first-child .dropdown-input .list li.focus {
+  color: black;
+}
+.project-update-secA .flex-box .col:first-child .dropdown-input .list li:hover {
+  color: var(--black);
+  background: #EEBF91;
+}
+.project-update-secA .flex-box .col:last-child input {
+  padding: 7.5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "LATO";
+  font-size: 16px;
+  color: var(--text);
+  max-width: 225px;
+}
+@media only screen and (max-width: 540px) {
+  .project-update-secA .flex-box .col:last-child input {
+    max-width: 225px;
+    width: 100%;
+    text-align: center;
+  }
+}
+.project-update-secA .grid-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px 20px;
+}
+@media only screen and (max-width: 1024px) {
+  .project-update-secA .grid-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .project-update-secA .grid-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 540px) {
+  .project-update-secA .grid-box {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.project-update-secA .grid-box .grid-box-item {
+  border: 1px solid #BEBEBE;
+  transition: 0.5s ease;
+}
+.project-update-secA .grid-box .grid-box-item:hover {
+  background: linear-gradient(180deg, #FFFFFF 27.79%, #FBEEE1 100%);
+}
+.project-update-secA .grid-box .grid-box-item:hover figure img {
+  scale: 1.1;
+}
+.project-update-secA .grid-box .grid-box-item figure {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.project-update-secA .grid-box .grid-box-item figure::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0) 66.26%, rgba(0, 0, 0, 0.6) 97.85%);
+}
+.project-update-secA .grid-box .grid-box-item figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.3s ease-in-out;
+}
+.project-update-secA .grid-box .grid-box-item figure p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 30px 10px 30px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: #EEBF91;
+  color: black;
+  margin: 30px 0px 0 0px;
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 20px;
+  z-index: 2;
+}
+.project-update-secA .grid-box .grid-box-item figcaption {
+  padding: 30px 20px;
+}
+.project-update-secA .grid-box .grid-box-item figcaption h2 {
+  font-family: Lato;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 540px) {
+  .project-update-secA .grid-box .grid-box-item figcaption h2 {
+    font-size: 18px !important;
+  }
+}
+.project-update-secA .grid-box .grid-box-item figcaption p {
+  font-family: Lato;
+  color: var(--text);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+  display: none !important;
+}/*# sourceMappingURL=projectsUpdates.css.map */

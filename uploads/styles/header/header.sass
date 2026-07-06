@@ -1,0 +1,1272 @@
+@import ../_common
+
+header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 5
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        height: 0
+        z-index: -1
+        transition: 0.7s ease
+        // box-shadow: 0 2px 5px 2px rgba(99, 99, 99, .2)
+        // background: #0000004D
+        // backdrop-filter: blur(150px)
+        // background: #FDF4EC
+        background: $primary
+    &.header-fixed::before, &.header-fill::before
+        height: 100%
+    &.header-fixed
+        box-shadow: 0 1px 9px 2px rgba(99, 99, 99, 0.1)
+    &.header-fixed .header-wrapper
+        padding: 15px 0
+        .ham-btn
+            .dot
+                span
+                    background: white
+        .colA
+            flex: 0 1 100px
+        .colB
+            .phone-ico
+                span
+                    color: white
+
+    .header-wrapper
+        padding: 30px 0
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        transition: 0.7s ease
+        justify-content: space-between
+        // justify-content: start
+        gap: 40px
+        @include media(1024)
+            gap: 40px 
+        @include media(991)
+            flex-direction: row-reverse
+        @include media(540)
+            gap: 0
+            padding: 10px 0
+        .colA
+            flex: 0 1 212px
+            transition: 0.7s ease
+            // margin-left: 190px  
+            @include media(991)
+                margin-left: 0
+                margin-right: auto
+            a
+                display: block
+            img
+                width: 100%
+                transition: 0.7s ease
+        .ham-btn
+            // margin-left: auto
+            position: relative
+            display: flex
+            gap: 10px
+            height: 30px
+            align-items: center
+            // display: none
+            @include media(991)
+                display: block
+            p
+                color: white
+                font-family: Poppins
+                font-weight: 400
+                font-size: 16px
+                text-transform: uppercase
+            .dot
+                display: flex
+                gap: 7px
+                flex-direction: column
+                span:nth-child(1)
+                    height: 3px
+                    width: 33px
+                span:nth-child(2)
+                    height: 3px
+                    width: 33px
+                span:nth-child(3)
+                    height: 3px
+                    width: 23px
+                span
+                    display: block
+                    height: var(--lineheight)
+                    width: inherit
+                    background: var(--white)
+                    transition: 0.7s ease
+
+@media (max-width: 1024px)
+    header.header-fixed .header-wrapper .colA
+        flex: 0 1 105px
+        @include media(540)
+            flex: 0 1 136px
+@media (max-width: 1024px)
+    header .header-wrapper .colA
+        flex: 0 1 245px
+        @include media(540)
+            flex: 0 1 175px
+
+@media (max-width: 991px)
+    header .header-wrapper .ham-btn
+        display: flex
+
+.colB
+    display: flex
+    gap: 20px
+    justify-content: flex-end
+    // flex: 1
+    align-items: center
+    @include media(991)
+        display: none    
+    .menu-list
+        display: flex
+        align-items: center
+        justify-content: end
+        gap: 35px
+        display: inline-flex
+        vertical-align: middle
+        @include media(1024)
+            gap: 24px
+        li
+            a
+                color: $white
+                display: flex
+                gap: 7px
+                align-items: center
+                // &:hover
+                //     color: $primary
+                span
+                    display: flex
+                    svg
+                        width: 16px
+                        height: 16px
+                        transition: 0.5s ease
+                &:hover
+                    span
+                        svg
+                            transform: rotate(-90deg)
+                
+            &.hasDropdown
+                position: relative
+                >a
+                    // &::after
+                    //     content: ""
+                    //     background-image: url(/assets/icon/arrow-down-white.svg)
+                    //     background-repeat: no-repeat
+                    //     background-position-x: 100%
+                    //     background-position-y: 50%
+                    //     background-size: var(--arrowsize) auto
+                    //     padding-right: calc(var(--arrowsize) + var(--space))
+                &:hover
+                    >a
+                        // color: $primary
+                        position: relative
+                        span
+                            svg
+                                transform: rotate(-90deg)
+                        &::after
+                            transform: rotate(90deg)
+                    .dropdown-menu 
+                        opacity: 1
+                        transform: scale3d(1, 1, 1) 
+                .dropdown-menu
+                    --triangle: 10px
+                    position: absolute
+                    top: calc(100% + var(--triangle))
+                    left: 50%
+                    translate: -50% 0
+                    transform: perspective(2000px) translate3d(0px, 0px, 50px) rotateX(-90deg) scale3d(0.86, 0.75, 1) translateY(50px)
+                    transform-origin: top
+                    transition: .4s ease
+                    opacity: 0
+                    width: 100%
+                    min-width: fit-content
+                    &::before
+                        content: ''
+                        display: block
+                        position: absolute
+                        bottom: calc(100% - (var(--triangle) / 2))
+                        left: 50%
+                        translate: -50% 0
+                        width: var(--triangle)
+                        height: var(--triangle)
+                        background: #E3E3E3
+                        transform: rotate(45deg)
+                        z-index: -1
+                    ul
+                        display: grid
+                        grid-template-columns: repeat(2, 1fr)
+                        column-gap: 30px
+                        background: #fff
+                        padding: 16px 12px
+                        box-shadow: rgb(0 0 0 / 1%) -2px 6px 2px 3px
+                        border-radius: 5px
+                        text-align: left
+                        white-space: nowrap
+                        li
+                            display: block
+                            &:not(:last-child)
+                                margin-right: 0
+                                margin-bottom: 2px
+                            a
+                                font-size: 14px
+                                display: flex
+                                align-items: center
+                                gap: 5px
+                                color: $black
+                                padding: 10px 14px
+                                border-radius: 5px
+                                overflow: hidden
+                                &:hover
+                                    background: $primary
+                                    color: $white
+                                    &::before
+                                        opacity: 1
+                                svg
+                                    width: 20px
+                                    height: 20px
+                                    object-fit: cover
+                                span
+                                    display: block
+                                    width: 24px
+                                    line-height: 0
+            &.single
+                ul
+                    grid-template-columns: repeat(1, 1fr) !important
+    .right-menu-list
+        display: flex
+        align-items: center
+        gap: 30px
+        li
+            a
+                span
+                    font-family: Lato
+                    font-weight: 500
+                    font-size: 16px
+                    color: white
+                    letter-spacing: 2px
+                    transition: 0.7s ease
+
+
+
+
+
+.cl-wht-icon
+  display: inline-block
+  border-left: 2px solid white
+  margin: 0px 0px  0px 30px
+  li
+    padding: 0px 0px 0 20px
+    &:nth-child(2)
+      padding-right: 35px
+    a
+      img
+        width: 25px
+
+@media (max-width: 520px)
+  .mobile-nav
+    padding: 90px 40px 40px
+
+@media (max-width: 991px)
+  .mobile-nav.is-open
+    transform: translateX(0)
+
+@media (max-width: 991px)
+  .mobile-nav .close
+    display: block
+
+@media (max-width: 520px)
+  .mobile-nav .close
+    right: 25px
+
+@media (max-width: 991px)
+  .mobile-nav ul
+    display: block
+    text-align: left
+
+@media (max-width: 991px)
+  .mobile-nav ul li
+    button, a
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      background-image: var(--gradient)
+      font-size: 42px
+      color: var(--black)
+      font-family: Cinzel-regular
+      text-transform: uppercase
+
+@media only screen and (max-width: 365px)
+  .mobile-nav ul li
+    button, a
+      font-size: 34px
+
+@media (max-width: 991px)
+  .mobile-nav ul.menu-list li
+    display: block
+
+@media (max-width: 1230px)
+  .mobile-nav ul.menu-list li:not(:last-child)
+    margin-right: 20px
+
+@media (max-width: 991px)
+  .mobile-nav ul.menu-list li:not(:last-child)
+    margin-right: 0
+    margin-bottom: 20px
+
+@media (max-width: 520px)
+  .mobile-nav ul.menu-list li:not(:last-child)
+    margin-bottom: 16px
+
+@media (max-width: 1230px)
+  .mobile-nav ul.enquire-menu
+    padding-left: 20px
+
+@media (max-width: 991px)
+  .mobile-nav ul.enquire-menu
+    display: none
+
+@media (max-width: 1230px)
+  .mobile-nav ul.enquire-menu li:not(:last-child)
+    margin-right: 15px
+
+footer
+    background: #F8F4F0
+    position: relative
+    overflow: hidden
+    .top-sec
+        border-bottom: 1px solid #00000026
+        padding: 25px 0
+        .flex-box
+            display: flex
+            justify-content: space-between
+            align-items: center
+            @include media(768)
+                flex-direction: column-reverse
+                gap: 40px
+            .col:first-child
+                display: flex
+                gap: 120px
+                @include media(540)
+                    flex-direction: column
+                    gap: 30px
+                .inside-flex
+                    display: flex
+                    align-items: center
+                    gap: 10px
+                    figure
+                        width: 26px
+                        height: 26px
+                    h4
+                        font-family: Lato
+                        font-weight: 600
+                        font-size: 12px
+                        line-height: 12px
+                        text-transform: uppercase
+                        color: black
+                    p
+                        font-family: Lato
+                        font-weight: 600
+                        font-size: 16px
+                        line-height: 24px
+                        color: black
+            .col:last-child
+                .inside-flex
+                    display: flex
+                    gap: 20px
+                    a
+                        padding: 10px 27px
+                        border: 1px solid #EEBF91
+                        color: black
+                        font-family: Lato
+                        font-weight: 700
+                        font-size: 16px
+                        line-height: 20px
+                        text-align: center
+                    a:first-child
+                        background: #EEBF91
+                        &:hover
+                            background: transparent
+                    a:last-child
+                        &:hover
+                            background: #EEBF91
+    .bottom-sec
+        padding: 50px 0 100px 
+        @include media(768)
+            padding: 50px 0
+        @include media(540)
+            padding: 50px 0 30px
+        .grid-box
+            display: grid
+            grid-template-columns: 1fr 1fr 1fr
+            grid-gap: 20px
+            position: relative
+            z-index: 1
+            @include media(1024)
+                grid-template-columns: 0.6fr 0.6fr 1fr
+            @include media(991)
+                grid-template-columns: repeat(2, 1fr)
+                grid-gap: 20px
+            @include media(768)
+                grid-template-columns: repeat(1, 1fr)
+                max-width: 70%
+                margin: auto
+            @include media(540)
+                gap: 20px
+                max-width: 90%
+            .grid-box-item:nth-child(1)
+                @include media(768)
+                    margin: auto
+                    text-align: center
+                figure
+                    width: 111px
+                    height: 123px
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+            .grid-box-item:nth-child(2)
+                padding: 20px 0 0 0 
+                .col-mdA
+                    display: flex
+                    gap: 50px
+                    @include media(768)
+                        justify-content: center
+                        text-align: center
+                    ul
+                        li
+                            margin-bottom: 20px
+                            @include media(540)
+                                margin-bottom: 10px
+                            a
+                                color: black
+                                font-family: Lato
+                                font-weight: 700
+                                font-size: 20px
+                                line-height: 16px
+                                transition: 0.3s ease
+                                &:hover
+                                    margin-left: 5px
+                                @include media(540)
+                                    font-size: 14px
+                                &:hover
+                                    padding-left: 0px
+            .grid-box-item:nth-child(3)
+                .flex-box
+                    display: flex
+                    justify-content: space-between
+                    gap: 10px
+                    .col
+                        .title
+                            font-family: Lato
+                            font-weight: 700
+                            font-size: 12px
+                            text-transform: uppercase
+                            color: $text
+                            margin-bottom: 15px
+                    .col:first-child
+                        flex: 0 1 40%
+                        ul li
+                            margin-bottom: 5px
+                            a
+                                font-family: Lato
+                                font-weight: 600
+                                color: black
+                                font-size: 14px
+                                line-height: 16px
+                                transition: 0.3s ease
+                                &:hover
+                                    margin-left: 5px
+                    .col:last-child
+                        flex: 0 1 60%
+                        a
+                            display: flex
+                            gap: 14px
+                            figure
+                                width: 50px
+                                justify-content: center
+                                display: flex
+                                align-items: center
+                                @include media(540)
+                                    width: 30%
+                                img
+                                    width: 100%
+                                    height: 100%
+                                    object-fit: contain
+                            p
+                                font-family: Lato
+                                font-weight: 600
+                                font-size: 14px
+                                line-height: 24px
+                                color: black
+                        .social-icons
+                            display: flex
+                            gap: 25px
+                            margin-top: 30px 
+                            a
+                                svg
+                                    &:hover
+                                        path
+                                            fill: #EEBF91
+                                    path
+                                        fill: black
+                                        transition: 0.3s ease
+    .bottom-footer
+        padding: 30px
+        display: flex
+        justify-content: center
+        align-items: center
+        line-height: 0
+        position: relative
+        border-top: 1px solid #DCD6D633
+        z-index: 1
+        @include media(768)
+            justify-content: center
+        @include media(540)
+            padding-top: 30px 
+            padding-bottom: 90px
+        .content
+            align-items: center
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            width: 100%
+            @include media(540)
+                justify-content: center
+            p
+                font-family: Lato
+                font-weight: 500
+                font-size: 14px
+                line-height: 24px
+                color: #666666B2
+                @include media(540)
+                    line-height: 1.9
+                span
+                    @include media(540)
+                        display: none
+        .footer-link
+            display: flex
+            align-items: center
+            gap: 10px
+            img
+                width: 53px
+
+.ham-pop
+    left: 0
+    max-width: 450px
+    transform: translateX(-100%)
+    transition: .5s ease
+    background-color: #fff
+    @include media(768)
+        right: 0
+        left: initial
+        transform: translateX(100%)
+    &.is-open
+        transform: translateX(0%)
+    .close
+        path
+            stroke: $white
+            stroke-width: 2 !important
+    .model-body
+        padding: 55px 40px 30px
+        height: 100%
+        // overflow-y: auto
+        overflow: hidden
+        display: flex
+        flex-direction: column
+        position: relative
+        // &::before
+        //     content: ""
+        //     position: absolute
+        //     left: 50%
+        //     bottom: 0%
+        //     transform: translate(-30%)
+        //     width: 100%
+        //     height: 340px
+        //     background: url(../../../assets/images/home/trans-logo.png) no-repeat
+        //     opacity: 0.05
+        //     z-index: -1
+        //     filter: brightness(0.5)
+        @include scrollbar(6px,$white,#5e5e5e,8px)
+        @include media(520)
+            padding: 60px 20px 20px 20px
+        .logo
+            margin-bottom: 20px
+            filter: contrast(0.5)
+            img
+                max-width: 40%
+        .ico
+            max-width: 70px
+            margin-bottom: 55px
+            line-height: 0
+            img,svg
+                width: 100%
+                height: auto
+        .nav-list
+            flex: 1
+            >li
+                &:not(:last-child)
+                    margin-bottom: 22px
+                    @include media(1366)
+                        margin-bottom: 20px
+                >a
+                    font-size: 28px
+                    line-height: 1.06
+                    color: black
+                    display: inline-block
+                    transition: 0.5s ease
+                    font-family: Lato
+                    @include font(500)
+                    @include media(1366)
+                        font-size: 28px
+                    @include media(675)
+                        font-size: 24px
+                    &:hover
+                        color: #EEBF91
+                        padding-left: 10px
+                &.hasDropdown
+                    position: relative
+                    cursor: pointer
+                    .plu-ico
+                        position: absolute
+                        right: 0
+                        top: 4px
+                        --sizeplu: 22px
+                        height: var(--sizeplu)
+                        width: var(--sizeplu)
+                        cursor: pointer
+                        &::before,&::after
+                            content: ''
+                            position: absolute
+                            top: 50%
+                            translate: 0 -50%
+                            left: 0
+                            right: 0
+                            height: 2px
+                            width: 100%
+                            background: $black
+                            transition: .5s ease
+                        &::before
+                            transform: rotate(90deg)
+                        &.active
+                            &::before
+                                transform: rotate(0deg)
+                                opacity: 0
+                    .dropdown-menu-ham
+                        display: none
+                        border: 1px solid #ccc
+                        border-right: none
+                        border-left: none
+                        margin: 12px 0
+                        padding: 15px 0
+                        li
+                            padding-left: 10px
+                            &:not(:last-child)
+                                margin-bottom: 10px
+                            a
+                                color: $text
+                                &:hover
+                                    color: $black
+        .bottom-list
+            border-top: 1px solid #444
+            margin-top: 2rem
+            padding-top: 1rem
+            display: flex
+            align-items: center
+            gap: 1rem
+            .social-icons
+                display: flex
+                justify-content: center
+                align-items: center
+                gap: 20px
+
+.enquire-pop
+    right: 0
+    transform: translateX(100%)
+    transition: .5s ease
+    background: var(--white)
+    max-width: 450px
+    &.is-open
+        transform: translateX(0%)
+    .model-body
+        padding: 40px 35px 30px
+        height: 100%
+        overflow: hidden
+        position: relative
+        // &::before
+        //     content: ""
+        //     position: absolute
+        //     left: 50%
+        //     bottom: 0%
+        //     transform: translate(-30%)
+        //     width: 100%
+        //     height: 340px
+        //     background: url(../../../assets/images/home/trans-logo.png) no-repeat
+        //     opacity: 0.03
+        //     filter: brightness(0.5)
+        @include scrollbar(3px,$white,#5e5e5e,8px)
+        @include media(675)
+            padding: 70px 20px 30px
+        .title
+            text-align: center
+            margin-bottom: 2rem
+            h4
+                color: #000000
+                font-size: 36px
+                font-weight: 600
+                line-height: 1.58
+                text-align: center
+                font-family: Optima
+            p
+                font-weight: 500
+                font-size: 14px
+                color: $text
+                line-height: 20px
+                @include media(675)
+                    font-size: 14px
+                    max-width: 300px
+        .form
+            --gaptb: 15px
+            input:not(.no-focus):focus ~ label,textarea:not(.no-focus):focus ~ label
+            //   color: $white
+            label,input
+                font-family: Lato
+            //   color: $white
+        button
+            padding: 8px 40px
+            font-weight: 600
+            font-size: 16px
+            text-align: center
+            border-radius: 25px            
+            z-index: 1
+            border: 1px solid $black
+            width: fit-content
+            margin: auto
+            margin-top: 40px
+            transition: 0.5s ease
+            font-family: Lato
+            &:hover
+                border: 1px solid #EEBF91
+                color: $black
+                background: #EEBF91
+                &::before
+                    bottom: 0
+                    z-index: -1
+
+.video-pop
+    left: 0
+    right: 0
+    // background: #0000007a
+    background: #03052e7d
+    z-index: 90
+    max-width: 100%
+    transform: translateY(100%)
+    transition: .5s ease
+    &.is-open
+        transform: translateY(0%)
+    .close-video
+        position: absolute
+        bottom: calc(100% + 20px)
+        top: auto
+        right: -40px
+        height: 50px
+        width: 50px
+        border-radius: 50%
+        background: $secondary
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: .5s ease
+        @include media(675)
+            right: 0
+        &:hover
+            background: $primary
+        svg
+            height: 35%
+            width: 35%
+        path
+            stroke-width: 2
+            stroke: $white
+    .model-body
+        position: absolute
+        top: 50%
+        left: 50%
+        translate: -50% -50%
+        width: 100%
+        max-width: 50%
+        @include media(675)
+            max-width: 95%
+        iframe
+            width: 100%
+            aspect-ratio: 1.9
+            border: 2px solid $white
+            background: $white
+            
+.video-pop-second
+    left: 0
+    right: 0
+    // background: #0000007a
+    background: #03052e7d
+    z-index: 90
+    max-width: 100%
+    transform: translateY(100%)
+    transition: .5s ease
+    &.is-open
+        transform: translateY(0%)
+    .close-video
+        position: absolute
+        bottom: calc(100% + 20px)
+        top: auto
+        right: -40px
+        height: 50px
+        width: 50px
+        border-radius: 50%
+        background: $secondary
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: .5s ease
+        @include media(675)
+            right: 0
+        &:hover
+            background: $primary
+        svg
+            height: 35%
+            width: 35%
+        path
+            stroke-width: 2
+            stroke: $white
+    .model-body
+        position: absolute
+        top: 50%
+        left: 50%
+        translate: -50% -50%
+        width: 100%
+        max-width: 20%
+        @include media(675)
+            max-width: 95%
+        iframe
+            width: 100%
+            aspect-ratio: 1.9
+            border: 2px solid $white
+            background: $white
+
+.about-pop
+    left: 0
+    right: 0
+    background: var(--bgcolor)
+    // background: linear-gradient(360deg, rgba(4, 32, 17, 0) -100.63%, #042011 50.4%)
+    z-index: 90
+    max-width: 100%
+    transform: translateY(100%)
+    transition: .5s ease
+    &.is-open
+        transform: translateY(0%)
+    .close-about-pop
+        position: absolute
+        bottom: calc(100% + 20px)
+        top: 20px
+        right: 10px
+        height: 50px
+        width: 150px
+        border-radius: 50%
+        display: flex
+        align-items: center
+        color: $white
+        justify-content: center
+        transition: 0.5s ease
+        font-family: Poppins
+        font-weight: 500
+        font-size: 17px
+        line-height: 25px
+        text-transform: uppercase
+        @include media(675)
+            right: -30px
+        // &:hover
+        //     background: $primary
+        svg
+            height: 50%
+            width: 40%
+        path
+            stroke-width: 2
+            stroke: $white
+    .model-body
+        position: absolute
+        top: 50%
+        left: 50%
+        translate: -50% -50%
+        width: 100%
+        max-width: 100%
+        height: 100vh
+        @include media(675)
+            max-width: 95%
+        .about-us-content
+            // border: 1px solid white
+            max-width: 800px
+            height: 376px
+            position: relative
+            top: 150px
+            margin: auto
+            .about-tab-nav
+                display: flex
+                justify-content: space-between
+                width: 341px
+                margin: auto
+                margin-bottom: 70px
+                li
+                    opacity: 0.4
+                .active
+                    opacity: 1
+                    transition: 0.5s
+                li span a
+                    font-family: Poppins
+                    font-weight: 600
+                    font-size: 36px
+                    line-height: 25px
+                    color: var(--primary)
+
+            .tab-nav-content
+                .about-tab-nav-content p
+                    font-family: Poppins
+                    font-weight: 500
+                    font-size: 16px
+                    line-height: 24px
+                    text-align: center
+                    max-width: 637px
+                    margin: auto
+
+
+.product-pop
+    left: 0
+    right: 0
+    // background-image: url("../../images/home/product-bg.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+    // width: 100%
+    // background: linear-gradient(360deg, rgba(4, 32, 17, 0) -100.63%, #042011 50.4%)
+    z-index: 90
+    max-width: 100%
+    transform: translateY(100%)
+    transition: .5s ease
+    &.is-open
+        transform: translateY(0%)
+    .close-product-pop
+        position: absolute
+        bottom: calc(100% + 20px)
+        top: 20px
+        right: 10px
+        height: 50px
+        width: 150px
+        border-radius: 50%
+        display: flex
+        align-items: center
+        color: $white
+        justify-content: center
+        transition: 0.5s ease
+        font-family: Poppins
+        font-weight: 500
+        font-size: 17px
+        line-height: 25px
+        text-transform: uppercase
+        z-index: 100
+        @include media(675)
+            right: -20px
+            top: 7px
+        // &:hover
+        //     background: $primary
+        svg
+            height: 50%
+            width: 40%
+        path
+            stroke-width: 2
+            stroke: $white
+    .model-body
+        background: linear-gradient(360deg, rgba(4, 32, 17, 0) -100.63%, #042011 50.4%)
+        position: absolute
+        top: 50%
+        left: 50%
+        translate: -50% -50%
+        width: 100%
+        max-width: 100%
+        height: 100vh
+        @include media(675)
+            max-width: 100%
+        .product-us-content
+            // border: 1px solid white
+            max-width: 100%
+            // height: auto
+            position: relative
+            top: 70px
+            display: flex
+            justify-content: space-between
+            gap: 50px
+            @include media(540)
+                display: block
+                top: 100px
+            .box
+                // border: 1px solid yellow
+            .left 
+                width: 60%
+                @include media(540)
+                    width: 100%
+                .heading
+                    .title
+                        h1
+                            font-family: Poppins
+                            font-weight: 600
+                            font-size: 60px
+                            line-height: 25px
+                            color: $white
+                            margin-bottom: 35px
+                            @include media(540)
+                                font-size: 50px
+                    .subtitle
+                        h4
+                            font-family: Poppins
+                            font-weight: 500
+                            font-size: 24px
+                            line-height: 25px
+                            color: $white
+                            @include media(540)
+                                font-size: 22px
+                .content
+                    padding: 0px 0 30px 0
+                    border-right: 1px solid #fff
+                    width: 90%
+                    margin-top: 30px
+                    .desc
+                        padding-right: 40px
+                        height: 310px
+                        overflow-y: auto
+                        margin-right: -4px
+                        p 
+                            font-size: 16px
+                            line-height: 24px
+                            font-weight: 400
+                            padding-bottom: 10px
+                            color: $text
+                            @include media(540)
+                                font-size: 14px
+                                line-height: 1.5
+                        h2 
+                            font-size: 36px
+                            line-height: 36px
+                            margin-bottom: 15px 
+                            margin-top: 50px
+                            color: $white
+                            
+                        h3 
+                            font-size: 28px
+                            line-height: 28px
+                            margin-bottom: 15px
+                            margin-top: 50px
+                            color: $white
+
+                            @include media(540)
+                                font-size: 22px
+                                line-height: 26px 
+                                
+
+                        h4 
+                            font-size: 24px
+                            line-height: 24px
+                            margin-bottom: 15px
+                            margin-top: 50px
+                            color: $white
+                            font-weight: 600
+
+                        h5
+                            font-size: 20px
+                            line-height: 20px
+                            margin-bottom: 15px
+                            margin-top: 50px
+                            color: $white
+                            font-weight: 600
+
+                            @include media(540)
+                                font-size: 18px
+                                line-height: 18px
+                        h6
+                            font-size: 16px
+                            line-height: 18px
+                            margin-bottom: 15px
+                            margin-top: 50px
+                            color: $white
+
+                        
+                        ul
+                            margin-left: 10px
+                            margin-top: 15px
+                            position: relative
+                            @include media(540)
+                                margin-left: 0
+                        li
+                            margin-left: 10px
+                            font-size: 16px
+                            line-height: 24px
+                            color: var(--white)
+                            padding-bottom: 20px
+                            padding-left: 50px
+                            position: relative
+                            // &::before
+                            //     content: ""
+                            //     background:  url('../../icon/list-style-icon.svg') no-repeat center
+                            //     width: 30px
+                            //     height: 30px
+                            //     position: absolute
+                            //     top: -3px
+                            //     left: 0
+                        
+                        // li::marker
+                            // font-size: 22px 
+                            // top: 0
+                            // left: 0px
+                            // width: 5%
+                            // height: 67%
+                            // background-repeat: no-repeat
+                            // content: ""
+                            // position: absolute
+                            // background: url(../../icon/list-style-icon.svg)
+                .product-btn
+                    display: flex 
+                    gap: 30px
+                    margin-top: 30px
+                    // .whatsapp a
+                    //     width: 163px
+                    //     height: 46px
+                    //     top: 625px
+                    //     left: 77px
+                    //     border-radius: 25px
+                    //     gap: 10px
+                    //     border: 1px solid $primary
+                    //     padding: 13px 24px
+                    //     display: flex
+                    //     align-items: center
+                    //     color: $primary
+                    .whatsapp
+                        .submit-btn
+                            color: var(--primary)
+                            border: 1px solid var(--primary)
+                            // border-width: 2px
+                            border-width: 0.1em
+                            border-radius: 25px
+                            padding: 10px 24px
+                            // font-weight: 500
+                            text-transform: capitalize
+                            width: 141px
+                            position: relative
+                            transition: all ease 0.4s
+                            overflow: hidden
+                            &:hover::after
+                                bottom: 0
+                                border-radius: 0
+                                transition: all ease 0.4s
+                            &::after
+                                content: ""
+                                position: absolute
+                                height: 100%
+                                width: 100%
+                                background-color: $primary
+                                left: 0
+                                bottom: -100%
+                                border-radius: 50%
+                                // visibility: hidden
+                            &:hover a
+                                color: $black
+                            a
+                                border-radius: 25px
+                                // padding: 14px 24px
+                                font-family: Poppins
+                                font-weight: 600
+                                font-size: 16px
+                                line-height: 16px
+                                text-align: center
+                                text-decoration: none
+                                color: var(--primary)
+                                z-index: 9  
+                                position: relative
+
+                    .enquire-now a
+                        width: 150px
+                        height: 46px
+                        font-weight: 500
+                        border-radius: 25px
+                        gap: 10px
+                        background: $primary
+                        border: 1px solid $primary
+                        padding: 13px 24px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        color: $black
+
+
+            .right
+                width: 40%
+                @include media(540)
+                    display: none
+                .box-image
+                    // border: 1px solid pink
+                    // height: 517px
+                    width: 100%
+                    max-width: 80%
+                    margin: 30px auto 10px
+                    overflow: hidden
+                    img
+                        width: 100%
+                        height: 100%
+                        border-radius: 15px
+                        // &:hover
+                        //     transform: scale(1.1)
+                        //     transition: 0.5s
+
+
+
+.footer-strip
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 40
+    background: black
+    display: none
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset
+    @include media(675)
+        display: block
+    ul
+        @include flex
+        li
+            flex: 1
+            &:not(:last-child)
+                border-right: 1px solid rgb(256 256 256 / 10%)
+            a
+                display: flex
+                flex-direction: column
+                align-items: center
+                padding: 10px
+                gap: 5px
+                color: $white
+                font-size: 14px
+                height: var(--footerstrip)
+                text-transform: uppercase
+                font-family: Lato
+                svg
+                    width: 20px
+                    height: 20px
+                    &[stroke]
+                        stroke: $white
+                    &[fill]
+                        fill: $white
+                    path
+                        &[stroke]
+                            stroke: $white
+                        &[fill]
+                            fill: $white
+
+
+

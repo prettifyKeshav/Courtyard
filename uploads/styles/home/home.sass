@@ -1,0 +1,1203 @@
+@import '../_var'
+
+// .hero-banner.home-banner
+//     position: relative
+//     overflow: hidden
+//     height: 100vh
+//     width: 100%
+//     @include media(768)
+//         height: 80vh
+//     @include media(768)
+//         height: 60vh
+//     .video-wrapper
+//         width: 100%
+//         height: 100%
+//         &::before
+//             content: ''
+//             position: absolute
+//             top: 0
+//             left: 0
+//             width: 100%
+//             height: 100%
+//             background: linear-gradient(360deg, rgba(0, 0, 0, 0) 63.46%, rgba(0, 0, 0, 0.85) 100%), linear-gradient(270deg, rgba(0, 0, 0, 0.8) 24.57%, rgba(0, 0, 0, 0) 78.28%)
+//             z-index: 1
+//             transform: scaleX(-1)
+//         video
+//             width: 100%
+//             height: 100%
+//             object-fit: cover
+//             transform: scaleX(-1)
+//         .bg-wrapper
+//             width: 100%
+//             position: absolute
+//             z-index: 2
+//             right: 0
+//             left: 0
+//             bottom: 13%
+//             @include media(768)
+//                 bottom: 30%
+//             @include media(540)
+//                 bottom: 10%
+//                 margin-left: 0
+//             .swiper
+//                 height: 104px
+//                 @include media(540)
+//                     height: 80px
+//             h1
+//                 text-align: left
+//                 @include media(540)
+//                     max-width: 90%
+//                     text-align: center
+//                     margin: auto
+//                     font-size: 55px
+//                     line-height: 1
+//             h5
+//                 color: $white
+//                 @include media(540)
+//                     max-width: 80%
+//                     margin: auto
+//             p
+//                 font-weight: 500
+//                 font-size: 20px
+//                 line-height: 100%
+//                 color: $white
+//                 max-width: 100%
+//                 margin-top: 60px
+//                 @include media(540)
+//                     display: flex
+//                     flex-direction: column
+//                     gap: 10px
+//                     margin-top: 20px
+//                 span:first-child
+//                     font-weight: 450
+//                     font-size: 16px
+//                     line-height: 100%
+//                     margin-right: 15px
+//                     @include media(540)
+//                         margin-right: 0
+//                 span:last-child
+//                     font-weight: 400
+//                     font-size: 20px
+
+.home-secA
+    padding: 70px 0
+    @include media(540)
+        padding: 50px 0
+    .flex-box
+        display: flex
+        justify-content: space-between
+        @include media(768)
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            gap: 40px
+        .col:first-child
+            flex: 0 1 65%
+            @include media(768)
+                text-align: center
+            h2
+                margin: 0 0 15px 0
+                font-size: 48px
+                @include media(540)
+                    font-size: 38px
+            p
+                max-width: 90%
+                @include media(768)
+                    margin: auto
+                @include media(540)
+                    max-width: 100%
+            .counter-flex
+                display: grid
+                grid-template-columns: repeat(3,1fr)
+                max-width: 523px
+                margin-top: 40px
+                @include media(768)
+                    margin: auto
+                    margin-top: 40px
+                @include media(540)
+                    grid-template-columns: repeat(1,1fr)
+                    gap: 20px
+                .count-info
+                    display: flex
+                    justify-content: space-around
+                    align-items: center
+                    @include media(540)
+                        justify-content: center
+                    h4
+                        font-family: Lato
+                        font-weight: 400
+                        font-size: 36px
+                        line-height: 24px
+                        color: black
+                    p
+                        font-weight: 400
+                        font-size: 14px
+                        line-height: 18px
+                        width: 98px
+                        @include media(540)
+                            margin: 0
+                        span
+                            display: block
+            .bottom-btn
+                margin: 40px 0 0 0
+                a
+                    border: 1px solid $black
+                    padding: 8px 17px
+                    position: relative
+                    overflow: hidden
+                    display: inline-block
+                    transition: 0.5s ease
+                    &:hover
+                        background: #EEBF91
+                        border: 1px solid #EEBF91
+                        span
+                            color: $black
+                        svg
+                            path
+                                stroke: $black
+                    span
+                        font-family: Lato
+                        font-weight: 400
+                        font-size: 16px
+                        line-height: 20px
+                        text-align: center
+                        color: $black
+                        transition: 0.5s ease
+                    svg
+                        path
+                            stroke: black
+                            transition: 0.5s ease
+        .col:last-child
+            flex: 0 1 35%
+            display: flex
+            justify-content: right
+            align-items: center
+            figure
+                width: 350px
+                height: 388px
+                @include media(540)
+                    width: 70%
+                    height: auto
+                    margin: auto
+.home-secB
+    background: linear-gradient(180deg, #FBF0E6 0%, #F5DBC1 100%)
+    .top-flex-box
+        display: flex
+        @include media(540)
+            display: initial
+        .col:first-child
+            flex: 0 1 30%
+        .col:last-child
+            flex: 0 1 70%
+            display: flex
+            @include media(540)
+                display: initial
+            .col-child
+                flex: 0 1 50%
+            .col-child:first-child
+                border-left: 1px solid #DDBE9F66
+                border-right: 1px solid #DDBE9F66
+                h2
+                    text-align: center
+                    padding: 60px 0
+                    font-size: 48px
+                    @include media(540)
+                        padding: 30px 0px
+                        font-size: 38px
+    .bottom-flex-box
+        display: flex
+        @include media(540)
+            display: none
+        .col:first-child
+            flex: 0 1 30%
+        .col:last-child
+            flex: 0 1 70%
+            display: flex
+            .col-child
+                flex: 0 1 50%
+            .col-child:first-child
+                border-left: 1px solid #DDBE9F66
+                border-right: 1px solid #DDBE9F66
+                h2
+                    text-align: center
+                    padding: 60px 0
+                    @include media(768)
+                        padding: 40px 0
+            
+    .flex-box
+        display: flex
+        @include media(768)
+            flex-direction: column
+        .col:first-child
+            flex: 0 1 30%
+            .tab-nav
+                height: 47vh
+                width: 100%
+                border-top: 1px solid #DDBE9F66
+                border-bottom: 1px solid #DDBE9F66
+                display: flex
+                justify-content: center
+                align-items: center
+                @include media(768)
+                    height: fit-content
+                    padding: 20px 0
+                ul
+                    margin-right: 100px
+                    @include media(768)
+                        margin-right: 0
+                        display: flex
+                        gap: 30px
+                    li
+                        font-family: Lato
+                        font-weight: 700
+                        font-size: 24px
+                        line-height: 24px
+                        color: #0000004D
+                        transition: 0.7s ease
+                        padding-bottom: 20px
+                        position: relative
+                        @include media(540)
+                            padding-bottom: 0
+                        &:hover
+                            color: rgb(0 0 0 / 43%)
+                        &::before
+                            content: ""
+                            position: absolute
+                            top: 32%
+                            left: -290%
+                            transform: translate(-50%,-50%)
+                            width: 400px
+                            height: 2px
+                            background: $black
+                            transition: 0.7s ease
+                            opacity: 0
+                            @include media(768)
+                                content: none
+                        &.active
+                            color: $black
+                            &::before
+                                opacity: 1
+                                left: -230%
+        .col:last-child
+            flex: 0 1 70%
+            .tab-nav-content
+                .tabs
+                    display: flex
+                    overflow: hidden
+                    @include media(540)
+                        flex-direction: column
+                    &.active
+                        .col-child:first-child
+                            figure
+                                img    
+                                    transform: translateY(0%)
+                                    opacity: 1
+                        .col-child:last-child
+                            .content
+                                p
+                                    opacity: 1
+                                    transform: translateY(0%)
+                    .col-child
+                        flex: 0 1 50%
+                    .col-child:first-child
+                        figure
+                            height: 47vh
+                            width: 100%
+                            line-height: 0
+                            border: 1px solid #DDBE9F66
+                            @include media(768)
+                                height: 22vh
+                            @include media(540)
+                                height: auto
+                            img
+                                width: 100%
+                                height: 100%
+                                object-fit: cover
+                                opacity: 0
+                                transition: 0.9s ease
+                                transform: translateY(110%)
+                    .col-child:last-child
+                        .content
+                            height: 47vh
+                            width: 100%
+                            border-top: 1px solid #DDBE9F66
+                            border-bottom: 1px solid #DDBE9F66
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            padding: 0 50px
+                            @include media(768)
+                                height: 22vh
+                            @include media(540)
+                                height: auto
+                                padding: 30px 0
+                                width: 90%
+                                margin: auto
+                                text-align: center
+                            p
+                                font-family: Lato
+                                font-weight: 300
+                                font-size: 24px
+                                line-height: 35px
+                                width: 360px
+                                color: $black
+                                opacity: 0
+                                transition: 0.9s ease
+                                transform: translateY(160%)
+                                @include media(1024)
+                                    width: auto
+                                strong
+                                    font-weight: 700
+.home-secC
+    background: #EFC297
+    height: 86vh
+    @include media(768)
+        height: auto
+    @include media(540)
+        height: 70vh
+    .flex-box
+        height: 100%
+        @include media(768)
+            flex-direction: column-reverse
+        @include media(540)
+            justify-content: space-between
+        .col:first-child
+            flex: 0 1 75%
+            overflow: hidden
+            @include media(540)
+                flex:  initial
+                height: 100%
+            .bg-video
+                width: 100%
+                height: 100%
+                line-height: 0
+                .bg
+                    height: 100%
+                video
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    opacity: 70%
+                .swiper-nav
+                    display: flex
+                    position: absolute
+                    bottom: 10%
+                    right: 3%
+                    gap: 20px
+                    z-index: 4
+                    @include media(540)
+                        display: none
+                    button
+                        width: 40px
+                        height: 40px
+                        border-radius: 50%
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        transition: 0.3s ease
+                        background: white
+                        &:hover
+                            background: #EEBF91
+                            svg path
+                                stroke: $white
+                        svg 
+                            path
+                                stroke: $black
+                                transition: 0.5s ease
+
+                        
+                .figure-wrap
+                    position: absolute
+                    inset: 0
+                    overflow: hidden
+                    > div
+                        position: absolute
+                        inset: 0
+                    @include media(768)
+                        &::before
+                            content: ""
+                            position: absolute
+                            top: 0
+                            left: 0
+                            width: 100%
+                            height: 100%
+                            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14.42%, rgba(0, 0, 0, 0.65) 67.98%)
+                            z-index: 3
+                    figure
+                        position: absolute
+                        inset: 0
+                        transform: translateY(100%)
+                        transition: transform 2s ease
+                        pointer-events: none
+                        &.active
+                            transform: translateY(0)
+                            pointer-events: auto
+                        &.exiting
+                            transform: translateY(100%)
+                        img
+                            position: absolute
+                            bottom: -20%
+                            left: 0
+                            width: 100%
+                            height: 100%
+                            z-index: -1
+                            // object-fit: contain
+                            object-fit: cover
+                    .figure-content
+                        position: absolute
+                        bottom: 10%
+                        left: 50%
+                        transform: translateX(-50%)
+                        width: 93%
+                        display: flex
+                        justify-content: space-between
+                        align-items: flex-end
+                        z-index: 4
+                        @include media(540)
+                            flex-direction: column
+                            width: 100%
+                            gap: 30px
+                            text-align: center
+                        .figure-content-wrap
+                            transform: translateX(-250%)
+                            transition: transform 2s ease
+                            pointer-events: none
+                            @include media(540)
+                                transform: translateX(0)
+                                opacity: 0
+                                transition: 0.9s ease
+                            h4
+                                font-weight: 400
+                                font-size: 48px
+                                line-height: 100%
+                                text-transform: uppercase
+                                font-family: Lato
+                                color: $white
+                                margin-bottom: 10px
+                                @include media(768)
+                                    font-size: 38px
+                            p
+                                font-weight: 450
+                                font-size: 20px
+                                line-height: 100%
+                                color: white
+                        a
+                            transform: translateX(-100%)
+                            opacity: 0
+                            transition: transform 1s ease
+                            padding: 0.6rem 0
+                            border-bottom: 2px solid var(--white)
+                            color: var(--white)
+                            font-weight: 200
+                            display: flex
+                            gap: 15px
+                            letter-spacing: 2px
+                            align-items: center
+                            cursor: pointer
+                            text-transform: uppercase
+                            transition: 2s ease
+                        svg
+                            width: 24px
+                            height: 24px
+                        &.content-active
+                            .figure-content-wrap
+                                transform: translateX(0)
+                                transition-delay: 0.3s
+                                pointer-events: auto
+                                @include media(540)
+                                    transform: translateX(0)
+                                    text-align: center
+                                    margin: auto
+                                    opacity: 1
+                            a
+                                transform: translateX(-100%)
+                                transition-delay: 0.5s
+                                pointer-events: auto
+                                opacity: 1
+                        &.content-exit
+                            .figure-content-wrap
+                                transform: translateX(-100%)
+                                transition-delay: 0s
+                                pointer-events: none
+                                @include media(540)
+                                    transform: translateX(0)
+                                    opacity: 0
+                                    width: 100%
+                            a
+                                transform: translateX(-100%)
+                                transition-delay: 0s
+                                transition-delay: 0.5s
+                                pointer-events: none
+                                opacity: 0
+                    .figure-pagination
+                        display: flex
+                        flex-direction: column
+                        margin-top: 30px
+                        gap: 10px
+                        z-index: 2
+                        position: absolute
+                        left: 96%
+                        top: 45%
+                        .dot
+                            width: 10px
+                            height: 10px
+                            background: rgba(255, 255, 255, 0.6117647059)
+                            border-radius: 50%
+                            transition: all 0.3s ease
+                            cursor: pointer
+                            &.active
+                                background: white
+        .col:last-child
+            flex: 0 1 25%
+            position: relative
+            @include media(768)
+                flex: inherit
+            h2
+                writing-mode: sideways-lr
+                font-family: Optima
+                font-weight: 400
+                font-size: 60px
+                text-transform: uppercase
+                margin: auto
+                padding-top: 40px
+                @include media(768)
+                    writing-mode: initial
+                    padding: 30px 0
+                    text-align: center
+                    font-size: 48px
+                @include media(540)
+                    font-size: 38px
+            figure
+                width: 70%
+                margin: auto
+                position: absolute
+                bottom: -7%
+                left: 50%
+                transform: translate(-50%)
+                @include media(768)
+                    display: none   
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+
+.home-secD
+    text-align: center
+    .heading
+        padding: 50px 0
+        h2
+            @include media(540)
+                font-size: 30px !important
+    .show-animation
+        .loc
+            animation: fadeInIn 0.6s ease-out forwards
+    .bg-wrapper
+        figure 
+            height: 100vh
+            width: 100%
+            position: relative
+            overflow: hidden
+            line-height: 0
+            @include media(768)
+                height: 50vh
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+                animation: zoomInOut 3s ease-in-out infinite
+            .loc
+                border-radius: 5px
+                background: $white
+                display: flex
+                justify-content: center
+                align-items: center
+                opacity: 0
+                transform: translateY(10px)
+                // animation: fadeInIn 0.6s ease-out forwards
+                &::hover
+                    background: #EEBF91
+                p
+                    position: relative
+                    span:first-child
+                        font-family: Lato
+                        font-weight: 400
+                        font-size: 16px
+                        line-height: 16px
+                        text-align: center
+                        color: $black
+                        padding: 15px 20px
+                        display: inline-block
+                        @include media(540)
+                            padding: 5px
+                            font-size: 12px
+                    span:last-child
+                        position: absolute
+                        bottom: -10%
+                        left: 50%
+                        transform: translate(-50%,50%) rotate(180deg)
+                        width: 0
+                        height: 0
+                        border-left: 9px solid transparent
+                        border-right: 9px solid transparent
+                        border-bottom: 13px solid $white
+            .loc1
+                position: absolute
+                bottom: 37%
+                left: 23%
+                animation-delay: 0.2s
+                @include media(540)
+                    bottom: 36%
+                    left: 1%
+            .loc2
+                position: absolute
+                bottom: 30%
+                left: 37%
+                animation-delay: 1s
+                @include media(540)
+                    bottom: 33%
+                    left: 24%
+            .loc3
+                position: absolute
+                bottom: 44%
+                left: 46%
+                animation-delay: 2s
+                @include media(540)
+                    left: 40%
+            .loc4
+                position: absolute
+                bottom: 82%
+                left: 47.7%
+                animation-delay: 3s
+            .loc5
+                position: absolute
+                bottom: 41%
+                left: 77%
+                animation-delay: 4s
+                @include media(540)
+                    bottom: 31%
+                    left: 59%
+
+    .bottom-btn
+        margin: 40px 0 
+        a
+            border: 1px solid #000000
+            padding: 8px 54px
+            position: relative
+            overflow: hidden
+            display: inline-block
+            transition: 0.3s ease
+            &:hover
+                border: 1px solid #EEBF91
+                background: #EEBF91
+                svg
+                    path
+                        stroke: $black
+            span
+                font-family: Lato
+                font-weight: 500
+                font-size: 16px
+                line-height: 20px
+                text-align: center
+                color: $black
+                transition: 0.5s ease
+
+.home-secE
+    background: #FAECDF
+    padding: 70px 0
+    @include media(540)
+        padding: 50px 0
+    .heading
+        text-align: center
+        position: relative
+        h2
+            display: flex
+            justify-content: center
+            align-items: center
+            gap: 20px
+            @include media(540)
+                font-size: 20px !important
+            span
+                font-family: Lato
+                font-weight: 450
+                font-size: 20px
+                line-height: 55px
+                text-align: center
+                text-transform: uppercase
+                display: inline-block
+                width: 81px
+                height: 81px
+                border-radius: 50%
+                border: 1px solid $black
+
+                display: flex
+                justify-content: center
+                align-items: center
+                @include media(540)
+                    width: 60px
+                    height: 60px
+        .swiper-nav
+            display: flex
+            align-items: center
+            gap: 10px
+            position: absolute
+            top: 20%
+            right: 0%
+            @include media(540)
+                top: 100%
+                z-index: 2
+                width: 100%
+                justify-content: space-between
+            .swiper-button-disabled
+                opacity: 0.3
+                cursor: no-drop
+                &:hover
+                    background: initial
+                    svg path 
+                        stroke: initial
+            button
+                border: 1px solid #D0A77F
+                width: 40px
+                height: 40px
+                border-radius: 50%
+                display: flex
+                justify-content: center
+                align-items: center
+                transition: 0.3s ease
+                &:hover
+                    background: #D0A77F
+                    svg path
+                        stroke: $white
+                svg 
+                    path
+                        stroke: #EEBF91
+                        transition: 0.5s ease
+    .commitment-delivery-swiper
+        padding: 40px 0 0 0
+        @include media(540)
+            padding: 50px 0 0 0
+        .swiper-slide
+            figure
+                height: 428px
+                line-height: 0
+                position: relative
+                @include media(540)
+                    height: auto
+            h4
+                font-family: Lato
+                font-weight: 500
+                font-size: 24px
+                padding: 10px 0 0 0
+            .bef-aft-div
+                position: relative
+                figure
+                    line-height: 0
+                    img
+                        width: 100%
+                        height: 100%
+                        -o-object-fit: cover
+                        object-fit: cover
+                .after-div, .compare-img-input
+                    position: absolute
+                    top: 0
+                    left: 0
+                    right: 0
+                    bottom: 0
+                .before-div p, .after-div p
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    right: 0
+                    text-transform: uppercase
+                    color: var(--white)
+                    letter-spacing: 0.05em
+                    margin: 15px
+                    overflow: hidden
+                .before-div p
+                    margin-left: 0
+                .after-div p
+                    margin-right: 0
+                .before-div
+                    text-align: right
+                    position: relative
+                    &::before
+                        content: ""
+                        position: absolute
+                        left: 0
+                        right: 0
+                        bottom: 0
+                        height: 35%
+                        z-index: 0
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%)
+                .after-div
+                    background-repeat: no-repeat
+                    background-size: cover
+                    --icon:60px
+                    border-right: 2px solid var(--white)
+                    &::before
+                        content: ""
+                        position: absolute
+                        left: 0
+                        right: 0
+                        bottom: 0
+                        height: 35%
+                        z-index: 0
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%)
+                    &::after
+                        content: ""
+                        position: absolute
+                        top: 50%
+                        translate: 0 -50%
+                        left: calc(100% - var(--icon) * 0.5)
+                        height: var(--icon)
+                        width: var(--icon)
+                        background-color: var(--white)
+                        border-radius: 50%
+                        // background-image: url(../../icon/compare-arrow.svg)
+                        background-repeat: no-repeat
+                        background-size: 60% auto
+                        background-position: center
+                    figure img
+                        opacity: 0
+                .compare-img-input
+                    z-index: 3
+                    -webkit-appearance: none
+                    -moz-appearance: none
+                    appearance: none
+                    width: 100%
+                    height: 100%
+                    opacity: 0
+
+            
+             
+    .bottom-btn
+        margin: 40px 0 0 0
+        text-align: center
+        a
+            border-bottom: 1px solid #000000
+            padding: 8px 0px
+            position: relative
+            overflow: hidden
+            display: inline-block
+            &::before
+                content: ""
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                transform: translateY(110%)
+                background: #EEBF91
+                transition: 0.5s ease
+                z-index: 1
+            &:hover
+                padding: 8px 8px
+                border-bottom: 1px solid #EEBF91
+                &::before
+                    transform: translateY(0%)
+                span
+                    color: $black
+                svg
+                    path
+                        stroke: $black
+            span
+                color: $black
+                font-family: Lato
+                font-weight: 500
+                font-size: 12px
+                line-height: 24px
+                letter-spacing: 10%
+                text-transform: uppercase
+
+                transition: 0.5s ease
+                z-index: 2
+                position: relative
+            svg
+                z-index: 2
+                position: relative
+                margin-left: 10px
+                path
+                    stroke: black
+                    transition: 0.5s ease
+
+@media only screen and (max-width: 991px)
+  .bef-aft-div
+    .before-div p, .after-div p
+      font-size: 14px
+
+@media only screen and (max-width: 991px)
+  .bef-aft-div .after-div
+    --icon:45px
+
+
+.home-secF
+    padding: 70px 0
+    @include media(768)
+        padding-bottom: 0
+        padding: 50px 0
+    h2
+        padding-bottom: 50px
+        text-align: center
+        @include media(540)
+            padding-bottom: 40px
+    .grid-box
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        gap: 30px
+        margin-bottom: 40px
+        @include media(768)
+            grid-template-columns: repeat(3,1fr)
+            // .col:nth-child(3) 
+                //     grid-column: 1 / -1
+                //     justify-self: center
+                //     max-width: 50%
+        @include media(540)
+            grid-template-columns: repeat(1,1fr)
+        .col
+            display: flex
+            justify-content: space-between
+            gap: 20px
+            figure
+                width: 124px
+                height: 114px
+                border-radius: 5px
+                line-height: 0
+                overflow: hidden
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+            figcaption
+                width: 64%
+                h3
+                    font-family: Lato
+                    font-weight: 600
+                    font-size: 16px
+                    line-height: 22px
+                    margin-bottom: 10px
+                    color: black
+                p
+                    font-family: Lato
+                    font-weight: 600
+                    font-size: 14px
+                    line-height: 24px
+    .flex-box
+        box-shadow: 0px 2px 8px 0px #63636333
+        background: #FAECDF
+        border-radius: 5px
+        overflow: hidden
+        display: flex
+        height: 461px
+        @include media(768)
+            flex-direction: column-reverse
+            height: fit-content
+
+        .col:first-child
+            flex: 0 1 65%
+            .tabs
+                position: relative
+                transform: translateY(40%)
+                opacity: 0
+                transition: 0.5s ease
+                &.active
+                    transform: translateY(0%)
+                    opacity: 1
+                figure
+                    height: 461px
+                    line-height: 0
+                    position: relative 
+                    @include media(540)
+                        height: 340px
+                    &::before
+                        content: ''
+                        position: absolute
+                        top: 0
+                        left: 0
+                        width: 100%
+                        height: 100%
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 49.52%, rgba(0, 0, 0, 0.65) 100%)
+                        @include media(540)
+                            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 2.52%, rgb(0 0 0 / 97%) 100%)
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                .figinfo
+                    position: absolute
+                    bottom: 0 
+                    left: 0
+                    z-index: 3
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    width: 100%
+                    padding: 30px 30px
+                    @include media(540)
+                        flex-direction: column
+                        gap: 20px
+                    p
+                        font-family: Lato
+                        font-weight: 700
+                        color: $white
+                        font-size: 16px
+                        line-height: 24px
+                        width: 395px
+                        @include media(540)
+                            width: 95%
+                            margin: auto
+                            text-align: center
+                    .bottom-btn
+                        a
+                            position: relative
+                            overflow: hidden
+                            display: inline-block
+                            background: $white
+                            border-radius: 25px
+                            padding: 6px 19px
+                            &:hover
+                                background: #EEBF91
+                                span
+                                    color: $black
+                            span
+                                font-family: Lato
+                                font-weight: 400
+                                font-size: 16px
+                                line-height: 24px
+                                text-align: center
+                                color: $black
+                                transition: 0.3s ease
+        .col:last-child
+            flex: 0 1 35%
+            padding: 30px 0
+            @include media(540)
+                padding: 20px 0
+            ul
+                li
+                    border-bottom: 1px solid #E9D8C6
+                    display: flex
+                    align-items: center
+                    gap: 20px
+                    padding: 20px
+                    @include media(540)
+                        padding: 10px
+                    &:last-child
+                        border: none
+                    &.active
+                        p:first-child
+                            opacity: 1
+                        p:last-child
+                            color: #A56321
+
+                    p:first-child
+                        font-family: Lato
+                        font-weight: 600
+                        font-size: 36px
+                        line-height: 20px
+                        color: #A56321
+                        transition: 0.5s ease
+                        opacity: 0
+                        @include media(540)
+                            font-size: 26px
+                    p:last-child
+                        font-family: Lato
+                        font-weight: 600
+                        font-size: 16px
+                        line-height: 20px
+                        color: #666666
+                        transition: 0.5s ease
+                        @include media(540)
+                            font-size: 14px
+
+.home-secG
+    background: $white
+    position: relative
+    z-index: 1
+    height: auto
+    padding: 0px 0 50px 0
+    @include media(768)
+        height: auto
+        padding: 70px 0 
+    @include media(540)
+        padding:10px 0 40px 0
+    .heading
+        position: relative
+        h2
+            text-align: center
+            @include media(540)
+                font-size: 34px !important
+        .swiper-nav
+            display: flex
+            align-items: center
+            gap: 10px
+            position: absolute
+            top: 10%
+            right: 0%
+            @include media(540)
+                display: none
+            button
+                border: 1px solid #D0A77F
+                width: 40px
+                height: 40px
+                border-radius: 50%
+                display: flex
+                justify-content: center
+                align-items: center
+                transition: 0.3s ease
+                &.swiper-button-disabled
+                    opacity: 0.4
+                    cursor: no-drop
+                &:hover
+                    background: #D0A77F
+                    svg path
+                        stroke: $white
+                    &.swiper-button-disabled
+                        background: $white
+                        svg path
+                            stroke: #D0A77F
+                svg 
+                    path
+                        stroke: #EEBF91
+                        transition: 0.5s ease
+    .testimonial-swiper
+        .swiper-slide
+            padding-top: 40px
+            figure
+                height: 419px
+                overflow: hidden
+                position: relative
+                border-radius: 5px
+                @include media(768)
+                    height: 400px
+                @include media(540)
+                    height: 300px
+                &::before
+                    content: ""
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 53.85%, rgba(0, 0, 0, 0.85) 100%)
+                img
+                    height: 100%
+                    width: 100%
+                    object-fit: cover
+                .figinfo
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    width: 100%
+                    padding: 30px
+                    .user-info
+                        h4
+                            color: $white
+                            font-family: Lato
+                            font-weight: 500
+                            font-size: 24px
+                        p
+                            font-family: Lato
+                            font-weight: 500
+                            font-size: 14px
+                            color: $white
