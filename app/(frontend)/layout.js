@@ -4,7 +4,7 @@ import MainTemplates from "../../components/frontendcomponents/templates/MainTem
 
 const optima = localFont({
   src: [
-    { 
+    {
       path: "../../fonts/Optima.woff",
       weight: "400",
     },
@@ -25,6 +25,10 @@ const lato = Lato({
 export const metadata = {
   title: "Courtyard",
   description: "Courtyard building better dreams",
+  icons: {
+    icon: '/assets/icon/favicon_io/favicon.ico',
+    apple: '/assets/icon/favicon_io/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -399,38 +399,71 @@ button
 // Here is the Main btn
 
 .btn
-    padding: 10px 0
-    border-radius: 25px
+    padding: 8px 17px
+    transition: 0.5s ease
+    position: relative
+    z-index: 1
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 10px
     width: fit-content
-    a,button
-        position: relative
+    margin-top: 40px
+    span
         display: inline-block
-        font-weight: 500
+        color: $white
+        font-family: Lato
+        font-weight: 400
         font-size: 16px
-        padding: 10px 24px
-        border-radius: 25px
-        overflow: hidden
-        z-index: 0
-        background: transparent
-        color: white
-        border: 1px solid white
+        line-height: 20px
+        text-align: center
         transition: 0.5s ease
-        overflow: hidden
-        &::before
-            content: ""
-            position: absolute
-            background: white
-            width: 100%
-            height: 100%
-            bottom: -100%
-            left: 0
-            transition: 0.5s ease
-            z-index: -1
+    img
+        transition: 0.5s ease
+    &.primary-btn
+        background: $primary
+        border: 1px solid $primary
         &:hover
-            color: black    
-            &::before
-                bottom: 0
-        
+            background: $white
+            color: $black
+            border: 1px solid $black
+            span
+                color: $black
+            .arrow-ico
+                filter: invert(1)
+    &.white-btn
+        background: white
+        border: 1px solid $white
+        span
+            color: black
+            transition: 0.5s ease
+        .arrow-ico
+            filter: brightness(0)
+            transition: 0.5s ease
+        &:hover
+            background: $primary
+            color: $white
+            border: 1px solid $primary
+            span
+                color: $white
+            .arrow-ico
+                filter: invert(0)
+    &.black-border-btn
+        background: white
+        border: 1px solid $black
+        span
+            color: black
+            transition: 0.5s ease
+        .arrow-ico
+            filter: brightness(0)
+            transition: 0.5s ease
+        &:hover
+            background: $primary
+            border: 1px solid $primary
+            span
+                color: $white
+            .arrow-ico
+                filter: brightness(1)
 .btn2
     padding: 10px 0
     border-radius: 25px

@@ -105,13 +105,13 @@
   }
 }
 .hero-banner .video-wrapper .bg-wrapper p {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 100%;
   color: var(--white);
   max-width: 100%;
-  margin-top: 60px;
+  margin: 20px 0 20px;
   max-width: 445px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
 }
 @media only screen and (max-width: 540px) {
   .hero-banner .video-wrapper .bg-wrapper p {

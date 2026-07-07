@@ -17,6 +17,7 @@ const HomePage = () => {
                 isLinkAvalible
                 linkHref="/projects"
                 linkText="Explore Our Projects"
+                linkClass="white-btn"
             />
 
         </>

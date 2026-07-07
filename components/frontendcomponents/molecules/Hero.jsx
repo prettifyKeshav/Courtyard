@@ -14,9 +14,9 @@ const Hero = ({
     bannerClassName,
     bgType = "image",
     isLinkAvalible,
-    slideTo,
     linkHref,
-    linkText
+    linkText,
+    linkClass,
 }) => {
     return (
         <div className={`hero-banner ${bannerClassName || ""}`}>
@@ -45,7 +45,7 @@ const Hero = ({
                             <h1>{heading}</h1>
                             <p>{description}</p>
                             {isLinkAvalible && (
-                                <Link href={linkHref} className="btn primary-btn">
+                                <Link href={linkHref} className={`${linkClass} btn primary-btn`}>
                                     <span>{linkText}</span>
                                     <Image className="arrow-ico" src="/assets/icon/btn-arrow.svg" width={20} height={8} alt="right ico" />
                                 </Link>
