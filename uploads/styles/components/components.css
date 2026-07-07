@@ -135,4 +135,35 @@
 .hero-banner .video-wrapper .bg-wrapper p span:last-child {
   font-weight: 400;
   font-size: 20px;
+}
+
+.counter-sec {
+  background: #FFF9F2;
+  padding: 30px 0;
+}
+.counter-sec .grid-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.counter-sec .grid-box .col {
+  border-right: 1px solid #D8D8D8;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 10px 27px;
+}
+.counter-sec .grid-box .col:nth-child(4) {
+  border-right: none;
+}
+.counter-sec .grid-box .col h4 {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1;
+  color: var(--black);
+}
+.counter-sec .grid-box .col p {
+  color: rgba(0, 0, 0, 0.6980392157);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
 }/*# sourceMappingURL=components.css.map */

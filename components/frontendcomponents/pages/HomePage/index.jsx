@@ -1,6 +1,8 @@
 import "../../../../uploads/styles/home/home.css"
 import Hero from "../../molecules/Hero"
 import "../../../../uploads/styles/components/components.css"
+import CounterSec from "../../molecules/CounterSec"
+import AboutUs from "./AboutUs"
 
 const HomePage = () => {
     return (
@@ -19,7 +21,8 @@ const HomePage = () => {
                 linkText="Explore Our Projects"
                 linkClass="white-btn"
             />
-
+            <CounterSec />
+            <AboutUs />
         </>
     )
 }

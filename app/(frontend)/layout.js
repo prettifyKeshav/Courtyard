@@ -23,8 +23,8 @@ const lato = Lato({
 });
 
 export const metadata = {
-  title: "Courtyard",
-  description: "Courtyard building better dreams",
+  title: "Courtyard Group - Best Real Estate Builders in Vadodara",
+  description: "Courtyard Group - Best Real Estate Builders in Vadodara",
   icons: {
     icon: '/assets/icon/favicon_io/favicon.ico',
     apple: '/assets/icon/favicon_io/apple-touch-icon.png',
