@@ -397,6 +397,17 @@ html {
   margin-bottom: 0 !important;
 }
 
+.heading {
+  text-align: center;
+}
+.heading h2 {
+  margin-bottom: 20px;
+}
+.heading p {
+  max-width: 600px;
+  margin: auto;
+}
+
 :root {
   --headerpadding: 35px;
   --headerheight: 94px;
@@ -692,6 +703,7 @@ h3 {
 h4 {
   font-size: 36px;
   line-height: 1.28;
+  font-family: Lato;
 }
 
 h5 {
@@ -996,6 +1008,32 @@ button {
 }
 .btn.black-border-btn:hover .arrow-ico {
   filter: brightness(1);
+}
+.btn.circle-btn {
+  margin-top: 0;
+  font-family: Lato;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 25px;
+  border: 1px solid white;
+  padding: 8px 25px;
+  background: transparent;
+}
+.btn.circle-btn-white {
+  color: black;
+  background: white;
+}
+.btn.circle-btn-white:hover {
+  background: transparent;
+  color: white;
+}
+.btn.circle-btn-border {
+  color: white;
+}
+.btn.circle-btn-border:hover {
+  background: white;
+  color: black;
 }
 
 .btn2 {
@@ -2630,25 +2668,6 @@ footer .top-sec .flex-box .col:first-child .inside-flex p {
 footer .top-sec .flex-box .col:last-child .inside-flex {
   display: flex;
   gap: 20px;
-}
-footer .top-sec .flex-box .col:last-child .inside-flex a {
-  padding: 10px 27px;
-  border: 1px solid #EEBF91;
-  color: black;
-  font-family: Lato;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
-  text-align: center;
-}
-footer .top-sec .flex-box .col:last-child .inside-flex a:first-child {
-  background: #EEBF91;
-}
-footer .top-sec .flex-box .col:last-child .inside-flex a:first-child:hover {
-  background: transparent;
-}
-footer .top-sec .flex-box .col:last-child .inside-flex a:last-child:hover {
-  background: #EEBF91;
 }
 footer .bottom-sec {
   padding: 50px 0 100px;

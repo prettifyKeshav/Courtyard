@@ -13,6 +13,15 @@ html
     scroll-behavior: smooth
 .mb-0
     margin-bottom: 0 !important
+
+.heading
+    text-align: center
+    h2
+        margin-bottom: 20px
+    p
+        max-width: 600px
+        margin: auto
+
 :root
     --headerpadding: 35px
     // --headerheight: 108px
@@ -200,6 +209,7 @@ h3
 h4
     font-size: 36px
     line-height: 1.28
+    font-family: Lato
 h5
     font-size: 24px
     line-height: 1.167
@@ -400,6 +410,28 @@ button
                 color: $white
             .arrow-ico
                 filter: brightness(1)
+    &.circle-btn
+        margin-top: 0
+        font-family: Lato
+        font-weight: 500
+        font-size: 16px
+        text-align: center
+        border-radius: 25px
+        border: 1px solid white
+        padding: 8px 25px
+        background: transparent
+    &.circle-btn-white
+        color: black
+        background: white
+        &:hover
+            background: transparent
+            color: white
+    &.circle-btn-border
+        color: white
+        &:hover
+            background: white
+            color: black
+
 .btn2
     padding: 10px 0
     border-radius: 25px

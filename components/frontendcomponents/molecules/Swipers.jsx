@@ -70,7 +70,6 @@ const Swipers = ({
                     }
                     navigation={false}
                     onSwiper={setSwiperInstance}
-
                     preventClicks={true}
                     preventClicksPropagation={true}
                     onSlideClick={(swiper) => {

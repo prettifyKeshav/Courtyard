@@ -41,8 +41,8 @@ const Footer = () => {
 
                             <div className="col">
                                 <div className="inside-flex">
-                                    <Link href="javascript:void(0);">WhatsApp</Link>
-                                    <Link href="javascript:void(0);">Enquire Now</Link>
+                                    <Link href="javascript:void(0);" className="btn circle-btn circle-btn-white">WhatsApp</Link>
+                                    <Link href="javascript:void(0);" className="btn circle-btn circle-btn-border">Enquire Now</Link>
                                 </div>
                             </div>
                         </div>

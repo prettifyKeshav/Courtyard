@@ -3,6 +3,8 @@ import Hero from "../../molecules/Hero"
 import "../../../../uploads/styles/components/components.css"
 import CounterSec from "../../molecules/CounterSec"
 import AboutUs from "./AboutUs"
+import ProjectSec from "./ProjectSec"
+import WhyChooseSec from "./WhyChooseSec"
 
 const HomePage = () => {
     return (
@@ -23,6 +25,8 @@ const HomePage = () => {
             />
             <CounterSec />
             <AboutUs />
+            <ProjectSec/>
+            <WhyChooseSec/>
         </>
     )
 }
