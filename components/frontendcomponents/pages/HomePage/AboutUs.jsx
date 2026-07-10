@@ -16,7 +16,7 @@ const AboutUs = () => {
                     observer.unobserve(entry.target);
                 }
             },
-            { threshold: 0.5, }
+            { threshold: 0.6, }
         );
         if (animationRef.current) { observer.observe(animationRef.current); }
         return () => observer.disconnect();
