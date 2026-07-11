@@ -2,6 +2,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import "../../../uploads/styles/header/header.css";
+import HamburgerModel from "../molecules/Modal/HamburgerModel";
+import Overlay from "../atoms/Overlay";
 
 // import { useModalStore } from "../../../store/modelStore";
 // import VideoPop from "../molecules/Modal/VideoPop";
@@ -138,9 +140,9 @@ const Footer = () => {
             </footer>
 
 
-            {/* <HamburgerModel />
+            <HamburgerModel />
             <Overlay />
-            <VideoPop />
+            {/* <VideoPop />
             <EnquirePop /> */}
         </>
     );

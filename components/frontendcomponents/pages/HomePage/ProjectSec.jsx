@@ -8,6 +8,7 @@ import Image from "next/image";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import Motion from "../../molecules/Animate";
 
 const projectData = {
     residential: [
@@ -81,14 +82,16 @@ const ProjectSec = () => {
     return (
         <section className="home-secB">
             <div className="container">
-                <div className="heading">
-                    <h2>Spaces That Matter</h2>
-                    <p>
-                        Whether residential, commercial, or mixed-use, every Courtyard
-                        project follows the same principle of thoughtful planning, long-term
-                        responsibility, and sensible value.
-                    </p>
-                </div>
+                <Motion variant="fadeUp">
+                    <div className="heading">
+                        <h2>Spaces That Matter</h2>
+                        <p>
+                            Whether residential, commercial, or mixed-use, every Courtyard
+                            project follows the same principle of thoughtful planning, long-term
+                            responsibility, and sensible value.
+                        </p>
+                    </div>
+                </Motion>
 
                 <div className="top-row">
                     <ul className="tabs">
@@ -114,46 +117,48 @@ const ProjectSec = () => {
                     </div>
                 </div>
 
-                <Swiper
-                    modules={[Navigation]}
-                    navigation={{
-                        prevEl: ".matter-prev",
-                        nextEl: ".matter-next",
-                    }}
-                    slidesPerView={3}
-                    spaceBetween={20}
-                    speed={800}
-                    breakpoints={{
-                        0: {
-                            slidesPerView: 1.1,
-                        },
-                        768: {
-                            slidesPerView: 2,
-                        },
-                        1200: {
-                            slidesPerView: 3,
-                        },
-                    }}
-                >
-                    {projectData[activeTab].map((item, index) => (
-                        <SwiperSlide key={index}>
-                            <Link href="/" className="project-card">
-                                <figure>
-                                    <Image
-                                        src={item.image}
-                                        width={404}
-                                        height={404}
-                                        alt="ico"
-                                    ></Image>
-                                </figure>
-                                <figcaption>
-                                    <h4>{item.title}</h4>
-                                    <p>{item.desc}</p>
-                                </figcaption>
-                            </Link>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+                <Motion variant="fadeUp">
+                    <Swiper
+                        modules={[Navigation]}
+                        navigation={{
+                            prevEl: ".matter-prev",
+                            nextEl: ".matter-next",
+                        }}
+                        slidesPerView={3}
+                        spaceBetween={20}
+                        speed={800}
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1.1,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                            },
+                            1200: {
+                                slidesPerView: 3,
+                            },
+                        }}
+                    >
+                        {projectData[activeTab].map((item, index) => (
+                            <SwiperSlide key={index}>
+                                <Link href="/" className="project-card">
+                                    <figure>
+                                        <Image
+                                            src={item.image}
+                                            width={404}
+                                            height={404}
+                                            alt="ico"
+                                        ></Image>
+                                    </figure>
+                                    <figcaption>
+                                        <h4>{item.title}</h4>
+                                        <p>{item.desc}</p>
+                                    </figcaption>
+                                </Link>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </Motion>
             </div>
         </section>
     );

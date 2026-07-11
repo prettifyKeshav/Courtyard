@@ -196,7 +196,7 @@
 
 .home-secC
     padding: 70px 0 
-    background: black
+    background: #1A1A1A
     position: relative
     overflow: hidden
     &::before
@@ -272,4 +272,327 @@
                                 font-size: 16px
                                 font-weight: 400
 
-                                
+.home-secD
+    background: #FFF9F2
+    padding: 50px 0 
+    .content
+        box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 0.2)
+        border-radius: 5px
+        margin-top: 60px
+        display: grid
+        grid-template-columns: 380px 1fr
+        background: #FFFFFF
+        .left
+            padding: 20px
+            .upper
+                h4
+                    font-size: 20px
+                    color: $black
+                    @include font(700)
+                    margin-bottom: 20px
+                .map-filter
+                    display: grid
+                    grid-template-columns: repeat(2, 1fr)
+                    gap: 16px
+                    margin-bottom: 15px
+            .filter-content
+                max-height: 414px
+                padding-right: 10px
+                overflow-y: auto
+                &::-webkit-scrollbar
+                    width: 4px
+                &::-webkit-scrollbar-track
+                    background: #D9D9D9
+                &::-webkit-scrollbar-thumb
+                    background: var(--primary)
+                li
+                    display: flex
+                    align-items: center
+                    gap: 42px
+                    cursor: pointer
+                    background: $white
+                    padding: 20px
+                    transition: all .5s ease-in-out
+                    justify-content: space-between
+                    background: #FFF9F2
+                    &:not(:last-child)
+                        margin-bottom: 5px
+                    .info
+                        h5
+                            transition: all .5s ease
+                            font-size: 14px
+                            text-align: left
+                            color: $black
+                            @include font(600)
+                            margin-bottom: 5px
+                        p
+                            transition: all .5s ease
+                            font-weight: 500
+                            font-size: 14px
+                            line-height: 1.4
+                            color: #666666
+                            &:not(:last-child)
+                                margin-bottom: 2px
+                    .icon
+                        flex-shrink: 0
+                        width: 10px
+                        img
+                            transition: all .5s ease
+                            height: 100%
+                            width: 100%
+                            object-fit: contain
+                    &.active
+                        background: var(--primary)
+                        .info
+                            h5
+                                color: $white
+                            p
+                                color: #FFFFFFB2
+                        .icon
+                            img
+                                filter: brightness(0) invert(1)
+    .map-select
+        background: var(--white)
+        display: flex
+        align-items: center
+        gap: 10px
+        padding: 7px 10px
+        position: relative
+        cursor: pointer
+        .type-icon
+            width: 16px
+            height: 16px
+        figcaption
+            flex: 1
+            .type
+                font-size: 12px
+                color: rgba(102, 102, 102, 0.5)
+            .value
+                font-size: 14px
+        .option-container
+            position: absolute
+            top: 100%
+            left: 0
+            right: 0
+            display: grid
+            grid-template-rows: 0fr
+            transition: all .5s ease
+            &.open
+                grid-template-rows: 1fr
+            .options
+                background: var(--white)
+                z-index: 1
+                border-top: 1px solid rgba(0, 0, 0, 0.15)
+                max-height: 150px
+                overflow-y: auto
+                &::-webkit-scrollbar
+                    width: 4px
+                &::-webkit-scrollbar-track
+                    background: transparent
+                &::-webkit-scrollbar-thumb
+                    background: var(--primary)
+                li
+                    padding: 8px 12px
+                    cursor: pointer
+                    transition: .3s ease
+                    font-size: 14px
+                    &:not(:last-child)
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.08)
+                    &.selected
+                        background: var(--bglight)
+    .map-pointer
+        background: var(--white)
+        box-shadow: 0px 7.53px 27.11px 0px rgba(0, 0, 0, 0.16)
+        h4
+            font-size: 14px
+            color: var(--primary)
+            @include font(600)
+            margin-bottom: 5px
+        p
+            transition: all .5s ease
+            font-size: 12px
+            &:not(:last-child)
+                margin-bottom: 2px
+        .btn
+            margin-top: 16px
+            font-size: 12px
+            --height: 28px
+            @include font(500)
+
+            
+.home-secE
+    padding: 60px 0 30px 0 
+    background: #1A1A1A
+    position: relative
+    overflow: hidden
+    &::before
+        content: ""
+        filter: blur(140px)
+        background: #ffffff21
+        border-radius: 50%
+        width: 100%
+        max-width: 452px
+        height: 66%
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -75%)
+        z-index: 0
+    &::after
+        content: ""
+        position: absolute
+        inset: 0
+        width: 100%
+        height: 100%
+        background: url("/assets/images/Home/whats-happening/bg-vector.png") center center / contain no-repeat
+        z-index: 0
+    .heading
+        margin-bottom: 60px
+        position: relative
+        z-index: 1
+        text-align: center
+        h2
+            color: white
+            max-width: 562px
+            margin: 0 auto 20px
+        p
+            color: $white
+            max-width: 457px
+        .btn
+            margin: 40px auto 0 
+    
+    .grid-box
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        gap: 0
+        position: relative
+        z-index: 1
+        .col
+            height: 247px
+            background: $white
+            padding: 10px
+            line-height: 0
+            transition: 0.6s ease
+            &:hover
+                transform: rotate(0) translate(0, 0) !important
+            img
+                height: 100%
+                width: 100%
+                object-fit: cover
+        .col:nth-child(1)
+            transform: rotate(-10deg) translate(30px, 70px)
+        .col:nth-child(2)
+            transform: rotate(10deg) translate(30px, 70px)
+        .col:nth-child(3)
+            transform: rotate(-10deg) translate(-30px, 70px)
+        .col:nth-child(4)
+            transform: rotate(10deg) translate(-30px, 70px)
+        
+.home-secF
+    overflow: hidden
+    background: #FFF9F2
+    padding: 70px 0 
+    .flex-box
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 60px
+    .colA
+        width: 35%
+        h2
+            margin-bottom: 20px
+            line-height: 1
+        .swiper-nav
+            display: flex
+            align-items: center
+            gap: 25px
+            margin-top: 50px
+        .home-prev,
+        .home-next
+            width: 48px
+            height: 48px
+            border: 1px solid #666666
+            border-radius: 50%
+            display: flex
+            justify-content: center
+            align-items: center
+            cursor: pointer
+            transition: .3s
+            &:hover
+                background: #8c6b1f
+                color: #fff
+                border-color: #8c6b1f
+        .home-pagination
+            display: flex
+            align-items: center
+            width: auto !important
+            .swiper-pagination-bullet
+                width: 9px
+                height: 9px
+                margin: 0 8px !important
+                opacity: 1
+                background: #666666B2
+                transition: 0.3s ease
+            .swiper-pagination-bullet-active
+                width: 9px
+                height: 9px
+                outline: 2px solid #364025
+                outline-offset: 3px
+                background: #364025
+                transition: 0.3s ease
+    .colB
+        width: 65%
+        overflow: hidden
+        .swiper
+            .swiper-wrapper
+                .swiper-slide
+                    transition: 0.5s ease
+                    &.swiper-slide-next
+                        opacity: 0.4
+                    .testimonial-card
+                        background: #fff
+                        padding: 35px
+                        min-height: 430px
+                        // box-shadow: 0px 8px 24px 0px #959DA533
+                        .top
+                            display: flex
+                            justify-content: space-between
+                            align-items: flex-start
+                            margin-bottom: 30px
+                            .quote
+                                font-size: 80px
+                                color: #c5ab72
+                                line-height: 1
+
+                        p
+                            margin-bottom: 35px
+                            max-width: 90%
+                        h4
+                            font-weight: 500
+                            font-size: 20px
+                            color: $black
+                        span
+                            font-family: Lato
+                            font-weight: 500
+                            font-size: 14px
+
+.hero-banner.home-secG
+    .video-wrapper 
+        &::before
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 20.33%, rgba(0, 0, 0, 0) 68.16%)
+        .bg-wrapper
+            text-align: center
+            h2
+                text-align: center
+                font-family: Optima
+                color: $white
+                font-weight: 400
+                font-size: 48px
+                line-height: 48px
+                max-width: 515px
+                margin: auto
+
+            p
+                margin: 30px auto
+            .btn
+                margin: auto

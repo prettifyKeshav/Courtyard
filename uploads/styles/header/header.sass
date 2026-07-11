@@ -623,6 +623,14 @@ footer
         @include scrollbar(6px,$white,#5e5e5e,8px)
         @include media(520)
             padding: 60px 20px 20px 20px
+        .icon
+            width: 90px
+            height: 70px
+            margin: 0 0 30px 0
+            img,svg
+                height: 100%
+                width: 100%
+                object-fit: contain
         .logo
             margin-bottom: 20px
             filter: contrast(0.5)
@@ -639,9 +647,9 @@ footer
             flex: 1
             >li
                 &:not(:last-child)
-                    margin-bottom: 22px
+                    margin-bottom: 15px
                     @include media(1366)
-                        margin-bottom: 20px
+                        margin-bottom: 15px
                 >a
                     font-size: 28px
                     line-height: 1.06
@@ -655,7 +663,7 @@ footer
                     @include media(675)
                         font-size: 24px
                     &:hover
-                        color: #EEBF91
+                        color: $primary
                         padding-left: 10px
                 &.hasDropdown
                     position: relative
@@ -702,7 +710,7 @@ footer
                                     color: $black
         .bottom-list
             border-top: 1px solid #444
-            margin-top: 2rem
+            margin-top: auto
             padding-top: 1rem
             display: flex
             align-items: center
@@ -712,6 +720,8 @@ footer
                 justify-content: center
                 align-items: center
                 gap: 20px
+                img
+                    filter: invert(1)
 
 .enquire-pop
     right: 0

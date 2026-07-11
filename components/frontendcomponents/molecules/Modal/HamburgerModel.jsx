@@ -2,24 +2,19 @@
 import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
-import "@/uploads/styles/header/header.css"
-import { useModalStore } from '../../../../store/modelStore'; 
-import { useGetFooterContactDataQuery } from '@/store/backendSlice/frontendAPISlice';
+import "../../../../uploads/styles/header/header.css"
+import { useModalStore } from '../../../../store/modelStore';
 
 const HamburgerModel = () => {
     const isOpen = useModalStore((state) => state.isHamOpen)
     const closeHam = useModalStore((state) => state.closeHam)
 
-    const { data: contactData } = useGetFooterContactDataQuery();
-    const staticData = contactData?.data;
-
     const menuItems = [
-        { id: 1, title: "Who We Are ", href: "/" },
-        { id: 2, title: "Careers ", href: "/jobs" },
-        { id: 3, title: "Beyond the Screens", href: "/career" },
-        { id: 4, title: "Investor Relations", href: "/legal" },
-        { id: 5, title: "Insights", href: "/blogs" },
-        { id: 6, title: "Contact Us", href: "/contact-us" },
+        { id: 1, title: "About us ", href: "/about-us" },
+        { id: 2, title: "Careers ", href: "career" },
+        { id: 3, title: "Blogs", href: "/blogs" },
+        { id: 4, title: "Contact us", href: "/contact-us" },
+        { id: 5, title: "Privacy Policy", href: "/privacy-policy" },
     ];
 
     return (
@@ -32,7 +27,7 @@ const HamburgerModel = () => {
 
             <div className="model-body">
                 <div className="icon">
-                    <Image src="/assets/logo-q.svg" width={50} height={50} className="svg" alt="icon" />
+                    <Image src="/assets/favicon.svg" width={50} height={50} className="svg" alt="icon" />
                 </div>
 
                 <nav>
@@ -54,21 +49,17 @@ const HamburgerModel = () => {
 
                 <div className="bottom-list">
                     <div className="social-icons">
-                        {staticData?.StaticLinkedInLink && (
-                            <Link href={staticData.StaticLinkedInLink} target="_blank" rel="noopener noreferrer" title="LinkedIn" onClick={closeHam}>
-                                <Image src="/assets/icon/linkedin.svg" width={25} height={25} alt="LinkedIn" />
-                            </Link>
-                        )}
-                        {staticData?.StaticFacebookLink && (
-                            <Link href={staticData.StaticFacebookLink} target="_blank" rel="noopener noreferrer" title="Facebook" onClick={closeHam}>
-                                <Image src="/assets/icon/facebook.svg" width={25} height={25} alt="Facebook" />
-                            </Link>
-                        )}
-                        {staticData?.StaticInstagramLink && (
-                            <Link href={staticData.StaticInstagramLink} target="_blank" rel="noopener noreferrer" title="Instagram" onClick={closeHam}>
-                                <Image src="/assets/icon/instagram.svg" width={25} height={25} alt="Instagram" />
-                            </Link>
-                        )}
+                        <Link href="/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                            <Image src="/assets/icon/linkedin.svg" width={25} height={25} alt="LinkedIn" />
+                        </Link>
+
+                        <Link href="/" target="_blank" rel="noopener noreferrer" title="Facebook">
+                            <Image src="/assets/icon/facebook.svg" width={25} height={25} alt="Facebook" />
+                        </Link>
+
+                        <Link href="/" target="_blank" rel="noopener noreferrer" title="Instagram">
+                            <Image src="/assets/icon/instagram.svg" width={25} height={25} alt="Instagram" />
+                        </Link>
                     </div>
                 </div>
             </div>
