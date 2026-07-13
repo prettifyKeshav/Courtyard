@@ -3,6 +3,9 @@ import "../../../../uploads/styles/about/about.css";
 import CounterSec from "../../molecules/CounterSec";
 import Intro from "./Intro";
 import OurMission from "./OurMission";
+import Founder from "./Founder";
+import Awards from "./Awards";
+import Journey from "./Journey";
 
 const About = () => {
   return (
@@ -20,6 +23,9 @@ const About = () => {
       <CounterSec />
       <Intro />
       <OurMission />
+      <Journey />
+      <Founder />
+      <Awards />
     </>
   );
 };

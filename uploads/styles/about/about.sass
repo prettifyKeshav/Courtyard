@@ -57,7 +57,7 @@
             text-align: center
             color: white
             max-width: none
-            margin: 10px 0 0 
+            margin: 10px 0 0
             @include media(540)
                 max-width: 80%
                 margin: auto
@@ -170,7 +170,7 @@
                     padding: 60px 0
                     @include media(768)
                         padding: 40px 0
-            
+
     .flex-box
         display: flex
         @include media(768)
@@ -249,7 +249,7 @@
                     &.active
                         .col-child:first-child
                             figure
-                                img    
+                                img
                                     transform: translateY(0%)
                                     opacity: 1
                         .col-child:last-child
@@ -324,7 +324,238 @@
                                     font-weight: 700
 
 .about-secC
-    background: #AF694F
     padding: 70px 0
-    @include media(1024)
+    position: relative
+    overflow: hidden
+    @include media(540)
         padding: 50px 0
+    &::before
+        content: ""
+        position: absolute
+        inset: 0
+        background: linear-gradient(180deg, #FFF9F1 35.65%, rgba(255, 255, 255, 0.1) 78.24%)
+        z-index: 1
+    video
+        position: absolute
+        inset: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+        z-index: 0
+        opacity: .5
+    .container
+        position: relative
+        z-index: 2
+        h2
+            text-align: center
+        .row
+            margin-top: 70px
+            display: flex
+            justify-content: space-between
+            gap: 150px
+            align-items: center
+            .left
+                min-width: 0
+                .swiper
+                    .swiper-wrapper
+                        .swiper-slide
+                            p
+                                font-size: 24px
+                                color: $black
+                                @include font(700)
+                                line-height: 1.3
+
+            .middle
+                
+                .swiper
+                    width: fit-content
+                    margin: 0 auto
+                    overflow: visible
+                    height: 364px
+                    .swiper-wrapper
+                        .swiper-slide
+                            transition: 1.5s ease-in
+                            figure
+                                height: 364px
+                                border: 1px solid $primary
+                                width: 322px
+                                border-radius: 10px
+                                overflow: hidden
+                                position: relative
+                                img
+                                    display: block
+                                    width: 100%
+                                    height: 100%
+                                    object-fit: cover
+                                figcaption
+                                    background: $primary
+                                    position: absolute
+                                    left: 0
+                                    right: 0
+                                    bottom: 0
+                                    text-align: center
+                                    padding: 16px
+                                    p
+                                        font-size: 24px
+                                        color: $white
+                                        @include font(600)
+                            &.swiper-slide-active
+                                transform: rotate(0)
+                            &.swiper-slide-next
+                                transform: rotate(-10deg)
+            .right
+                min-width: 0
+                
+        .timeline
+            margin-top: 70px
+            display: flex
+            align-items: center
+            justify-content: center
+            gap: 50px
+            .timeline-prev, .timeline-next
+                width: 46px
+                height: 46px
+                border: 1px solid $primary
+                border-radius: 50%
+                margin-bottom: 40px
+                display: flex
+                justify-content: center
+                align-items: center
+                transition: .4s ease
+                &:hover
+                    background: $primary
+                    img
+                        filter: invert(0) brightness(100)
+                        transition: .4s ease
+            .timeline-prev
+                transform: scaleX(-1)
+            .timeline-year
+                display: flex
+                gap: 80px
+                position: relative
+                &::before
+                    content: ""
+                    position: absolute
+                    height: 1px
+                    width: 100%
+                    background: $primary
+                .timeline-tab
+                    position: relative
+                    padding-top: 24px
+                    cursor: pointer
+                    &::before
+                        position: absolute
+                        content: ""
+                        width: 16px
+                        height: 16px
+                        border-radius: 50%
+                        background: $white
+                        border: 1px solid $primary
+                        position: absolute
+                        left: 50%
+                        transform: translateX(-50%)
+                        top: -8px
+                        transition: 0.4s ease
+                    &.active
+                        p
+                            color: $primary
+                        &::before
+                            background: $primary
+
+.about-secD
+    background: linear-gradient(180deg, #FFF9F1 0%, #FFF1DE 100%)
+    .container
+        .row
+            display: flex
+            gap: 100px
+            align-items: center
+            .col
+                flex: 0 1 50%
+                &:first-child
+                    padding: 70px 0
+                    @include media(1024)
+                        padding: 50px 0
+                    h2
+                    p
+                        font-size: 24px
+                        @include font(600)
+                        line-height: 1.4
+                    .quote
+                        margin: 42px 0 28px 0
+                    .info
+                        margin-top: 42px
+                        display: flex
+                        align-items: center
+                        gap: 100px
+                        figcaption
+                            h4
+                                font-size: 28px
+                                @include font(600)
+                            p
+                                font-size: 14px
+
+                        figure
+                            img
+                                width: 41px
+                                height: 41px
+                &:last-child
+                    figure
+                        img
+                            display: block
+
+.about-secE
+    padding: 70px 0
+    @include media(540)
+        padding: 50px 0
+    .container
+        h2
+            text-align: center
+        .row
+            position: relative
+            margin-top: 70px
+            .swiper
+                overflow: hidden
+                .swiper-wrapper
+                    .swiper-slide
+                        width: 570px
+                        height: 419px
+                        border-radius: 10px
+                        overflow: hidden
+                        figure
+                            height: 100%
+                            width: 100%
+                            position: relative
+                            &::before
+                                content: ""
+                                position: absolute
+                                inset: 0
+                                background: linear-gradient(360deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%)
+                            img
+                                width: 100%
+                                height: 100%
+                                object-fit: cover
+                                display: block
+                            figcaption
+                                position: absolute
+                                left: 0
+                                right: 0
+                                bottom: 0
+                                padding: 24px
+                                text-align: center
+                                font-family: Lato
+                                color: white
+                                font-size: 20px
+                                opacity: 0
+                                transition: 0.5s ease
+                        &.swiper-slide-active
+                            figcaption
+                                opacity: 100%
+            .swiper-nav
+                max-width: 60%
+                .swiper-prev, .swiper-next
+                    background: $white
+                    &:hover
+                        background: $primary
+                        img
+                            filter: invert(0) brightness(100)
+                            transition: .5s ease
