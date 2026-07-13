@@ -1,10 +1,10 @@
-import ProjectsPage from '../../../components/frontendcomponents/pages/ProjectsPage/index'
+import ProjectsListing from '../../../components/frontendcomponents/pages/ProjectsListing/index'
 import React from 'react'
 
 const page = () => {
     return (
         <>
-            <ProjectsPage />
+            <ProjectsListing />
         </>
     )
 }

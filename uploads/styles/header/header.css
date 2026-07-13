@@ -96,6 +96,7 @@
      -moz-user-select: none;
           user-select: none;
   pointer-events: none;
+  font-family: Lato;
 }
 .form .form-group input, .form .form-group textarea {
   height: calc(var(--inputsize) - var(--borderwidth));
@@ -106,7 +107,7 @@
   background: none;
   color: var(--black);
   font-size: inherit;
-  font-family: inherit;
+  font-family: Lato;
   padding: 0 var(--paddingleftright);
 }
 .form .form-group input:focus, .form .form-group textarea:focus {
@@ -140,7 +141,7 @@
   background: none;
   color: var(--black);
   font-size: inherit;
-  font-family: inherit;
+  font-family: Lato;
   line-height: 1.2;
   cursor: initial;
 }
@@ -228,7 +229,7 @@
 .form .form-group.file-input .file-name::before {
   content: var(--filenameinitial);
   z-index: 2;
-  font-family: inherit;
+  font-family: Lato;
   font-size: inherit;
   line-height: calc(var(--inputsize) - var(--borderwidth));
   padding-left: var(--paddingleftright);
@@ -256,7 +257,7 @@
   max-width: 100%;
   cursor: pointer;
   display: block;
-  font-family: inherit;
+  font-family: Lato;
   height: var(--inputsize);
   position: relative;
   transition: all 0.2s ease-in-out;
@@ -2206,6 +2207,74 @@ button {
   margin: 10px 0 3rem;
 }
 
+.custom-select .option-type {
+  flex: 1;
+  border: 1px solid #9A761B;
+  border-radius: 25px;
+  padding: 2px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.custom-select .option-type p {
+  font-weight: 500;
+  font-size: 16px;
+  color: #9A761B;
+}
+.custom-select .option-type .ico img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.custom-select .options-wrapper {
+  position: absolute;
+  top: 100%;
+  min-width: 170px;
+  right: 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all 0.5s ease;
+}
+.custom-select .options-wrapper.open {
+  grid-template-rows: 1fr;
+}
+.custom-select .options-wrapper .options {
+  background: var(--white);
+  z-index: 1;
+  max-height: 150px;
+  overflow-y: auto;
+}
+.custom-select .options-wrapper .options::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-select .options-wrapper .options::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-select .options-wrapper .options::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+.custom-select .options-wrapper .options li {
+  padding: 6px 12px;
+  cursor: pointer;
+  line-height: 1.4;
+  transition: 0.3s ease;
+  font-size: 14px;
+  font-family: Lato;
+  text-wrap: wrap;
+}
+.custom-select .options-wrapper .options li:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.custom-select .options-wrapper .options li.selected {
+  background: var(--bglight);
+}
+.custom-select .options-wrapper .options li:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
 header {
   position: fixed;
   top: 0;
@@ -2329,6 +2398,154 @@ header .header-wrapper .ham-btn .dot span {
   background: var(--white);
   transition: 0.7s ease;
 }
+header .colB {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media only screen and (max-width: 991px) {
+  header .colB {
+    display: none;
+  }
+}
+header .colB .menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 35px;
+  display: inline-flex;
+  vertical-align: middle;
+}
+@media only screen and (max-width: 1024px) {
+  header .colB .menu-list {
+    gap: 24px;
+  }
+}
+header .colB .menu-list li a {
+  color: var(--white);
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+header .colB .menu-list li a span {
+  display: flex;
+}
+header .colB .menu-list li a span svg {
+  width: 16px;
+  height: 16px;
+  transition: 0.5s ease;
+}
+header .colB .menu-list li a:hover span svg {
+  transform: rotate(-90deg);
+}
+header .colB .menu-list li.hasDropdown {
+  position: relative;
+}
+header .colB .menu-list li.hasDropdown:hover > a {
+  position: relative;
+}
+header .colB .menu-list li.hasDropdown:hover > a span svg {
+  transform: rotate(-90deg);
+}
+header .colB .menu-list li.hasDropdown:hover > a::after {
+  transform: rotate(90deg);
+}
+header .colB .menu-list li.hasDropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+}
+header .colB .menu-list li.hasDropdown .dropdown-menu {
+  --triangle: 10px;
+  position: absolute;
+  top: calc(100% + var(--triangle));
+  left: 50%;
+  translate: -50% 0;
+  transform: perspective(2000px) translate3d(0px, 0px, 50px) rotateX(-90deg) scale3d(0.86, 0.75, 1) translateY(50px);
+  transform-origin: top;
+  transition: 0.4s ease;
+  opacity: 0;
+  width: 100%;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+header .colB .menu-list li.hasDropdown .dropdown-menu::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: calc(100% - var(--triangle) / 2);
+  left: 50%;
+  translate: -50% 0;
+  width: var(--triangle);
+  height: var(--triangle);
+  background: #E3E3E3;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+header .colB .menu-list li.hasDropdown .dropdown-menu ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  background: #fff;
+  padding: 16px 12px;
+  box-shadow: rgba(0, 0, 0, 0.01) -2px 6px 2px 3px;
+  border-radius: 5px;
+  text-align: left;
+  white-space: nowrap;
+}
+header .colB .menu-list li.hasDropdown .dropdown-menu ul li {
+  display: block;
+}
+header .colB .menu-list li.hasDropdown .dropdown-menu ul li:not(:last-child) {
+  margin-right: 0;
+  margin-bottom: 2px;
+}
+header .colB .menu-list li.hasDropdown .dropdown-menu ul li a {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--black);
+  padding: 10px 14px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+header .colB .menu-list li.hasDropdown .dropdown-menu ul li a:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+header .colB .menu-list li.hasDropdown .dropdown-menu ul li a:hover::before {
+  opacity: 1;
+}
+header .colB .menu-list li.hasDropdown .dropdown-menu ul li a svg {
+  width: 20px;
+  height: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+header .colB .menu-list li.hasDropdown .dropdown-menu ul li a span {
+  display: block;
+  width: 24px;
+  line-height: 0;
+}
+header .colB .menu-list li.single ul {
+  grid-template-columns: repeat(1, 1fr) !important;
+}
+header .colB .right-menu-list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+header .colB .right-menu-list li a span {
+  font-family: Lato;
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+  letter-spacing: 2px;
+  transition: 0.7s ease;
+  display: inline-block;
+}
 
 @media (max-width: 1024px) {
   header.header-fixed .header-wrapper .colA {
@@ -2355,155 +2572,6 @@ header .header-wrapper .ham-btn .dot span {
     display: flex;
   }
 }
-.colB {
-  display: flex;
-  gap: 20px;
-  justify-content: flex-end;
-  align-items: center;
-}
-@media only screen and (max-width: 991px) {
-  .colB {
-    display: none;
-  }
-}
-.colB .menu-list {
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  gap: 35px;
-  display: inline-flex;
-  vertical-align: middle;
-}
-@media only screen and (max-width: 1024px) {
-  .colB .menu-list {
-    gap: 24px;
-  }
-}
-.colB .menu-list li a {
-  color: var(--white);
-  display: flex;
-  gap: 7px;
-  align-items: center;
-}
-.colB .menu-list li a span {
-  display: flex;
-}
-.colB .menu-list li a span svg {
-  width: 16px;
-  height: 16px;
-  transition: 0.5s ease;
-}
-.colB .menu-list li a:hover span svg {
-  transform: rotate(-90deg);
-}
-.colB .menu-list li.hasDropdown {
-  position: relative;
-}
-.colB .menu-list li.hasDropdown:hover > a {
-  position: relative;
-}
-.colB .menu-list li.hasDropdown:hover > a span svg {
-  transform: rotate(-90deg);
-}
-.colB .menu-list li.hasDropdown:hover > a::after {
-  transform: rotate(90deg);
-}
-.colB .menu-list li.hasDropdown:hover .dropdown-menu {
-  opacity: 1;
-  transform: scale3d(1, 1, 1);
-}
-.colB .menu-list li.hasDropdown .dropdown-menu {
-  --triangle: 10px;
-  position: absolute;
-  top: calc(100% + var(--triangle));
-  left: 50%;
-  translate: -50% 0;
-  transform: perspective(2000px) translate3d(0px, 0px, 50px) rotateX(-90deg) scale3d(0.86, 0.75, 1) translateY(50px);
-  transform-origin: top;
-  transition: 0.4s ease;
-  opacity: 0;
-  width: 100%;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-}
-.colB .menu-list li.hasDropdown .dropdown-menu::before {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: calc(100% - var(--triangle) / 2);
-  left: 50%;
-  translate: -50% 0;
-  width: var(--triangle);
-  height: var(--triangle);
-  background: #E3E3E3;
-  transform: rotate(45deg);
-  z-index: -1;
-}
-.colB .menu-list li.hasDropdown .dropdown-menu ul {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  -moz-column-gap: 30px;
-       column-gap: 30px;
-  background: #fff;
-  padding: 16px 12px;
-  box-shadow: rgba(0, 0, 0, 0.01) -2px 6px 2px 3px;
-  border-radius: 5px;
-  text-align: left;
-  white-space: nowrap;
-}
-.colB .menu-list li.hasDropdown .dropdown-menu ul li {
-  display: block;
-}
-.colB .menu-list li.hasDropdown .dropdown-menu ul li:not(:last-child) {
-  margin-right: 0;
-  margin-bottom: 2px;
-}
-.colB .menu-list li.hasDropdown .dropdown-menu ul li a {
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: var(--black);
-  padding: 10px 14px;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.colB .menu-list li.hasDropdown .dropdown-menu ul li a:hover {
-  background: var(--primary);
-  color: var(--white);
-}
-.colB .menu-list li.hasDropdown .dropdown-menu ul li a:hover::before {
-  opacity: 1;
-}
-.colB .menu-list li.hasDropdown .dropdown-menu ul li a svg {
-  width: 20px;
-  height: 20px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.colB .menu-list li.hasDropdown .dropdown-menu ul li a span {
-  display: block;
-  width: 24px;
-  line-height: 0;
-}
-.colB .menu-list li.single ul {
-  grid-template-columns: repeat(1, 1fr) !important;
-}
-.colB .right-menu-list {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-.colB .right-menu-list li a span {
-  font-family: Lato;
-  font-weight: 500;
-  font-size: 16px;
-  color: white;
-  letter-spacing: 2px;
-  transition: 0.7s ease;
-  display: inline-block;
-}
-
 .cl-wht-icon {
   display: inline-block;
   border-left: 2px solid white;

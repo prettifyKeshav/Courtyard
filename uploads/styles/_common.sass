@@ -1316,3 +1316,62 @@ button
             font-family: 'Lato'
             font-size: 18px
             margin: 10px 0 3rem
+
+.custom-select
+    .option-type
+        flex: 1
+        border: 1px solid #9A761B
+        border-radius: 25px
+        padding: 2px 15px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 10px
+        p
+            font-weight: 500
+            font-size: 16px
+            color: #9A761B
+        .ico
+            img
+                height: 100%
+                width: 100%
+                object-fit: contain
+    .options-wrapper
+        position: absolute
+        top: 100%
+        min-width: 170px
+        right: 0
+        display: grid
+        grid-template-rows: 0fr
+        transition: all .5s ease
+        &.open
+            grid-template-rows: 1fr
+        .options
+            background: var(--white)
+            z-index: 1
+            // border-top: 1px solid rgba(0, 0, 0, 0.15)
+            max-height: 150px
+            overflow-y: auto
+            // position: absolute
+            // right: 0
+            &::-webkit-scrollbar
+                width: 4px
+            &::-webkit-scrollbar-track
+                background: transparent
+            &::-webkit-scrollbar-thumb
+                background: var(--primary)
+            li
+                padding: 6px 12px
+                cursor: pointer
+                line-height: 1.4
+                transition: .3s ease
+                font-size: 14px
+                font-family: Lato
+                text-wrap: wrap
+                &:not(:last-child)
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.08)
+                &.selected
+                    background: var(--bglight)
+                &:hover
+                    background: $primary
+                    color: $white

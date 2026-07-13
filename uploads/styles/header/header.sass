@@ -103,6 +103,144 @@ header
                     background: var(--white)
                     transition: 0.7s ease
 
+    .colB
+        display: flex
+        gap: 20px
+        justify-content: flex-end
+        // flex: 1
+        align-items: center
+        @include media(991)
+            display: none    
+        .menu-list
+            display: flex
+            align-items: center
+            justify-content: end
+            gap: 35px
+            display: inline-flex
+            vertical-align: middle
+            @include media(1024)
+                gap: 24px
+            li
+                a
+                    color: $white
+                    display: flex
+                    gap: 7px
+                    align-items: center
+                    // &:hover
+                    //     color: $primary
+                    span
+                        display: flex
+                        svg
+                            width: 16px
+                            height: 16px
+                            transition: 0.5s ease
+                    &:hover
+                        span
+                            svg
+                                transform: rotate(-90deg)
+                    
+                &.hasDropdown
+                    position: relative
+                    >a
+                        // &::after
+                        //     content: ""
+                        //     background-image: url(/assets/icon/arrow-down-white.svg)
+                        //     background-repeat: no-repeat
+                        //     background-position-x: 100%
+                        //     background-position-y: 50%
+                        //     background-size: var(--arrowsize) auto
+                        //     padding-right: calc(var(--arrowsize) + var(--space))
+                    &:hover
+                        >a
+                            // color: $primary
+                            position: relative
+                            span
+                                svg
+                                    transform: rotate(-90deg)
+                            &::after
+                                transform: rotate(90deg)
+                        .dropdown-menu 
+                            opacity: 1
+                            transform: scale3d(1, 1, 1) 
+                    .dropdown-menu
+                        --triangle: 10px
+                        position: absolute
+                        top: calc(100% + var(--triangle))
+                        left: 50%
+                        translate: -50% 0
+                        transform: perspective(2000px) translate3d(0px, 0px, 50px) rotateX(-90deg) scale3d(0.86, 0.75, 1) translateY(50px)
+                        transform-origin: top
+                        transition: .4s ease
+                        opacity: 0
+                        width: 100%
+                        min-width: fit-content
+                        &::before
+                            content: ''
+                            display: block
+                            position: absolute
+                            bottom: calc(100% - (var(--triangle) / 2))
+                            left: 50%
+                            translate: -50% 0
+                            width: var(--triangle)
+                            height: var(--triangle)
+                            background: #E3E3E3
+                            transform: rotate(45deg)
+                            z-index: -1
+                        ul
+                            display: grid
+                            grid-template-columns: repeat(2, 1fr)
+                            column-gap: 30px
+                            background: #fff
+                            padding: 16px 12px
+                            box-shadow: rgb(0 0 0 / 1%) -2px 6px 2px 3px
+                            border-radius: 5px
+                            text-align: left
+                            white-space: nowrap
+                            li
+                                display: block
+                                &:not(:last-child)
+                                    margin-right: 0
+                                    margin-bottom: 2px
+                                a
+                                    font-size: 14px
+                                    display: flex
+                                    align-items: center
+                                    gap: 5px
+                                    color: $black
+                                    padding: 10px 14px
+                                    border-radius: 5px
+                                    overflow: hidden
+                                    &:hover
+                                        background: $primary
+                                        color: $white
+                                        &::before
+                                            opacity: 1
+                                    svg
+                                        width: 20px
+                                        height: 20px
+                                        object-fit: cover
+                                    span
+                                        display: block
+                                        width: 24px
+                                        line-height: 0
+                &.single
+                    ul
+                        grid-template-columns: repeat(1, 1fr) !important
+        .right-menu-list
+            display: flex
+            align-items: center
+            gap: 30px
+            li
+                a
+                    span
+                        font-family: Lato
+                        font-weight: 500
+                        font-size: 16px
+                        color: white
+                        letter-spacing: 2px
+                        transition: 0.7s ease
+                        display: inline-block
+
 @media (max-width: 1024px)
     header.header-fixed .header-wrapper .colA
         flex: 0 1 105px
@@ -118,143 +256,7 @@ header
     header .header-wrapper .ham-btn
         display: flex
 
-.colB
-    display: flex
-    gap: 20px
-    justify-content: flex-end
-    // flex: 1
-    align-items: center
-    @include media(991)
-        display: none    
-    .menu-list
-        display: flex
-        align-items: center
-        justify-content: end
-        gap: 35px
-        display: inline-flex
-        vertical-align: middle
-        @include media(1024)
-            gap: 24px
-        li
-            a
-                color: $white
-                display: flex
-                gap: 7px
-                align-items: center
-                // &:hover
-                //     color: $primary
-                span
-                    display: flex
-                    svg
-                        width: 16px
-                        height: 16px
-                        transition: 0.5s ease
-                &:hover
-                    span
-                        svg
-                            transform: rotate(-90deg)
-                
-            &.hasDropdown
-                position: relative
-                >a
-                    // &::after
-                    //     content: ""
-                    //     background-image: url(/assets/icon/arrow-down-white.svg)
-                    //     background-repeat: no-repeat
-                    //     background-position-x: 100%
-                    //     background-position-y: 50%
-                    //     background-size: var(--arrowsize) auto
-                    //     padding-right: calc(var(--arrowsize) + var(--space))
-                &:hover
-                    >a
-                        // color: $primary
-                        position: relative
-                        span
-                            svg
-                                transform: rotate(-90deg)
-                        &::after
-                            transform: rotate(90deg)
-                    .dropdown-menu 
-                        opacity: 1
-                        transform: scale3d(1, 1, 1) 
-                .dropdown-menu
-                    --triangle: 10px
-                    position: absolute
-                    top: calc(100% + var(--triangle))
-                    left: 50%
-                    translate: -50% 0
-                    transform: perspective(2000px) translate3d(0px, 0px, 50px) rotateX(-90deg) scale3d(0.86, 0.75, 1) translateY(50px)
-                    transform-origin: top
-                    transition: .4s ease
-                    opacity: 0
-                    width: 100%
-                    min-width: fit-content
-                    &::before
-                        content: ''
-                        display: block
-                        position: absolute
-                        bottom: calc(100% - (var(--triangle) / 2))
-                        left: 50%
-                        translate: -50% 0
-                        width: var(--triangle)
-                        height: var(--triangle)
-                        background: #E3E3E3
-                        transform: rotate(45deg)
-                        z-index: -1
-                    ul
-                        display: grid
-                        grid-template-columns: repeat(2, 1fr)
-                        column-gap: 30px
-                        background: #fff
-                        padding: 16px 12px
-                        box-shadow: rgb(0 0 0 / 1%) -2px 6px 2px 3px
-                        border-radius: 5px
-                        text-align: left
-                        white-space: nowrap
-                        li
-                            display: block
-                            &:not(:last-child)
-                                margin-right: 0
-                                margin-bottom: 2px
-                            a
-                                font-size: 14px
-                                display: flex
-                                align-items: center
-                                gap: 5px
-                                color: $black
-                                padding: 10px 14px
-                                border-radius: 5px
-                                overflow: hidden
-                                &:hover
-                                    background: $primary
-                                    color: $white
-                                    &::before
-                                        opacity: 1
-                                svg
-                                    width: 20px
-                                    height: 20px
-                                    object-fit: cover
-                                span
-                                    display: block
-                                    width: 24px
-                                    line-height: 0
-            &.single
-                ul
-                    grid-template-columns: repeat(1, 1fr) !important
-    .right-menu-list
-        display: flex
-        align-items: center
-        gap: 30px
-        li
-            a
-                span
-                    font-family: Lato
-                    font-weight: 500
-                    font-size: 16px
-                    color: white
-                    letter-spacing: 2px
-                    transition: 0.7s ease
-                    display: inline-block
+
 
 
 
