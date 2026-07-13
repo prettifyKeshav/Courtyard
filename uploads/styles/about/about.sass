@@ -1,10 +1,10 @@
 @import '../_var'
 
-.about-banner
+.hero-banner.about-banner
     position: relative
     color: white
     overflow: hidden
-    height: 80vh
+    height: 100vh
     display: flex
     flex-direction: column
     justify-content: center
@@ -19,9 +19,9 @@
         left: 0
         width: 100%
         height: 100%
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 46.76%, rgba(0, 0, 0, 0.7) 78.83%),linear-gradient(0deg, rgba(0, 0, 0, 0) 69.01%, rgba(0, 0, 0, 0.5) 88.92%)
+        background: linear-gradient(360deg, rgba(0, 0, 0, 0) 63.46%, rgba(0, 0, 0, 0.85) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 31.73%, rgba(0, 0, 0, 0.85) 94.72%)
     .bg
-        img 
+        img
             position: absolute
             top: 0
             left: 0
@@ -41,11 +41,11 @@
             bottom: 10%
         h1
             font-weight: 400
-            font-size: 64px
+            font-size: 48px
             text-align: center
-            text-transform: uppercase
             color: white
             line-height: 1.1
+            max-width: none
             @include media(540)
                 font-weight: 600
                 font-size: 38px
@@ -56,117 +56,71 @@
             font-size: 20px
             text-align: center
             color: white
+            max-width: none
+            margin: 10px 0 0
             @include media(540)
                 max-width: 80%
-                margin: auto       
-                     
-        
+                margin: auto
+
 .about-secA
-    padding: 70px 0
+    background: #fff9f2
+    padding: 50px 0
     @include media(540)
-        padding: 50px 0
+        padding: 30px 0
     .flex-box
         display: flex
         justify-content: space-between
+        align-items: center
         @include media(768)
             flex-direction: column
             align-items: center
             justify-content: center
             gap: 40px
         .col:first-child
-            flex: 0 1 65%
+            flex: 0 1 42%
             @include media(768)
                 text-align: center
-            h3
-                margin: 0 0 15px 0
-                font-size: 48px
-                font-family: Lato
-                font-weight: 600
-                font-size: 24px
-                line-height: 30px
-                margin-bottom: 15px
-                @include media(540)
-                    font-size: 19px
-                    line-height: 1.3
+            h2
+                margin-bottom: 26px
             p
-                max-width: 90%
-                margin-bottom: 10px
-                @include media(768)
-                    margin: auto
-                    margin-bottom: 10px
-            .counter-flex
-                display: grid
-                grid-template-columns: repeat(3,1fr)
-                max-width: 523px
-                margin-top: 40px
-                @include media(768)
-                    margin: auto
-                    margin-top: 40px
-                @include media(540)
-                    grid-template-columns: repeat(1,1fr)
-                    gap: 20px
-                .count-info
-                    display: flex
-                    justify-content: space-around
-                    align-items: center
-                    @include media(540)
-                        justify-content: center
-                    h4
-                        font-family: Lato
-                        font-weight: 400
-                        font-size: 36px
-                        line-height: 24px
-                        color: black
-                    p
-                        font-weight: 400
-                        font-size: 14px
-                        line-height: 18px
-                        width: 98px
-                        @include media(540)
-                            margin: 0
-                        span
-                            display: block
-            .bottom-btn
-                margin: 40px 0 0 0
-                a
-                    border: 1px solid $black
-                    padding: 8px 17px
-                    position: relative
-                    overflow: hidden
-                    display: inline-block
-                    transition: 0.5s ease
-                    &:hover
-                        background: #EEBF91
-                        border: 1px solid #EEBF91
-                        span
-                            color: $black
-                        svg
-                            path
-                                stroke: $black
-                    span
-                        font-family: Lato
-                        font-weight: 400
-                        font-size: 16px
-                        line-height: 20px
-                        text-align: center
-                        color: $black
-                        transition: 0.5s ease
-                    svg
-                        path
-                            stroke: black
-                            transition: 0.5s ease
+                &:not(:last-child)
+                    margin-bottom: 16px
+                b
+                    @include font(700)
+
         .col:last-child
-            flex: 0 1 35%
+            flex: 0 1 58%
             display: flex
             justify-content: right
             align-items: center
             figure
-                width: 350px
-                height: 388px
-                @include media(540)
-                    width: 70%
-                    height: auto
-                    margin: auto
+                width: 405px
+                height: 412px
+                position: relative
+                video
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    -webkit-mask-image: url(../../../public/assets/vector/diamond-vector.png)
+                    mask-image: url(../../../public/assets/vector/diamond-vector.png)
+                    -webkit-mask-repeat: no-repeat
+                    mask-repeat: no-repeat
+                    -webkit-mask-position: center
+                    mask-position: center
+                    -webkit-mask-size: 405px
+                    mask-size: 405px
+                    -o-object-position: top center
+                    object-position: top center
+                    background-size: cover
+                    background-position: top center
+                &::before
+                    content: ""
+                    position: absolute
+                    background: url('../../../public/assets/vector/c-vector.svg')
+                    width: 273px
+                    height: 416px
+                    background-repeat: no-repeat
+                    left: -173px
 
 .about-secB
     background: linear-gradient(180deg, #FBF0E6 0%, #F5DBC1 100%)
@@ -175,15 +129,17 @@
         @include media(540)
             display: initial
         .col:first-child
-            flex: 0 1 30%
+            flex: 0 1 27%
+            border-bottom: 1px solid #DDBE9F66
         .col:last-child
-            flex: 0 1 70%
+            flex: 0 1 73%
             display: flex
             @include media(540)
                 display: initial
-            .col-child
-                flex: 0 1 50%
+            .col-child:last-child
+                flex: 0 1 40%
             .col-child:first-child
+                flex: 0 1 60%
                 border-left: 1px solid #DDBE9F66
                 border-right: 1px solid #DDBE9F66
                 h2
@@ -191,21 +147,22 @@
                     padding: 60px 0
                     font-size: 48px
                     @include media(540)
-                        padding: 40px 0 
-                        font-size: 35px
-                        line-height: 1.1
+                        padding: 30px 0px 10px 0px
+                        font-size: 38px
     .bottom-flex-box
         display: flex
         @include media(540)
             display: none
         .col:first-child
-            flex: 0 1 30%
+            flex: 0 1 27%
+            border-top: 1px solid #DDBE9F66
         .col:last-child
-            flex: 0 1 70%
+            flex: 0 1 73%
             display: flex
-            .col-child
-                flex: 0 1 50%
+            .col-child:last-child
+                flex: 0 1 40%
             .col-child:first-child
+                flex: 0 1 60%
                 border-left: 1px solid #DDBE9F66
                 border-right: 1px solid #DDBE9F66
                 h2
@@ -213,24 +170,24 @@
                     padding: 60px 0
                     @include media(768)
                         padding: 40px 0
-            
+
     .flex-box
         display: flex
         @include media(768)
             flex-direction: column
         .col:first-child
-            flex: 0 1 30%
+            flex: 0 1 27%
             .tab-nav
                 height: 47vh
                 width: 100%
-                border-top: 1px solid #DDBE9F66
-                border-bottom: 1px solid #DDBE9F66
                 display: flex
                 justify-content: center
                 align-items: center
                 @include media(768)
                     height: fit-content
                     padding: 20px 0
+                @include media(540)
+                    padding: 10px 0 30px 0
                 ul
                     margin-right: 100px
                     @include media(768)
@@ -246,8 +203,10 @@
                         transition: 0.7s ease
                         padding-bottom: 20px
                         position: relative
+                        cursor: pointer
                         @include media(540)
                             padding-bottom: 0
+                            font-size: 20px
                         &:hover
                             color: rgb(0 0 0 / 43%)
                         &::before
@@ -263,13 +222,24 @@
                             opacity: 0
                             @include media(768)
                                 content: none
+                            @include media(540)
+                                content: ""
+                                top: 110%
+                                left: 0
+                                width: 0%
+                                transform: initial
                         &.active
                             color: $black
                             &::before
                                 opacity: 1
                                 left: -230%
+                                @include media(540)
+                                    width: 100%
+                                    left: 0%
+                                    transform: initial
         .col:last-child
-            flex: 0 1 70%
+            flex: 0 1 73%
+            min-width: 0
             .tab-nav-content
                 .tabs
                     display: flex
@@ -279,7 +249,7 @@
                     &.active
                         .col-child:first-child
                             figure
-                                img    
+                                img
                                     transform: translateY(0%)
                                     opacity: 1
                         .col-child:last-child
@@ -287,9 +257,13 @@
                                 p
                                     opacity: 1
                                     transform: translateY(0%)
-                    .col-child
-                        flex: 0 1 50%
+                    .col-child:last-child
+                        flex: 0 1 40%
+                        min-width: 0
                     .col-child:first-child
+                        flex: 0 1 60%
+                        .image-slider
+                            height: 47vh
                         figure
                             height: 47vh
                             width: 100%
@@ -299,6 +273,7 @@
                                 height: 22vh
                             @include media(540)
                                 height: auto
+                                border: none
                             img
                                 width: 100%
                                 height: 100%
@@ -324,6 +299,12 @@
                                 width: 90%
                                 margin: auto
                                 text-align: center
+                            .text-slider
+                                height: 47vh
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        display: flex
+                                        align-items: center
                             p
                                 font-family: Lato
                                 font-weight: 300
@@ -336,1033 +317,245 @@
                                 transform: translateY(160%)
                                 @include media(1024)
                                     width: auto
+                                @include media(540)
+                                    font-size: 20px
+                                    line-height: 1.4
                                 strong
                                     font-weight: 700
 
 .about-secC
-    background: #AF694F
-    padding: 70px 0 
-    @include media(1024)
-        padding: 50px 0
-    h2
-        font-family: Optima
-        font-weight: 400
-        font-size: 48px
-        line-height: 48px
-        text-align: center
-        color: white
-        margin-bottom: 40px
-        @include media(540)
-            font-size: 35px
-            line-height: 1.1
-    .grid-box
-        display: grid
-        grid-template-columns: repeat(4, 1fr)
-        gap: 20px
-        @include media(540)
-            grid-template-columns: repeat(2, 1fr)
-        .col
-            padding: 20px
-            background: #FFFFFF1A
-            border-radius: 10px
-            overflow: hidden
-            text-align: center
-            figure
-                width: 102px
-                height: 102px
-                margin: auto
-                margin-bottom: 10px
-                @include media(768)
-                    width: 62px
-                    height: 62px
-                img
-                    width: 100%
-                    height: 100%
-                    object-fit: contain
-            p
-                font-family: Lato
-                font-weight: 600
-                font-size: 24px
-                line-height: 48px
-                color: white
-                @include media(768)
-                    font-size: 20px
-                    line-height: 1.1
-
-.about-secD
-    padding: 50px 0 
+    padding: 70px 0
     position: relative
     overflow: hidden
-    background: #F8F4F0
-    .qoma
-        width: 238px
-        height: 238px
+    @include media(540)
+        padding: 50px 0
+    &::before
+        content: ""
         position: absolute
-        right: 10%
-        bottom: -12%
+        inset: 0
+        background: linear-gradient(180deg, #FFF9F1 35.65%, rgba(255, 255, 255, 0.1) 78.24%)
         z-index: 1
-        // transform: translate(50%)
-        @include media(540)
-            width: 50px
-            height: 90px
-            bottom: -4%
-            right: 0
-        img
-            width: 100%
-            height: 100%
-            object-fit: contain
+    video
+        position: absolute
+        inset: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+        z-index: 0
+        opacity: .5
+    .container
+        position: relative
+        z-index: 2
+        h2
+            text-align: center
+        .row
+            margin-top: 70px
+            display: flex
+            justify-content: space-between
+            gap: 150px
+            align-items: center
+            .left
+                min-width: 0
+                .swiper
+                    .swiper-wrapper
+                        .swiper-slide
+                            p
+                                font-size: 24px
+                                color: $black
+                                @include font(700)
+                                line-height: 1.3
 
-    .flex-box
-        display: flex
-        justify-content: space-between
-        align-items: center
-        @include media(768)
-            flex-direction: column
-            gap: 30px
-        .col:first-child
-            flex: 0 1 45%
-            @include media(1024)
-            figure
-                width: 454px
-                height: 454px
-                overflow: hidden
-                @include media(540)
-                    width: 100%
-                    height: fit-content
-                img
-                    width: 100%
-                    height: 100%
-                    object-fit: cover
-        .col:last-child
-            flex: 0 1 55%
-            @include media(1024)
-                flex: 0 1 45%
-            @include media(768)
-                text-align: center
-            h2
-                font-family: Optima
-                font-weight: 400
-                font-size: 48px
-                line-height: 48px
-                margin-bottom: 20px
-                @include media(540)
-                    font-size: 28px
-                    line-height: 1.1
-            p
-                font-family: Lato
-                font-weight: 400
-                font-size: 20px
-                line-height: 26px
-                margin-bottom: 30px
-            .name
-                font-family: Lato
-                font-weight: 400
-                line-height: 30px
-                color: black
-                position: relative
-                padding-left: 40px
-                @include media(768)
+            .middle
+                
+                .swiper
                     width: fit-content
-                    margin: auto          
+                    margin: 0 auto
+                    overflow: visible
+                    height: 364px
+                    .swiper-wrapper
+                        .swiper-slide
+                            transition: 1.5s ease-in
+                            figure
+                                height: 364px
+                                border: 1px solid $primary
+                                width: 322px
+                                border-radius: 10px
+                                overflow: hidden
+                                position: relative
+                                img
+                                    display: block
+                                    width: 100%
+                                    height: 100%
+                                    object-fit: cover
+                                figcaption
+                                    background: $primary
+                                    position: absolute
+                                    left: 0
+                                    right: 0
+                                    bottom: 0
+                                    text-align: center
+                                    padding: 16px
+                                    p
+                                        font-size: 24px
+                                        color: $white
+                                        @include font(600)
+                            &.swiper-slide-active
+                                transform: rotate(0)
+                            &.swiper-slide-next
+                                transform: rotate(-10deg)
+            .right
+                min-width: 0
+                
+        .timeline
+            margin-top: 70px
+            display: flex
+            align-items: center
+            justify-content: center
+            gap: 50px
+            .timeline-prev, .timeline-next
+                width: 46px
+                height: 46px
+                border: 1px solid $primary
+                border-radius: 50%
+                margin-bottom: 40px
+                display: flex
+                justify-content: center
+                align-items: center
+                transition: .4s ease
+                &:hover
+                    background: $primary
+                    img
+                        filter: invert(0) brightness(100)
+                        transition: .4s ease
+            .timeline-prev
+                transform: scaleX(-1)
+            .timeline-year
+                display: flex
+                gap: 80px
+                position: relative
                 &::before
                     content: ""
                     position: absolute
-                    top: 52%
-                    left: 2%
-                    transform: translate(-50%,-50%)
-                    background: black
-                    height: 2px 
-                    width: 24px
-
-    
-.about-secE
-    padding: 50px 0
-    @include media(540)
-        padding: 20px 0 50px 0px
-        
-    .heading
-        text-align: center
-        position: relative
-        h2
-            font-family: Optima
-            font-weight: 400
-            font-size: 36px
-            line-height: 40px
-            text-align: center
-            color: black
-        p
-            font-family: Lato
-            font-weight: 700
-            font-size: 14px
-            line-height: 24px
-            letter-spacing: 20%
-            text-align: center
-            text-transform: uppercase
-        .swiper-nav
-            position: absolute
-            right: 0
-            bottom: 0
-            z-index: 2
-            @include media(540)
-                display: none
-        .swiper-nav
-            button
-                transition: 0.5s ease
-                border: 1px solid #D0A77F
-                border-radius: 50%
-                width: 40px
-                height: 40px
-                background: transparent
-                &:hover
-                    background: #D0A77F
-                    svg
-                        path
-                            fill: #fff
-                svg path
-                    fill: #D0A77F
-                    transition: 0.5s ease
-    .swiper-slide
-        a
-            .desc
-                display: none
-    .about-slider1
-        padding: 30px 0 0px 0
-        @include media(540)
-            padding: 30px 0 0px 0
-        .swiper-wrapper
-            .swiper-slide
-                a
-                    figure
-                        // background: #F8F4F0
-                        background: #af694f4c
-                        border-radius: 10px
-                        padding: 20px 20px 0 20px
-                        line-height: 0
-                        position: relative
-                        overflow: hidden
-                        img
-                            transition: 0.5s ease
-                    figcaption
-                        padding: 10px 
-                        text-align: center
-                        h5
-                            font-weight: 600
-                            font-size: 18px
-                            color: black
-                            margin-bottom: 4px
-                        p
-                            font-weight: 400
-                            font-size: 16px
-                    &:hover
-                        figure img
-                            transform: scale(1.1)
-
-.about-secF
-    background: #F8F4F0
-    padding: 50px 0 
-    .heading
-        h2
-            font-family: Optima
-            font-weight: 400
-            font-size: 36px
-            line-height: 40px
-            text-align: center
-            color: black
-            @include media(540)
-                font-size: 28px
-                line-height: 1.1
-        p
-            font-family: Lato
-            font-weight: 700
-            font-size: 14px
-            line-height: 24px
-            letter-spacing: 20%
-            text-align: center
-            text-transform: uppercase
-            @include media(540)
-                margin-bottom: 10px
-    .swiper
-        padding: 70px 0 150px 0
-        position: relative
-        .swiper-slide
-            display: flex
-            justify-content: center
-            align-items: center
-        figure
-            border: 11.27px solid #EEBF91
-            border-radius: 50%
-            background: white
-            height: 215px
-            width: 215px
-            position: relative
-            img
-                position: absolute
-                bottom: 0
-                left: 50%
-                transform: translate(-50%)
-                width: 100%
-            figcaption
-                position: absolute
-                text-align: center
-                bottom: -40%
-                width: 100%
-                left: 50%
-                transform: translate(-50%)
-                h4
-                    font-family: Lato
-                    font-weight: 700
-                    font-size: 24px
-                    line-height: 27.04px
-                    text-align: center
-                    color: #A56321
-                p
-                    font-family: Lato
-                    font-weight: 400
-                    font-size: 18.03px
-                    line-height: 24.79px
-                    text-align: center
-                    color: $text
-        .custom-pagination  
-            position: absolute
-            bottom: 3%
-            left: 50%
-            transform: translate(-50%)
-            width: 30%
-            height: 20px
-            display: inline-flex
-            align-items: center
-            @include media(540)
-                width: 90%
-            .swiper-pagination-horizontal
-                position: absolute
-                top: inherit
-                top: 50%
-                left: 50%
-                transform: translate(-50%,-50%)
-                width: 80%
-            .swiper-pagination-progressbar
-                background: #E6E6E6
-                .swiper-pagination-progressbar-fill
-                    background: #EEBF91
-            .swiper-nav
-                display: flex
-                align-items: center
-                justify-content: space-between
-                width: 110%
-                position: absolute
-                top: 50%
-                left: 50%
-                transform: translate(-50%, -50%)
-                button
-                    display: flex
-                    align-items: center
-                    transition: 0.5s ease
-                    border: 1px solid #D0A77F
-                    border-radius: 50%
-                    width: 40px
-                    height: 40px
-                    &:hover
-                        background: #D0A77F
-                        svg
-                            path
-                                stroke: white
-                    &.swiper-button-disabled
-                        opacity: 0.5
-                        cursor: no-drop
-                    svg
-                        vertical-align: middle
-                        width: 34px
-                        height: 40px
-                        path
-                            stroke: #D0A77F
-                            transition: 0.5s ease
-
-.about-secG
-    padding: 50px 0 
-    overflow: hidden
-    .heading
-        h2
-            font-family: Optima
-            font-weight: 400
-            font-size: 36px
-            line-height: 40px
-            text-align: center
-            color: black
-            @include media(540)
-                font-size: 28px
-                line-height: 1.1
-        p
-            font-family: Lato
-            font-weight: 700
-            font-size: 14px
-            line-height: 24px
-            letter-spacing: 20%
-            text-align: center
-            text-transform: uppercase
-    .grid-box
-        display: grid
-        grid-template-columns: repeat(2,1fr)
-        gap: 3px
-        padding: 30px 0 0 0
-        @include media(540)
-            grid-template-columns: repeat(1,1fr)
-        .col
-            height: 380px
-            position: relative
-            overflow: hidden
-            @include media(1024)
-                height: 310px
-            &:hover
-                img
-                    scale: 1.1
-            &::before
-                content: ""
-                position: absolute
-                top: 0
-                left: 0
-                width: 100%
-                height: 100%
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%)
-            img
-                width: 100%
-                height: 100%
-                object-fit: cover
-                transition: 0.5s ease
-                z-index: -1
-                position: absolute
-            figcaption
-                position: absolute
-                bottom: 0
-                left: 0
-                padding: 30px
-                h4
-                    font-family: Optima
-                    font-weight: 400
-                    font-size: 36px
-                    color: white
-                    margin-bottom: 10px
-                p
-                    font-family: Lato
-                    font-weight: 400
-                    font-size: 16px
-                    color: white
-                    line-height: 22px
-                    width: 563px
-                    @include media(1024)
-                        width: auto
-        .col:nth-child(1)
-            grid-row: span 2
-            height: 100%
-            @include media(540)
-                grid-row: unset
-                height: 310px
-
-.about-timeline-sec
-    padding: 50px 0 
-    // background: #969acd
-    position: relative
-    overflow: hidden
-    &::before
-        content: "JOURNEY"
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%,-50%)
-        font-family: Lato
-        font-weight: 800
-        font-size: 22vw
-        width: 100%
-        letter-spacing: -8px
-        color: #EEBF9133
-        @include media(768)
-            font-size: 23vw
-            top: 36.6%
-    .heading
-        margin-bottom: 50px
-        @include media(540)
-            margin-bottom: 20px
-        h2
-            text-align: center
-            font-family: Optima
-            font-weight: 400
-            font-size: 48px
-            line-height: 48px
-            @include media(540)
-                font-size: 35px
-                line-height: 1.1
-    .year-timeline
-        margin: 40px 0 55px
-        position: absolute
-        top: 27%
-        left: 50%
-        transform: translate(-50%, -50%)
-        width: 100%
-        @include media(768)
-            top: 18.6%
-        @include media(540)
-            margin: 10px 0
-            // display: none
-        .container
-            max-width: 100%
-        .year-dot
-            display: flex
-            flex-direction: column
-            align-items: center
-            justify-content: center
-            cursor: pointer
-            font-weight: 500
-            transition: all 0.6s ease
-            font-size: 14px
-            width: 100%
-            margin: 0 auto
-            text-align: center
-
-            font-family: Lato
-            font-weight: 600
-            font-size: 20px
-            line-height: 1.3
-            color: $black
-            height: 120px
-            gap: 10px
-            &::before
-                content: ""
-                width: 18px
-                height: 18px
-                border-radius: 50%
-                background-color: #AF694F
-                margin-bottom: 8px
-                transition: all 0.3s ease
-            &.active
-                color: var(--secondary)
-                &::before
-                    background-color: #AF694F
-                    outline: 1px solid #AF694F
-                    outline-offset: 10px
-                    width: 18px
-                    height: 18px
-        .timeline-line
-            position: absolute
-            top: 32%
-            left: 0
-            right: 0
-            height: 1px
-            background-color: #00000033
-            z-index: 1
-    figcaption
-        width: 344px
-        height: 242px
-        position: absolute
-        top: 79%
-        left: 18.5%
-        transform: translate(-50%, -50%)
-        overflow: hidden
-        @include media(768)
-            top: initial
-            bottom: 16%
-            left: 50%
-            transform: translate(-50%)
-            text-align: center
-            width: 70%
-            height: 182px
-        @include media(540)
-            width: 90%
-        .figcaption-content
-            transform: translateY(160%)
-            transition: 0.8s ease
-            opacity: 0
-            &.active
-                transform: translateY(0%)
-                opacity: 1
-                top: 0
-                position: absolute
-            h4
-                font-family: Lato
-                font-weight: 500
-                font-size: 20px
-                line-height: 1.2
-                margin-bottom: 10px
-                color: black
-            p
-                font-family: Lato
-                font-weight: 400
-                font-size: 16px
-                line-height: 1.2
-    .swiper
-        padding: 0px 0 100px 0
-        position: relative
-        @include media(768)
-            padding: 0 0 300px 0
-        @include media(540)
-            padding: 0 0 310px 0
-        .swiper-slide
-            display: flex
-            justify-content: center
-            align-items: center
-        figure
-            border-radius: 50%
-            background: white
-            width: 334px
-            height: 334px
-            // padding: 10px
-            // overflow: hidden
-            position: relative
-            img
-                // position: absolute
-                // bottom: 0
-                // left: 50%
-                // transform: translate(-50%)
-                // width: 100%
-                border-radius: 50%
-                height: 100%
-                width: 100%
-                object-fit: cover
-            .year-dot
-                display: flex
-                flex-direction: column
-                align-items: center
-                justify-content: center
-                cursor: pointer
-                font-weight: 500
-                transition: all 0.6s ease
-                font-size: 14px
-                width: 100%
-                margin: 0 auto
-                text-align: center
-
-                font-family: Lato
-                font-weight: 400
-                font-size: 16
-                line-height: 1.3
-                color: $text
-                height: 120px
-                gap: 0px
-                position: absolute
-                top: 51%
-                left: -58vw
-                transform: translate(-50%, -50%)
-                @include media(768)
-                    left: -43vw
-                @include media(540)
-                    opacity: 0
-                &::before
-                    content: ""
-                    width: 18px
-                    height: 18px
-                    border-radius: 50%
-                    background-color: #AF694F
-                    margin-bottom: 8px
-                    transition: all 0.3s ease
-                &.active
-                    color: var(--secondary)
-                    top: 54%
-                    left: -30vw
-                    transform: translate(-50%, -50%)
-
-                    height: 120px
-                    gap: 10px
-                    font-weight: 600
-                    font-size: 20px
-                    color: $black
-                    @include media(768)
-                        left: -10vw
-                    @include media(540)
-                        left: 50%
-                        top: initial
-                        bottom: -45%
-                        transform: translate(-50%, -50%)
-                        opacity: 1
-                    &::before
-                        background-color: #AF694F
-                        outline: 1px solid #AF694F
-                        outline-offset: 10px
-                        width: 18px
-                        height: 18px
-                        @include media(540)
-                            content: none
-                    &::after
-                        content: ""
-                        width: 40px
-                        height: 40px
-                        background: #ffffff
-                        position: absolute
-                        border-radius: 50%
-                        bottom: 60px
-                        z-index: -1
-                        @include media(540)
-                            content: none
-        .custom-pagination  
-            position: absolute
-            bottom: 3%
-            left: 63%
-            transform: translate(-50%)
-            width: 60%
-            height: 20px
-            display: inline-flex
-            align-items: center
-            @include media(768)
-                left: 50%
-            @include media(540)
-                width: 90%
-            .swiper-pagination-horizontal
-                position: absolute
-                top: inherit
-                top: 50%
-                left: 50%
-                transform: translate(-50%,-50%)
-                width: 80%
-                @include media(540)
-                    width: 60%
-            .swiper-pagination-progressbar
-                background: #E6E6E6
-                .swiper-pagination-progressbar-fill
-                    background: #EEBF91
-            .swiper-nav
-                display: flex
-                align-items: center
-                justify-content: space-between
-                width: 92px
-                position: absolute
-                top: 50%
-                left: 100%
-                transform: translate(-50%, -50%)
-                @include media(768)
-                    width: 110%
-                    left: 50%
-                @include media(540)
+                    height: 1px
                     width: 100%
-                button
-                    display: flex
-                    align-items: center
-                    transition: 0.5s ease
-                    border: 1px solid #D0A77F
-                    border-radius: 50%
-                    width: 40px
-                    height: 40px
+                    background: $primary
+                .timeline-tab
+                    position: relative
+                    padding-top: 24px
+                    cursor: pointer
+                    &::before
+                        position: absolute
+                        content: ""
+                        width: 16px
+                        height: 16px
+                        border-radius: 50%
+                        background: $white
+                        border: 1px solid $primary
+                        position: absolute
+                        left: 50%
+                        transform: translateX(-50%)
+                        top: -8px
+                        transition: 0.4s ease
+                    &.active
+                        p
+                            color: $primary
+                        &::before
+                            background: $primary
+
+.about-secD
+    background: linear-gradient(180deg, #FFF9F1 0%, #FFF1DE 100%)
+    .container
+        .row
+            display: flex
+            gap: 100px
+            align-items: center
+            .col
+                flex: 0 1 50%
+                &:first-child
+                    padding: 70px 0
+                    @include media(1024)
+                        padding: 50px 0
+                    h2
+                    p
+                        font-size: 24px
+                        @include font(600)
+                        line-height: 1.4
+                    .quote
+                        margin: 42px 0 28px 0
+                    .info
+                        margin-top: 42px
+                        display: flex
+                        align-items: center
+                        gap: 100px
+                        figcaption
+                            h4
+                                font-size: 28px
+                                @include font(600)
+                            p
+                                font-size: 14px
+
+                        figure
+                            img
+                                width: 41px
+                                height: 41px
+                &:last-child
+                    figure
+                        img
+                            display: block
+
+.about-secE
+    padding: 70px 0
+    @include media(540)
+        padding: 50px 0
+    .container
+        h2
+            text-align: center
+        .row
+            position: relative
+            margin-top: 70px
+            .swiper
+                overflow: hidden
+                .swiper-wrapper
+                    .swiper-slide
+                        width: 570px
+                        height: 419px
+                        border-radius: 10px
+                        overflow: hidden
+                        figure
+                            height: 100%
+                            width: 100%
+                            position: relative
+                            &::before
+                                content: ""
+                                position: absolute
+                                inset: 0
+                                background: linear-gradient(360deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%)
+                            img
+                                width: 100%
+                                height: 100%
+                                object-fit: cover
+                                display: block
+                            figcaption
+                                position: absolute
+                                left: 0
+                                right: 0
+                                bottom: 0
+                                padding: 24px
+                                text-align: center
+                                font-family: Lato
+                                color: white
+                                font-size: 20px
+                                opacity: 0
+                                transition: 0.5s ease
+                        &.swiper-slide-active
+                            figcaption
+                                opacity: 100%
+            .swiper-nav
+                max-width: 60%
+                .swiper-prev, .swiper-next
+                    background: $white
                     &:hover
-                        background: #D0A77F
-                        svg
-                            path
-                                stroke: white
-                    &.swiper-button-disabled
-                        opacity: 0.5
-                        cursor: no-drop
-                    svg
-                        vertical-align: middle
-                        width: 34px
-                        height: 40px
-                        path
-                            stroke: #D0A77F
-                            transition: 0.5s ease        
-
-// .about-timeline-sec
-//   position: relative
-//   overflow: hidden
-//   padding: 30px 0 60px 
-//   @include media(540)
-//     padding: 30px 0 10px 0px !important
-//   &::before
-//     content: ""
-//     background-image: url("../../images/home/Specialization-bg1.svg")
-//     background-size: contain
-//     background-repeat: no-repeat
-//     background-position: bottom
-//     position: absolute
-//     left: 0
-//     bottom: 0
-//     width: 100%
-//     max-width: 530px
-//     height: 100%
-//     z-index: 0
-//   &::after
-//     content: ""
-//     background-image: url("../../images/home/Specialization-bg2.svg")
-//     background-size: contain
-//     background-repeat: no-repeat
-//     background-position: bottom
-//     position: absolute
-//     right: 0
-//     bottom: 0
-//     width: 100%
-//     max-width: 530px
-//     height: 100%
-//     z-index: 0
-
-//   .heading-img
-//     width: 80px
-//     margin: auto
-
-//     img
-//       animation: wiggle 2s ease-in-out infinite
-//       transform-origin: center
-
-//   .heading
-//     margin-top: 10px
-
-//     h2
-//       color: var(--primary)
-
-//   .year-swiper-grid
-//     display: flex
-//     flex-direction: column
-
-//   .swiper-card
-//     display: grid
-//     grid-template-columns: 1fr
-//     gap: 3rem
-//     align-items: center
-//     width: 85%
-//     margin: 0 auto
-//     @include media(540)
-//         width: 100%
-
-//     .card-header 
-//         display: none
-//         h5
-//             color: var(--black)
-//             font-weight: 600
-
-//     .card-body
-//         display: flex   
-//         justify-content: center
-//         align-content: center
-//         gap: 70px
-//         @include media(768)
-//             flex-direction: column
-//             text-align: center
-//             gap: 30px
-//         @include media(540)
-//             gap: 20px
-//         .img
-//             flex: 0 1 40%
-//             width: 379px
-//             height: 304px
-//             border-radius: 5px
-//             overflow: hidden
-//             @include media(768)
-//                 margin: auto
-//             @include media(540)
-//                 width: 80%
-//             img
-//                 width: 100%
-//                 height: 100%
-//                 object-fit: cover
-//         .card-content
-//             flex: 0 1 60%
-//             @include media(540)
-//                 max-width: 96%
-//                 margin: auto
-//             p
-//                 color: #666
-//                 margin-bottom: 35px
-//                 font-family: Lato
-//                 @include media(540)
-//                     font-size: 14px
-//                     line-height: 1.3
-//             a
-//                 padding: 10px 27px
-//                 border: 1px solid #EEBF91
-//                 color: black
-//                 font-family: Lato
-//                 font-weight: 700
-//                 font-size: 16px
-//                 line-height: 20px
-//                 text-align: center
-//                 background: #EEBF91
-//                 display: inline-block
-//                 &:hover
-//                     background: transparent
-
-//   .year-timeline
-//     margin: 40px 0 55px
-//     position: relative
-//     flex: 1
-//     @include media(540)
-//         margin: 10px 0
-
-//     .container
-//       max-width: 80%
-
-//     .years-container
-//       display: flex
-//       flex-direction: column
-//       align-items: center
-
-//     .year-dots
-//       display: grid
-//       grid-template-columns: repeat(6, 184px)
-//       justify-content: space-between
-//       width: 100%
-//       position: relative
-//       flex-wrap: nowrap
-//       overflow-x: auto
-//       z-index: 2
-
-//     .year-dot
-//       display: flex
-//       flex-direction: column
-//       align-items: center
-//       cursor: pointer
-//       font-weight: 500
-//       color: #686868
-//       transition: all 0.3s ease
-//       font-size: 14px
-//       width: 100%
-//       margin: 0 auto
-//       text-align: center
-//       font-family: Lato 
-
-//       &::before
-//         content: ""
-//         width: 18px
-//         height: 18px
-//         border-radius: 50%
-//         border: 1px solid var(--secondary)
-//         background-color: var(--white)
-//         margin-bottom: 8px
-//         transition: all 0.3s ease
-
-//       &.active
-//         color: var(--secondary)
-
-//         &::before
-//           background-color: var(--secondary)
-//           width: 18px
-//           height: 18px
-
-//     .timeline-line
-//       position: absolute
-//       top: 8px
-//       left: 0
-//       right: 0
-//       height: 1px
-//       background-color: var(--secondary)
-//       z-index: 1
-
-//   .swiper-parent
-//     flex: 1
-//     .container
-//       max-width: 80%
-//       .swiper-wrap
-//         position: relative
-//         .swiper-nav
-//           position: absolute
-//           top: 50%
-//           left: 50%
-//           transform: translate(-50%, -50%)
-//           display: flex
-//           justify-content: space-between
-//           width: 100%
-//           z-index: 999999
-//           @include media(540)
-//             display: none
-//           button
-//             width: 45px
-//             height: 45px
-//             background-color: var(--white)
-//             border-radius: 50%
-//             box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.3490196078)
-//             display: flex
-//             justify-content: center
-//             align-items: center
-//             svg
-//               width: 30px
-//               height: 30px
-//               path
-//                 stroke: var(--secondary)
-//           .specialization-prev
-//             transform: rotate(270deg)
-//           .specialization-next
-//             transform: rotate(90deg)
-// @media only screen and (max-width: 991px)
-//     .about-timeline-sec
-//         padding: 30px 0 65px 0
-// @media only screen and (max-width: 540px)
-//     .about-timeline-sec .heading-img
-//         width: 50px
-
-// @media only screen and (max-width: 540px)
-//     .about-timeline-sec .heading
-//         margin-top: 0
-
-// @media only screen and (max-width: 991px)
-//     .about-timeline-sec .swiper-card .card-header h5
-//         font-size: 1.2rem
-
-// @media only screen and (max-width: 768px)
-//     .about-timeline-sec .swiper-card .card-header h5
-//         text-align: center
-//         font-size: 1.4rem
-
-// @media only screen and (max-width: 768px)
-//     .about-timeline-sec .year-timeline
-//         flex: 1 50%
-
-// @media only screen and (max-width: 1550px)
-//     .about-timeline-sec .year-timeline .container
-//         max-width: 94%
-
-// @media only screen and (max-width: 1024px)
-//     .about-timeline-sec .year-timeline .container
-//         max-width: 100%
-
-// @media only screen and (max-width: 991px)
-//     .about-timeline-sec .year-timeline .container
-//         padding: 0 18px
-
-// @media only screen and (max-width: 1250px)
-//     .about-timeline-sec .year-timeline .year-dots
-//         grid-template-columns: repeat(6, 145px)
-//         gap: 1rem
-
-// @media only screen and (max-width: 768px)
-//     .about-timeline-sec .year-timeline .year-dots
-//         grid-template-columns: repeat(6, 132px)
-
-// @media only screen and (max-width: 540px)
-//     .about-timeline-sec .year-timeline .year-dots
-//         grid-template-columns: repeat(6, 58px)
-
-// @media only screen and (max-width: 1250px)
-//     .about-timeline-sec .year-timeline .year-dot
-//         font-size: 12px
-
-// @media only screen and (max-width: 768px)
-//     .about-timeline-sec .year-timeline .year-dot::before
-//         width: 14px
-//         height: 14px
-
-// @media only screen and (max-width: 768px)
-//     .about-timeline-sec .year-timeline .year-dot.active::before
-//         width: 14px
-//         height: 14px
-
-// @media only screen and (max-width: 768px)
-//     .about-timeline-sec .swiper-parent
-//         flex: 0 50%
-
-// @media only screen and (max-width: 1550px)
-//     .about-timeline-sec .swiper-parent .container
-//         max-width: 94%
-
-// @media only screen and (max-width: 1024px)
-//     .about-timeline-sec .swiper-parent .container
-//         max-width: 100%
-
-// @media only screen and (max-width: 768px)
-//     .about-timeline-sec .swiper-parent .container
-//         padding: 0 18px
-
-// @media only screen and (max-width: 768px)
-//     .about-timeline-sec .swiper-parent .container .swiper-wrap .swiper-nav button
-//         width: 35px
-//         height: 35px
-
-// @media only screen and (max-width: 540px)
-//     .about-timeline-sec .swiper-parent .container .swiper-wrap .swiper-nav button
-//         background: transparent
-//         box-shadow: none
-
-// @media only screen and (max-width: 768px)
-//     .about-timeline-sec .swiper-parent .container .swiper-wrap .swiper-nav button svg
-//         width: 25px
-//         height: 25px
+                        background: $primary
+                        img
+                            filter: invert(0) brightness(100)
+                            transition: .5s ease
