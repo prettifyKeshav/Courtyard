@@ -1,7 +1,7 @@
 @import '../_var'
 
 body
-    background: #FFF9F2
+    background: #FFF9F1
 
 .hero-banner.projects-banner
     .video-wrapper
@@ -51,12 +51,12 @@ body
     border-radius: 10px
     overflow: hidden
     background: $white
-    @include shine
     &:hover
         figure
             img
                 scale: 1.1
     figure
+        @include shine
         height: 279px
         line-height: 0
         overflow: hidden
@@ -218,6 +218,7 @@ h2
     .flex-box
         display: flex
         justify-content: space-between
+        align-items: center
         position: relative
         z-index: 1
     .colA
@@ -295,9 +296,8 @@ h2
             object-fit: cover
             transform: scaleX(-1)
 
-.project-details-secC
-    padding: 50px 0 
-    background: #FBEDDC
+.project-detail-secC
+    padding: 50px 0
     .heading
         p
             font-family: Lato
@@ -308,12 +308,62 @@ h2
             text-align: center
             text-transform: uppercase
             margin-bottom: 10px
+        h2
+            max-width: 360px
+            margin: auto
+            line-height: 1.1
+    .custom-pagination
+        max-width: 457px
+        margin: auto
+        position: relative
+        z-index: 0
+        .swiper-pagination
+            width: 75%
+            left: 50%
+            top: 42%
+            transform: translate(-50%)
+            height: 4px
+            &.swiper-pagination-progressbar
+                background: #E6E6E6
+                .swiper-pagination-progressbar-fill
+                    background: $primary !important
+
+        .swiper-nav
+            display: flex
+            align-items: center
+            justify-content: space-between
+            button
+                display: flex
+                align-items: center
+                transition: 0.5s ease
+                border: 1px solid #9D864D
+                border-radius: 50%
+                width: 40px
+                height: 40px
+                &:hover
+                    background: #9D864D
+                    svg
+                        path
+                            stroke: white
+                &.swiper-button-disabled
+                    opacity: 0.5
+                    cursor: no-drop
+                svg
+                    vertical-align: middle
+                    width: 38px
+                    height: 34px
+                    path
+                        stroke: #9D864D
+                        transition: 0.5s ease
+
+
     .swiper
-        padding: 50px 0 90px 0
+        padding: 50px 0 40px
         position: relative
         @include media(540)
             padding: 40px 0 60px 0
         .swiper-slide
+            transition: 0.5s ease
             &.swiper-slide-active
                 width: 39% !important
                 @include media(768)
@@ -326,7 +376,6 @@ h2
             figure
                 height: 442px
                 margin: auto
-                margin-bottom: 20px
                 position: relative
                 @include media(540)
                     height: 320px
@@ -355,6 +404,8 @@ h2
                         font-size: 32px
                         line-height: 42px
                         color: white
+                        max-width: 320px
+                        line-height: 1.3
         .custom-pagination  
             position: absolute
             bottom: 6%
@@ -409,3 +460,278 @@ h2
                         path
                             stroke: #D0A77F
                             transition: 0.5s ease
+
+.project-detail-secD
+    padding: 50px 0
+    background: #FBEDDC
+    position: relative
+    .flex-box
+        display: flex
+        justify-content: space-between
+        align-items: center
+        position: relative
+        z-index: 1
+    .colA
+        flex: 0 1 50%
+        h2
+            font-weight: 400
+            font-size: 36px
+            margin-bottom: 20px
+        p
+            max-width: 516px
+            line-height: 1.4
+        .grid-box
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: 20px
+            padding: 20px 0 20px
+            .col
+                h4
+                    font-weight: 400
+                    color: $black
+                    font-size: 24px
+                    font-family: $Optima
+                p
+                    font-weight: 500
+                    color: $text
+                    font-size: 16px
+        .btn-flex
+            display: flex
+            gap: 20px
+            align-items: center
+            .primary-btn
+                &:hover
+                    background: transparent
+            .black-border-btn
+                background: transparent
+                max-width: 180px
+                width: 100%
+                justify-content: center
+                &:hover
+                    background: $primary
+                    
+    .colB
+        flex: 0 1 50%
+        figure
+            line-height: 0
+            position: relative
+            img
+                height: 100%
+                width: 100%
+                object-fit: cover
+            figcaption
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)
+                background: #9D864D
+                display: flex
+                justify-content: center
+                align-items: center
+                border-radius: 50%
+                height: 60px
+                width: 60px
+                line-height: 0
+                padding: 15px
+                img
+                    height: 100%
+                    width: 100%
+                    object-fit: contain
+
+.project-detail-secE
+    padding: 50px 0
+    .heading
+        margin-bottom: 50px
+        position: relative
+        p
+            font-family: Lato
+            font-weight: 700
+            font-size: 14px
+            line-height: 24px
+            letter-spacing: 20%
+            text-align: center
+            text-transform: uppercase
+            margin-bottom: 10px
+        h2
+            max-width: 460px
+            margin: auto
+            line-height: 1.1
+        .swiper-nav
+            display: flex
+            justify-content: center
+            gap: 25px
+            position: absolute
+            bottom: 0
+            right: 0
+        
+    .swiper
+        .swiper-wrapper
+            .swiper-slide
+                border: 1px solid #F0F0F0
+                .floor-card
+                    &:hover
+                        figcaption
+                            background: #9D864D
+                            p
+                                color: $white
+                    figure
+                        background: $white
+                        height: 311px
+                        padding: 40px
+                        img
+                            margin: auto
+                            width: 100%
+                            height: fit-content
+                            object-fit: contain
+                        .info
+                            text-align: center
+                            p
+                                font-weight: 400
+                                font-size: 16px
+                                color: #000000
+                    figcaption
+                        background: #F0F0F0
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+                        padding: 20px
+                        transition: 0.5s ease
+                        button
+                            margin: 0
+                            &:hover
+                                background: $white
+                                span
+                                    color: $black
+                        p
+                            color: $black
+                            transition: 0.5s ease
+
+.project-detail-secF
+    padding: 20px 0px 10px
+    .heading
+        margin-bottom: 20px
+        .container
+            display: flex
+            justify-content: space-between
+            align-items: center
+            .left
+                display: flex
+                align-items: center
+                gap: 50px
+                h2
+                    font-family: $Optima
+                ul
+                    display: flex
+                    gap: 42px
+                    list-style: none
+                    padding: 0
+                    margin: 0
+                    li
+                        cursor: pointer
+                        color: #777
+                        padding-bottom: 12px
+                        position: relative
+                        transition: .5s ease
+                        font-family: Lato
+                        font-weight: 700
+                        font-size: 16px
+                        height: fit-content
+                        &.active
+                            color: #8c6b1f
+                            &::before
+                                width: 100%
+                        &::before
+                            content: ""
+                            position: absolute
+                            left: 0
+                            width: 0%
+                            height: 2px
+                            transition: .5s ease
+                            bottom: 0
+                            background: #8c6b1f
+            .swiper-nav
+                display: flex
+                justify-content: center
+                gap: 25px
+    .swiper
+        .swiper-slide
+            figure
+                line-height: 0
+                overflow: hidden
+                height: 565px
+                img
+                    height: 100%
+                    width: 100%
+                    object-fit: cover
+
+.project-detail-secG
+    background: $black
+    padding: 70px 0 
+    .heading
+        figure
+            height: 64px
+            width: 86px
+            line-height: 0
+            margin: 0 auto 20px
+        h2
+            max-width: 403px
+            margin: auto
+            color: $white
+            line-height: 1.1
+
+    .form
+        --inputsize: 42px
+        --labelbefore: var(--white)
+        --labelafter: var(--white)
+        // --borderbefore: var(--litewhite)
+        --borderbefore: var(--white)
+        --borderafter: var(--gradient-a)
+        --labelfontbefore: 16px
+        --labelfontafter: 12px
+        --font: 500
+        --color: var(--white)
+        --borderwidth: 1px
+        --labelbackground: none
+        --font: normal
+        --textareaheight: 86px
+        --paddingleftright: 0px
+        max-width: 707px
+        margin: 50px auto 0px
+        --item: 2
+        input,label,textarea
+            color: $white
+        .btn
+            margin: 10px auto 0
+            max-width: 150px
+            justify-content: center
+            width: 100%
+            &:hover
+                span
+                    color: $black
+
+.project-detail-secH
+    background: #FBEDDC
+    padding: 50px 0 
+    .heading
+        text-align: center
+        position: relative
+        
+.project-detail-secI
+    padding: 50px 0 
+    .heading
+        text-align: center
+        position: relative
+        margin-bottom: 40px
+        .swiper-nav
+            display: flex
+            justify-content: center
+            gap: 25px
+            position: absolute
+            bottom: 0
+            right: 0
+    .swiper-wrapper
+        padding-bottom: 20px
+        .swiper-slide
+            height: -webkit-fill-available
+            .project-card
+                height: -webkit-fill-available

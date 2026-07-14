@@ -13,22 +13,24 @@ const ProjectCard = ({
 }) => {
     return (
         <div className="project-card">
-            <figure>
-                <Image
-                    src={image}
-                    width={409}
-                    height={279}
-                    alt={title}
-                />
-                <div className="tag">
-                    <p>{tagName}</p>
-                </div>
-            </figure>
-
+            <Link href={`/projects/${detailLink}`}>
+                <figure>
+                    <Image
+                        src={image}
+                        width={409}
+                        height={279}
+                        alt={title}
+                    />
+                    <div className="tag">
+                        <p>{tagName}</p>
+                    </div>
+                </figure>
+            </Link>
             <figcaption>
-                <h4>{title}</h4>
-                <p>{subtitle}</p>
-
+                <Link href={`/projects/${detailLink}`}>
+                    <h4>{title}</h4>
+                    <p>{subtitle}</p>
+                </Link>
                 <div className="detail-flex">
                     {details.map((item, index) => (
                         <div className="col" key={index}>

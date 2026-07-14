@@ -7,6 +7,12 @@ import Link from 'next/link'
 import FeelTheLuxury from './FeelTheLuxury'
 import VideoWrapper from './VideoWrapper'
 import Ammenities from './Amenities'
+import LocationAdvantages from './LocationAdvantages'
+import FloorPlans from './FloorPlans'
+import GallerySec from './GallerySec'
+import ConnectSec from './ConnectSec'
+import EMICalculator from './EMICalculator'
+import MoreProjects from './MoreProjects'
 
 const ProjectsDetail = () => {
     return (
@@ -71,6 +77,12 @@ const ProjectsDetail = () => {
             <FeelTheLuxury />
             <VideoWrapper />
             <Ammenities />
+            <LocationAdvantages />
+            <FloorPlans />
+            <GallerySec />
+            <ConnectSec />
+            <EMICalculator />
+            <MoreProjects />
         </>
     )
 }

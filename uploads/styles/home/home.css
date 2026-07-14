@@ -235,16 +235,16 @@
 .home-secB .swiper-slide {
   overflow: hidden;
 }
-.home-secB .project-card:hover figure img {
+.home-secB .projectss-card:hover figure img {
   scale: 1.1;
 }
-.home-secB .project-card figure {
+.home-secB .projectss-card figure {
   height: 404px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
 }
-.home-secB .project-card figure::before {
+.home-secB .projectss-card figure::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -253,26 +253,26 @@
   height: 100%;
   z-index: 1;
 }
-.home-secB .project-card figure img {
+.home-secB .projectss-card figure img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   transition: 0.5s ease;
 }
-.home-secB .project-card figcaption {
+.home-secB .projectss-card figcaption {
   position: absolute;
   bottom: 0;
   left: 0;
   padding: 30px;
   z-index: 2;
 }
-.home-secB .project-card figcaption h4 {
+.home-secB .projectss-card figcaption h4 {
   font-weight: 500;
   font-size: 24px;
   color: white;
 }
-.home-secB .project-card figcaption p {
+.home-secB .projectss-card figcaption p {
   font-weight: 500;
   font-size: 14px;
   color: white;
