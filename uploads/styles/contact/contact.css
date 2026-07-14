@@ -423,6 +423,7 @@ html {
 :root {
   --primary: #9D864D;
   --bgcolor: #03052E;
+  --bgcolorlight: #FFF9F1;
   --primary-hover: #000;
   --secondary: #03052E;
   --gradient-a: linear-gradient(90deg, #232963 0%, #4753C9 100%);

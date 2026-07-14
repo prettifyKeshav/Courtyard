@@ -166,4 +166,108 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 1.4;
+}
+
+.testimonial-section {
+  overflow: hidden;
+  background: #FFF9F2;
+  padding: 70px 0;
+}
+.testimonial-section .flex-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+.testimonial-section .colA {
+  width: 35%;
+}
+.testimonial-section .colA h2 {
+  margin-bottom: 20px;
+  line-height: 1;
+}
+.testimonial-section .colA .swiper-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 50px;
+}
+.testimonial-section .colA .home-prev,
+.testimonial-section .colA .home-next {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #666666;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.testimonial-section .colA .home-prev:hover,
+.testimonial-section .colA .home-next:hover {
+  background: #8c6b1f;
+  color: #fff;
+  border-color: #8c6b1f;
+}
+.testimonial-section .colA .home-pagination {
+  display: flex;
+  align-items: center;
+  width: auto !important;
+}
+.testimonial-section .colA .home-pagination .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  margin: 0 8px !important;
+  opacity: 1;
+  background: rgba(102, 102, 102, 0.6980392157);
+  transition: 0.3s ease;
+}
+.testimonial-section .colA .home-pagination .swiper-pagination-bullet-active {
+  width: 9px;
+  height: 9px;
+  outline: 2px solid #364025;
+  outline-offset: 3px;
+  background: #364025;
+  transition: 0.3s ease;
+}
+.testimonial-section .colB {
+  width: 65%;
+  overflow: hidden;
+}
+.testimonial-section .colB .swiper .swiper-wrapper .swiper-slide {
+  transition: 0.5s ease;
+}
+.testimonial-section .colB .swiper .swiper-wrapper .swiper-slide.swiper-slide-next {
+  opacity: 0.4;
+}
+.testimonial-section .colB .swiper .swiper-wrapper .swiper-slide .testimonial-card {
+  background: #fff;
+  padding: 35px;
+  min-height: 430px;
+}
+.testimonial-section .colB .swiper .swiper-wrapper .swiper-slide .testimonial-card .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+.testimonial-section .colB .swiper .swiper-wrapper .swiper-slide .testimonial-card .top .quote {
+  font-size: 80px;
+  color: #c5ab72;
+  line-height: 1;
+}
+.testimonial-section .colB .swiper .swiper-wrapper .swiper-slide .testimonial-card p {
+  margin-bottom: 35px;
+  max-width: 90%;
+}
+.testimonial-section .colB .swiper .swiper-wrapper .swiper-slide .testimonial-card h4 {
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--black);
+}
+.testimonial-section .colB .swiper .swiper-wrapper .swiper-slide .testimonial-card span {
+  font-family: Lato;
+  font-weight: 500;
+  font-size: 14px;
 }/*# sourceMappingURL=components.css.map */

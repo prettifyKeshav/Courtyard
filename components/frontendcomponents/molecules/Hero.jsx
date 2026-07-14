@@ -9,7 +9,7 @@ const Hero = ({
   imgHeight,
   imgWidth,
   heading,
-  subHeading, 
+  subHeading,
   description,
   bannerClassName,
   bgType = "image",
@@ -18,6 +18,7 @@ const Hero = ({
   linkText,
   linkClass,
   poster,
+  isPlayBtn,
 }) => {
   return (
     <div className={`hero-banner ${bannerClassName || ""}`}>
@@ -35,26 +36,28 @@ const Hero = ({
           />
         )}
         <div className="container">
-          <div  className="bg-wrapper">
-              <h2>{subHeading}</h2>
-              <h1>{heading}</h1>
-              <p>{description}</p>
-              {isLinkAvalible && (
-                <Link
-                  href={linkHref}
-                  className={`${linkClass} btn primary-btn`}
-                >
-                  <span>{linkText}</span>
-                  <Image
-                    className="arrow-ico"
-                    src="/assets/icon/btn-arrow.svg"
-                    width={20}
-                    height={8}
-                    alt="right ico"
-                  />
-                </Link>
-              )}
+          <div className="bg-wrapper">
+            <h2>{subHeading}</h2>
+            <h1>{heading}</h1>
+            <p>{description}</p>
+            {isLinkAvalible && (
+              <Link href={linkHref} className={`${linkClass} btn primary-btn`}>
+                <span>{linkText}</span>
+                <Image
+                  className="arrow-ico"
+                  src="/assets/icon/btn-arrow.svg"
+                  width={20}
+                  height={8}
+                  alt="right ico"
+                />
+              </Link>
+            )}
           </div>
+          {isPlayBtn && (
+            <div className="play-button" data-model=".video-pop">
+              <button type="button" className="play-btn"></button>
+            </div>
+          )}
         </div>
       </div>
     </div>
