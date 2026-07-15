@@ -10,9 +10,10 @@ export default function Overlay() {
     const isVideoOpen = useModalStore((state) => state.isVideoOpen);
     const isAddressOpen = useModalStore((state) => state.isAddressOpen)
     const isPassChangeOpen = useModalStore((state) => state.isPassChangeOpen)
+    const isOpeningsPop = useModalStore((state) => state.isOpeningsPop)
     const closeAll = useModalStore((state) => state.closeAll);
 
-    const isAnyOpen = isSearchOpen || isHamOpen || isEnquireOpen || isVideoOpen || isAddressOpen || isPassChangeOpen;
+    const isAnyOpen = isSearchOpen || isHamOpen || isEnquireOpen || isVideoOpen || isAddressOpen || isPassChangeOpen || isOpeningsPop;
 
     useEffect(() => {
         if (isAnyOpen) {

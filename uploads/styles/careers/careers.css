@@ -245,6 +245,9 @@
 .testimonial-section .container .flex-box .colB {
   width: 60%;
 }
+.testimonial-section .container .flex-box .colB .swiper .swiper-wrapper {
+  padding: 20px 0 20px 8px;
+}
 .testimonial-section .container .flex-box .colB .swiper .swiper-wrapper .swiper-slide-next {
   opacity: 1;
 }

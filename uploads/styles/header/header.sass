@@ -899,8 +899,8 @@ footer
 .openings-pop
     left: 0
     right: 0
-    // background: #0000007a
-    background: #03052e7d
+    background: #00000000
+    // background: #03052e7d
     z-index: 90
     max-width: 100%
     transform: translateY(100%)
@@ -910,26 +910,22 @@ footer
     .close-video
         position: absolute
         bottom: calc(100% + 20px)
-        top: auto
-        right: -40px
-        height: 50px
-        width: 50px
-        border-radius: 50%
-        background: $secondary
+        top: 20px
+        right: 20px
+        height: 20px
+        width: 20px
         display: flex
         align-items: center
         justify-content: center
         transition: .5s ease
         @include media(675)
             right: 0
-        &:hover
-            background: $primary
         svg
-            height: 35%
-            width: 35%
+            height: 100%
+            width: 100%
         path
             stroke-width: 2
-            stroke: $white
+            stroke: #230606
     .model-body
         position: absolute
         top: 50%
@@ -937,14 +933,110 @@ footer
         translate: -50% -50%
         width: 100%
         max-width: 50%
+        background: #FFFFFF
+        max-width: 1192px
+        width: 100%
+        height: calc( 100vh - 80px )
+        border-radius: 15px
+        padding: 30px
+        overflow: auto
         @include media(675)
             max-width: 95%
         .openings-flex-box
             display: flex
             justify-content: space-between
-            
+            height: 100%
+            h1,h2,h3,h4,h5,h6,span,li,a,b
+                font-family: Lato
+            input,label
+                font-family: Poppins
             .left
-                
+                flex: 0 1 50%
+                border-right: 1px solid #0000002E
+                padding-right: 50px
+                overflow-x: auto
+                h3
+                    
+                    font-weight: 600
+                    font-size: 24px
+                    color: black
+                    line-height: 1.1
+                    text-align: left
+                    margin-bottom: 4px
+                span
+                    font-weight: 500
+                    text-align: left
+                    color: $text
+                    font-size: 14px
+                    line-height: 16px
+                p
+                    margin: 10px 0 
+                ul
+                    padding-left: 20px
+                    margin: 20px 0
+                    li
+                        font-weight: 400
+                        font-size: 16px
+                        color: $text
+                        position: relative
+                        padding-left: 15px
+                        &::before
+                            content: ""                
+                            position: absolute
+                            top: 8px
+                            left: -10px
+                            width: 11px
+                            height: 11px
+                            border-radius: 50%
+                            background: #9D864D
+            .right
+                flex: 0 1 50%
+                padding: 50px 0 0 50px
+                .heading
+                    margin-bottom: 40px
+                    h2
+                        font-weight: 600
+                        font-size: 30px
+                        text-align: left
+                        span
+                            font-weight: 300
+                            font-style: italic
+                .form
+                    display: grid
+                    grid-template-columns: repeat(2,1fr)
+                    gap: 18px 20px
+                    .custom-form-group
+                        &.full
+                            grid-column: span 2
+                            input
+                                display: block
+                                width: 100%
+                        label
+                            font-weight: 500
+                            color: $text
+                            font-size: 16px
+                            display: inline-block
+                            margin-bottom: 10px
+                            line-height: 1
+                        input
+                            border: none
+                            outline: none
+                            background: #E8E8E8
+                            border-radius: 7px
+                            padding: 7px 10px
+                            width: 100%
+                    .submit-btn
+                        button
+                            margin-top: 20px
+                            &:hover
+                                img
+                                    filter: brightness(0) contrast(100%)
+                            img
+                                filter: brightness(0) invert(1)
+                                height: 20px
+                                transition: 0.5s ease
+
+                  
 
 .about-pop
     left: 0
