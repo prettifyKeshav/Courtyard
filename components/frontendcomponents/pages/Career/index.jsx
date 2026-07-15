@@ -18,7 +18,7 @@ const Career = () => {
         heading="Building the Future with Trust & Excellence"
         description="Join us in shaping the future of real estate through innovation, quality, and sustainable development. Building vibrant communities and creating lasting value for generations to come."
         isLinkAvalible
-        linkHref="/projects"
+        linkHref="#Opning_section"
         linkText="View Current Openings"
         linkClass="btn"
         isPlayBtn

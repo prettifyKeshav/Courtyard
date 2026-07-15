@@ -40,7 +40,7 @@ const Header = () => {
                     <div className="colB">
                         <ul className="right-menu-list">
                             <li className="phone-ico">
-                                <Link href="contact.html">
+                                <Link href="/contact-us">
                                     <span>CONTACT US</span>
                                 </Link>
                             </li>

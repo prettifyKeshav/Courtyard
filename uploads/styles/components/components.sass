@@ -22,7 +22,7 @@
             background: linear-gradient(360deg, rgba(0, 0, 0, 0) 63.46%, rgba(0, 0, 0, 0.85) 100%), linear-gradient(270deg, rgba(0, 0, 0, 0.8) 24.57%, rgba(0, 0, 0, 0) 78.28%)
             z-index: 1
             transform: scaleX(-1)
-        video
+        video,img
             width: 100%
             height: 100%
             object-fit: cover
@@ -189,7 +189,6 @@
                                 font-size: 80px
                                 color: #c5ab72
                                 line-height: 1
-
                         p
                             margin-bottom: 35px
                             max-width: 90%
@@ -201,3 +200,79 @@
                             font-family: Lato
                             font-weight: 500
                             font-size: 14px
+
+.accordian-wrapper
+    background: $white
+    border-radius: 10px
+    width: 100%
+    border: 1px solid #E9E9E9
+    margin-bottom: 20px
+    cursor: pointer
+    position: relative
+    transition: 0.5s ease
+    &::before
+        content: ""
+        position: absolute
+        top: 35px
+        right: 24px
+        width: 16px
+        height: 2px
+        border-radius: 2px
+        background: #00000066
+        z-index: 1
+    &::after
+        content: ""
+        position: absolute
+        top: 35px
+        right: 24px
+        width: 16px
+        height: 2px
+        border-radius: 2px
+        background: #00000066
+        z-index: 1
+        transform: rotate(90deg)
+        transition: 0.4s ease
+    &.open
+        border: 1px solid #9D864D
+        &::before
+            background: #9D864D
+        &::after
+            transform: rotate(0deg)
+            background: #9D864D
+        .title
+            margin-bottom: 10px
+            h4
+                color: #9D864D
+                padding: 24px 24px 10px 24px
+    .title
+        display: flex
+        justify-content: space-between
+        transition: 0.4s ease
+        width: 100%
+        h4
+            font-weight: 600
+            font-size: 18px
+            line-height: 24px
+            color: #00000066
+            padding: 24px
+            transition: 0.4s ease
+    .description
+        p
+            padding: 0px 24px 24px 24px
+            font-weight: 400
+            font-size: 16px
+            line-height: 1.4
+            max-width: 100%
+            font-family: Poppins
+
+
+    figure
+        height: 429px
+        border-radius: 10px
+        overflow: hidden
+        line-height: 0
+        margin: 0 24px 24px 24px
+        img
+            height: 100%
+            width: 100%
+            object-fit: cover

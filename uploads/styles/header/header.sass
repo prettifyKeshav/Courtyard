@@ -19,7 +19,7 @@ header
         // background: #0000004D
         // backdrop-filter: blur(150px)
         // background: #FDF4EC
-        background: $primary
+        background: $black
     &.header-fixed::before, &.header-fill::before
         height: 100%
     &.header-fixed
@@ -895,6 +895,56 @@ footer
             aspect-ratio: 1.9
             border: 2px solid $white
             background: $white
+
+.openings-pop
+    left: 0
+    right: 0
+    // background: #0000007a
+    background: #03052e7d
+    z-index: 90
+    max-width: 100%
+    transform: translateY(100%)
+    transition: .5s ease
+    &.is-open
+        transform: translateY(0%)
+    .close-video
+        position: absolute
+        bottom: calc(100% + 20px)
+        top: auto
+        right: -40px
+        height: 50px
+        width: 50px
+        border-radius: 50%
+        background: $secondary
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: .5s ease
+        @include media(675)
+            right: 0
+        &:hover
+            background: $primary
+        svg
+            height: 35%
+            width: 35%
+        path
+            stroke-width: 2
+            stroke: $white
+    .model-body
+        position: absolute
+        top: 50%
+        left: 50%
+        translate: -50% -50%
+        width: 100%
+        max-width: 50%
+        @include media(675)
+            max-width: 95%
+        .openings-flex-box
+            display: flex
+            justify-content: space-between
+            
+            .left
+                
 
 .about-pop
     left: 0

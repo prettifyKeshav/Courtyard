@@ -6,7 +6,8 @@ import HamburgerModel from "../molecules/Modal/HamburgerModel";
 import Overlay from "../atoms/Overlay";
 
 // import { useModalStore } from "../../../store/modelStore";
-// import VideoPop from "../molecules/Modal/VideoPop";
+import VideoPop from "../molecules/Modal/VideoPop";
+import OpeningsPop from "../molecules/Modal/OpeningsPop";
 // import HamburgerModel from "../molecules/Modal/HamburgerModel";
 // import Overlay from "../atoms/Overlay";
 // import EnquirePop from "../molecules/Modal/EnquirePop";
@@ -67,17 +68,17 @@ const Footer = () => {
                                 <div className="flex-box">
                                     <div className="col">
                                         <ul>
-                                            <li><Link href="projects.html">Residential</Link></li>
-                                            <li><Link href="about.html">Commercial</Link></li>
+                                            <li><Link href="/projects">Residential</Link></li>
+                                            <li><Link href="/projects">Commercial</Link></li>
                                         </ul>
                                     </div>
                                     <div className="col">
                                         <h4 className="title">Quick Links</h4>
                                         <ul>
-                                            <li><Link href="/about">About us</Link></li>
+                                            <li><Link href="/about-us">About us</Link></li>
                                             <li><Link href="/careers">Careers</Link></li>
-                                            <li><Link href="/blog">Blogs</Link></li>
-                                            <li><Link href="/contact">Contact us</Link></li>
+                                            <li><Link href="/blogs">Blogs</Link></li>
+                                            <li><Link href="/contact-us">Contact us</Link></li>
                                             <li><Link href="/privacy-policy">Privacy Policy</Link></li>
                                         </ul>
                                     </div>
@@ -133,7 +134,7 @@ const Footer = () => {
                         <span>&nbsp; | &nbsp;</span>
                         <a href="https://www.prettifycreative.com/" target="_blank" className="footer-link">
                             <p>Made by</p>
-                            <Image src="assets/icon/prettify-light.svg" alt="prettifycreative" width={57} height={21} ></Image>
+                            <Image src="/assets/icon/prettify-light.svg" alt="prettifycreative" width={57} height={21} ></Image>
                         </a>
                     </div>
                 </div>
@@ -142,8 +143,9 @@ const Footer = () => {
 
             <HamburgerModel />
             <Overlay />
-            {/* <VideoPop />
-            <EnquirePop /> */}
+            <VideoPop />
+            {/* <EnquirePop /> */}
+            <OpeningsPop />
         </>
     );
 };

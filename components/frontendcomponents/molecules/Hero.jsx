@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Motion from "./Animate";
 import "../../../uploads/styles/components/components.css";
+import PlayButton from "../atoms/PlayButton";
 
 const Hero = ({
     imgSrc,
@@ -18,7 +19,10 @@ const Hero = ({
     linkText,
     linkClass,
     poster,
+    isPlayIconVisible,
+    playVideoSrc
 }) => {
+
     return (
         <div className={`hero-banner ${bannerClassName || ""}`}>
             <div className="video-wrapper">
@@ -36,28 +40,35 @@ const Hero = ({
                 )}
                 <div className="container">
                     <div className="bg-wrapper">
-                        <h2>{subHeading}</h2>
-                        <h1>{heading}</h1>
-                        <p>{description}</p>
-                        {isLinkAvalible && (
-                            <Link
-                                href={linkHref}
-                                className={`${linkClass} btn primary-btn`}
-                            >
-                                <span>{linkText}</span>
-                                <Image
-                                    className="arrow-ico"
-                                    src="/assets/icon/btn-arrow.svg"
-                                    width={20}
-                                    height={8}
-                                    alt="right ico"
-                                />
-                            </Link>
-                        )}
+                        <Motion variant="fadeUp">
+                            <h2>{subHeading}</h2>
+                            <h1>{heading}</h1>
+                            <p>{description}</p>
+                            {isLinkAvalible && (
+                                <Link
+                                    href={linkHref}
+                                    className={`${linkClass} btn primary-btn`}
+                                >
+                                    <span>{linkText}</span>
+                                    <Image
+                                        className="arrow-ico"
+                                        src="/assets/icon/btn-arrow.svg"
+                                        width={20}
+                                        height={8}
+                                        alt="right ico"
+                                    />
+                                </Link>
+                            )}
+                        </Motion>
+                        {
+                            isPlayIconVisible && (
+                                <PlayButton playVideoSrc={playVideoSrc} />
+                            )
+                        }
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

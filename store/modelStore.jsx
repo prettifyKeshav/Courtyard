@@ -6,6 +6,7 @@ export const useModalStore = create((set) => {
             isHamOpen: false,
             isEnquireOpen: false,
             isVideoOpen: false,
+            isOpeningsPop: false,
             isAddressOpen: false,
             isPassChangeOpen: false,
             isEnquireOpen: false,
@@ -15,6 +16,7 @@ export const useModalStore = create((set) => {
         isHamOpen: false,
         isEnquireOpen: false,
         isVideoOpen: false,
+        isOpeningsPop: false,
         isAddressOpen: false,
         isPassChangeOpen: false,
         isEnquireOpen: false,
@@ -36,6 +38,12 @@ export const useModalStore = create((set) => {
             set({ isVideoOpen: true });
         },
         closeVideo: () => set({ isVideoOpen: false }),
+
+        openingsPop: () => {
+            closeAll();
+            set({ isOpeningsPop: true });
+        },
+        closeOpeningsPop: () => set({ isOpeningsPop: false }),
 
         openAddress: () => {
             closeAll();

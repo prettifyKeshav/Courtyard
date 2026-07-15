@@ -11,7 +11,7 @@ const HamburgerModel = () => {
 
     const menuItems = [
         { id: 1, title: "About us ", href: "/about-us" },
-        { id: 2, title: "Careers ", href: "career" },
+        { id: 2, title: "Careers ", href: "/careers" },
         { id: 3, title: "Blogs", href: "/blogs" },
         { id: 4, title: "Contact us", href: "/contact-us" },
         { id: 5, title: "Privacy Policy", href: "/privacy-policy" },
