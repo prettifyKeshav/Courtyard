@@ -123,9 +123,10 @@ const CardSec = () => {
 };
 
 export default CardSec;
+
 const projectData = [
     {
-        detailLink: "/courtyard-enclave",
+        detailLink: "courtyard-enclave",
         category: "Residential",
         image: "/assets/images/Others/project-card-img/1.png",
         tagName: "Newly Launched",
@@ -146,7 +147,7 @@ const projectData = [
         ],
     },
     {
-        detailLink: "/skyline-heights",
+        detailLink: "skyline-heights",
         category: "Residential",
         image: "/assets/images/Others/project-card-img/2.png",
         tagName: "Ready to Move",
@@ -167,7 +168,7 @@ const projectData = [
         ],
     },
     {
-        detailLink: "/green-valley-residency",
+        detailLink: "green-valley-residency",
         category: "Commercial",
         image: "/assets/images/Others/project-card-img/3.png",
         tagName: "Ongoing",
@@ -188,7 +189,7 @@ const projectData = [
         ],
     },
     {
-        detailLink: "/royal-greens-business-hub",
+        detailLink: "royal-greens-business-hub",
         category: "Commercial",
         image: "/assets/images/Others/project-card-img/4.png",
         tagName: "Limited Units",
@@ -209,7 +210,7 @@ const projectData = [
         ],
     },
     {
-        detailLink: "/lakeview-residency",
+        detailLink: "lakeview-residency",
         category: "Resi–Commercial Developments",
         image: "/assets/images/Others/project-card-img/5.png",
         tagName: "Premium Living",
@@ -230,7 +231,7 @@ const projectData = [
         ],
     },
     {
-        detailLink: "/the-grand-horizon",
+        detailLink: "the-grand-horizon",
         category: "Resi–Commercial Developments",
         image: "/assets/images/Others/project-card-img/6.png",
         tagName: "Exclusive Launch",

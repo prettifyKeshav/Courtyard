@@ -141,7 +141,7 @@ const ProjectSec = () => {
                     >
                         {projectData[activeTab].map((item, index) => (
                             <SwiperSlide key={index}>
-                                <Link href="/" className="project-card">
+                                <Link href="/" className="projectss-card">
                                     <figure>
                                         <Image
                                             src={item.image}
