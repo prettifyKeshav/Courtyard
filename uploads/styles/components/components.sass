@@ -185,6 +185,9 @@
                             justify-content: space-between
                             align-items: flex-start
                             margin-bottom: 30px
+                            .user
+                                border-radius: 50%
+                                overflow: hidden
                             .quote
                                 font-size: 80px
                                 color: #c5ab72
@@ -276,3 +279,18 @@
             height: 100%
             width: 100%
             object-fit: cover
+
+.hero-banner.not-found-banner
+    .video-wrapper 
+        &::before
+            background: linear-gradient(360deg, #0000 63.46%, #000000d9 100%), linear-gradient(359deg, #000c 24.57%, #0000 78.28%)
+        .bg-wrapper
+            h1
+                margin: auto
+                text-align: center
+            p
+                max-width: 300px
+                margin: auto
+                text-align: center
+            a
+                margin: 30px auto 0 

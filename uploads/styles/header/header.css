@@ -2279,8 +2279,8 @@ button {
 }
 
 .swiper-button-disabled {
-  opacity: 0.7;
-  cursor: no-drop;
+  opacity: 0.7 !important;
+  cursor: no-drop !important;
 }
 
 header {
@@ -3228,33 +3228,20 @@ footer .bottom-footer .footer-link img {
 }
 .enquire-pop .model-body .form {
   --gaptb: 15px;
+  --borderafter: black;
+}
+.enquire-pop .model-body .form input:not(.no-focus):focus ~ label, .enquire-pop .model-body .form textarea:not(.no-focus):focus ~ label {
+  color: var(--black);
 }
 .enquire-pop .model-body .form label, .enquire-pop .model-body .form input {
-  font-family: Lato;
+  font-family: Lato !important;
+  color: var(--black);
 }
 .enquire-pop .model-body button {
-  padding: 8px 40px;
-  font-weight: 600;
-  font-size: 16px;
-  text-align: center;
-  border-radius: 25px;
-  z-index: 1;
-  border: 1px solid var(--black);
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
   margin-top: 40px;
-  transition: 0.5s ease;
-  font-family: Lato;
-}
-.enquire-pop .model-body button:hover {
-  border: 1px solid #EEBF91;
-  color: var(--black);
-  background: #EEBF91;
-}
-.enquire-pop .model-body button:hover::before {
-  bottom: 0;
-  z-index: -1;
 }
 
 .video-pop {
@@ -3515,6 +3502,10 @@ footer .bottom-footer .footer-link img {
   grid-template-columns: repeat(2, 1fr);
   gap: 18px 20px;
 }
+.openings-pop .model-body .openings-flex-box .right .form .disabled-btn {
+  opacity: 0.3;
+  cursor: no-drop;
+}
 .openings-pop .model-body .openings-flex-box .right .form .custom-form-group.full {
   grid-column: span 2;
 }
@@ -3537,6 +3528,34 @@ footer .bottom-footer .footer-link img {
   border-radius: 7px;
   padding: 7px 10px;
   width: 100%;
+}
+.openings-pop .model-body .openings-flex-box .right .form .custom-form-group .file-input {
+  border: none;
+  outline: none;
+  background: #E8E8E8;
+  border-radius: 7px;
+  padding: 7px 10px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.openings-pop .model-body .openings-flex-box .right .form .custom-form-group .file-input p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #818181;
+}
+.openings-pop .model-body .openings-flex-box .right .form .custom-form-group .file-input img {
+  width: 18px;
+}
+.openings-pop .model-body .openings-flex-box .right .form .custom-form-group .file-input input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
 }
 .openings-pop .model-body .openings-flex-box .right .form .submit-btn button {
   margin-top: 20px;

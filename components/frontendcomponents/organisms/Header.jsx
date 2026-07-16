@@ -5,10 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import "../../../uploads/styles/header/header.css";
 import { useModalStore } from "../../../store/modelStore";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
     const openHam = useModalStore((state) => state.openHam);
     const [isFixed, setIsFixed] = useState(false);
+    const pathname = usePathname();
+    const isFixedPage = pathname === "/privacy-policy";
 
     useEffect(() => {
         const handleScroll = () => {
@@ -20,7 +23,7 @@ const Header = () => {
         };
     }, []);
     return (
-        <header className={`${isFixed ? "header-fixed" : ""}`} >
+        <header className={`${isFixed || isFixedPage ? "header-fixed" : ""}`} >
             <div className="container-fluid">
                 <div className="header-wrapper">
 
@@ -44,9 +47,6 @@ const Header = () => {
                                     <span>CONTACT US</span>
                                 </Link>
                             </li>
-                            {/* <li class="btn">
-                                <a href="javascript:void(0);" data-model=".enquire-pop">get in touch</a>
-                            </li> */}
                         </ul>
                     </div>
                 </div>

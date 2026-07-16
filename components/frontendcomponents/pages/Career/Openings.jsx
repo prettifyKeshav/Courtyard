@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react";
 import { useModalStore } from "../../../../store/modelStore";
 import Image from "next/image";
 
@@ -17,9 +16,7 @@ const Openings = () => {
                 <div className="grid-box">
                     {data?.map((item, i) => {
                         return (
-                            <div key={i} className="open-item" onClick={() => {
-                                openingsPops(item.details);
-                            }} >
+                            <div key={i} className="open-item" onClick={() => { openingsPops(item.details, item.positionName); }} >
                                 <h6>{item.positionName}</h6>
                                 <p>{item.location}</p>
                                 <figure className="icon">

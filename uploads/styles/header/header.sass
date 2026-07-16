@@ -772,31 +772,17 @@ footer
                     max-width: 300px
         .form
             --gaptb: 15px
+            --borderafter: black
             input:not(.no-focus):focus ~ label,textarea:not(.no-focus):focus ~ label
-            //   color: $white
+              color: $black
             label,input
-                font-family: Lato
-            //   color: $white
+                font-family: Lato !important
+                color: $black
+                
         button
-            padding: 8px 40px
-            font-weight: 600
-            font-size: 16px
-            text-align: center
-            border-radius: 25px            
-            z-index: 1
-            border: 1px solid $black
             width: fit-content
             margin: auto
             margin-top: 40px
-            transition: 0.5s ease
-            font-family: Lato
-            &:hover
-                border: 1px solid #EEBF91
-                color: $black
-                background: #EEBF91
-                &::before
-                    bottom: 0
-                    z-index: -1
 
 .video-pop
     left: 0
@@ -1005,6 +991,10 @@ footer
                     display: grid
                     grid-template-columns: repeat(2,1fr)
                     gap: 18px 20px
+
+                    .disabled-btn
+                        opacity: 0.3
+                        cursor: no-drop
                     .custom-form-group
                         &.full
                             grid-column: span 2
@@ -1025,6 +1015,31 @@ footer
                             border-radius: 7px
                             padding: 7px 10px
                             width: 100%
+                        .file-input
+                            border: none
+                            outline: none
+                            background: #E8E8E8
+                            border-radius: 7px
+                            padding: 7px 10px
+                            width: 100%
+                            position: relative
+                            display: flex
+                            justify-content: space-between
+                            align-items: center
+                            p
+                                font-size: 16px
+                                font-weight: 400
+                                color: #818181
+                            img
+                                width: 18px
+                            input
+                                position: absolute
+                                inset: 0
+                                width: 100%
+                                height: 100%
+                                opacity: 0
+                                cursor: pointer
+
                     .submit-btn
                         button
                             margin-top: 20px
@@ -1449,6 +1464,3 @@ footer
                             stroke: $white
                         &[fill]
                             fill: $white
-
-
-

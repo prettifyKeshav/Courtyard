@@ -10,7 +10,7 @@ const MapFilter = ({ type, data, state, setState }) => {
         <div className="map-select" onClick={() => setIsOpen(!isOpen)}>
             <figure className="type-icon">
                 <Image
-                    src={`/icon/${isCountry ? "location" : "watch"}.svg`}
+                    src={`/assets/images/Home/${isCountry ? "location" : "watch"}.svg`}
                     alt="icon"
                     width={16}
                     height={16}
@@ -21,7 +21,7 @@ const MapFilter = ({ type, data, state, setState }) => {
                 <p className="value">India</p>
             </figcaption>
             <figure className="icon">
-                <Image src="/icon/down-blue.svg" alt="icon" width={16} height={16} />
+                <Image src="/assets/images/Home/down-blue.svg" alt="icon" width={16} height={16} />
             </figure>
 
             <div className={`option-container ${isOpen ? "open" : ""}`}>

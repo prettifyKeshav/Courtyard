@@ -4,15 +4,13 @@ import Image from "next/image";
 import "../../../uploads/styles/header/header.css";
 import HamburgerModel from "../molecules/Modal/HamburgerModel";
 import Overlay from "../atoms/Overlay";
-
-// import { useModalStore } from "../../../store/modelStore";
 import VideoPop from "../molecules/Modal/VideoPop";
 import OpeningsPop from "../molecules/Modal/OpeningsPop";
-// import HamburgerModel from "../molecules/Modal/HamburgerModel";
-// import Overlay from "../atoms/Overlay";
-// import EnquirePop from "../molecules/Modal/EnquirePop";
+import EnquirePop from "../molecules/Modal/EnquirePop";
+import { useModalStore } from "../../../store/modelStore";
 
 const Footer = () => {
+    const openEnqui = useModalStore((state) => state.openEnquire);
 
     return (
         <>
@@ -21,31 +19,31 @@ const Footer = () => {
                     <div className="container">
                         <div className="flex-box">
                             <div className="col">
-                                <Link href="emailto:info@shfsquare.com" className="inside-flex">
+                                <Link href="emailto:info@courtyardgroup.in" className="inside-flex">
                                     <figure>
                                         <Image src="/assets/icon/mail-ico.svg" width={20} height={20} alt="mail-icon" ></Image>
                                     </figure>
                                     <div className="info">
                                         <h4>Email Us</h4>
-                                        <p>info@shfsquare.com</p>
+                                        <p>info@courtyardgroup.in</p>
                                     </div>
                                 </Link>
 
-                                <Link href="tel:+918745977977" className="inside-flex">
+                                <Link href="tel:+919104051518" className="inside-flex">
                                     <figure>
                                         <Image src="/assets/icon/bi_phone.svg" width={20} height={20} alt="mail-icon" ></Image>
                                     </figure>
                                     <div className="info">
                                         <h4>call Us</h4>
-                                        <p>+ 91 - 87459 77977</p>
+                                        <p>+ 91 91040 51518</p>
                                     </div>
                                 </Link>
                             </div>
 
                             <div className="col">
                                 <div className="inside-flex">
-                                    <Link href="javascript:void(0);" className="btn circle-btn circle-btn-white">WhatsApp</Link>
-                                    <Link href="javascript:void(0);" className="btn circle-btn circle-btn-border">Enquire Now</Link>
+                                    <Link href="https://wa.link/ti0h9t" className="btn circle-btn circle-btn-white">WhatsApp</Link>
+                                    <Link href="" className="btn circle-btn circle-btn-border" onClick={openEnqui} >Enquire Now</Link>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +84,7 @@ const Footer = () => {
                                         <h4 className="title">location</h4>
                                         <ul>
                                             <li>
-                                                <a href="javascript:void(0);">
+                                                <a href="https://maps.app.goo.gl/uiwWKVJaCAzaK4He9" target="_blank">
                                                     <figure>
                                                         <Image src="/assets/icon/location.svg" width={20} height={20} alt="ico" ></Image>
                                                     </figure>
@@ -144,7 +142,7 @@ const Footer = () => {
             <HamburgerModel />
             <Overlay />
             <VideoPop />
-            {/* <EnquirePop /> */}
+            <EnquirePop />
             <OpeningsPop />
         </>
     );

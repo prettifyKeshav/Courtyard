@@ -132,7 +132,7 @@ const HomeownerSec = ({ isCareerPage }) => {
                 slidesPerView={1.65}
                 spaceBetween={24}
                 speed={600}
-                loop={true}
+                loop={false}
                 onBeforeInit={(swiper) => {
                   swiper.params.navigation.prevEl = ".home-prev";
                   swiper.params.navigation.nextEl = ".home-next";
