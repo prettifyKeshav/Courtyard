@@ -10,6 +10,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Motion from "../../../molecules/Animate";
 
 const galleryData = [
     {
@@ -59,59 +60,63 @@ const Amenities = () => {
         <section>
             <div className="project-detail-secC">
                 <div className="heading" data-animate="fade-up">
-                    <p>Amenities</p>
-                    <h2>Everything You Need,
-                        Right Where You Live</h2>
+                    <Motion variant="fadeUp">
+                        <p>Amenities</p>
+                        <h2>Everything You Need,
+                            Right Where You Live</h2>
+                    </Motion>
                 </div>
 
-                <Swiper
-                    modules={[Navigation, Pagination]}
-                    className="photo-gallery-swiper"
-                    navigation={{
-                        prevEl: ".photo-gallery-swiper-prev",
-                        nextEl: ".photo-gallery-swiper-next",
-                    }}
-                    pagination={{
-                        el: ".swiper-pagination",
-                        type: 'progressbar',
-                        clickable: true,
-                    }}
-                    
-                    spaceBetween={7}
-                    slidesPerView={1.2}
-                    loop={true}
-                    speed={800}
-                    breakpoints={{
-                        576: {
-                            slidesPerView: 2,
-                        },
-                        768: {
-                            slidesPerView: 2.5,
-                        },
-                        992: {
-                            slidesPerView: 3,
-                        },
-                        1200: {
-                            slidesPerView: 5,
-                        },
-                    }}
-                >
-                    {galleryData.map((item) => (
-                        <SwiperSlide key={item.id}>
-                            <figure>
-                                <Image
-                                    src={item.image}
-                                    alt={item.title}
-                                    width={524}
-                                    height={442}
-                                />
-                                <div className="figinfo">
-                                    <h3>{item.title}</h3>
-                                </div>
-                            </figure>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+                <Motion variant="fadeUp">
+                    <Swiper
+                        modules={[Navigation, Pagination]}
+                        className="photo-gallery-swiper"
+                        navigation={{
+                            prevEl: ".photo-gallery-swiper-prev",
+                            nextEl: ".photo-gallery-swiper-next",
+                        }}
+                        pagination={{
+                            el: ".swiper-pagination",
+                            type: 'progressbar',
+                            clickable: true,
+                        }}
+
+                        spaceBetween={7}
+                        slidesPerView={1.2}
+                        loop={true}
+                        speed={800}
+                        breakpoints={{
+                            576: {
+                                slidesPerView: 2,
+                            },
+                            768: {
+                                slidesPerView: 2.5,
+                            },
+                            992: {
+                                slidesPerView: 3,
+                            },
+                            1200: {
+                                slidesPerView: 5,
+                            },
+                        }}
+                    >
+                        {galleryData.map((item) => (
+                            <SwiperSlide key={item.id}>
+                                <figure>
+                                    <Image
+                                        src={item.image}
+                                        alt={item.title}
+                                        width={524}
+                                        height={442}
+                                    />
+                                    <div className="figinfo">
+                                        <h3>{item.title}</h3>
+                                    </div>
+                                </figure>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </Motion>
 
                 <div className="container">
                     <div className="custom-pagination">

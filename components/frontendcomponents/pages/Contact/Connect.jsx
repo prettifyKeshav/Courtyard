@@ -1,56 +1,59 @@
 import Image from "next/image";
 import Link from "next/link";
+import Motion from "../../molecules/Animate";
 
 const Connect = () => {
     return (
         <section className="contact-secA">
             <div className="container">
-                <div className="grid-box">
-                    {data?.map(({ title, icon, description, social, link }, i) => {
-                        return (
-                            <div key={i} className="grid-box-item">
-                                <div className="flex">
-                                    <figure>
-                                        <Image src={icon} alt="icon" width={44} height={44} />
-                                    </figure>
-                                    <h4>{title}</h4>
-                                    <Link className="desc" href={i === 1 ? "mailto:info@courtyardgroup.in" : i === 2 ? "tel:+919104051518" : "#"}>
-                                        {description}
-                                    </Link>
-                                    {link && (
-                                        <Link className="redirect" href={link?.href || "#"}>
-                                            {link?.text}
-                                            <Image
-                                                src="/assets/icon/move-right.svg"
-                                                alt="icon"
-                                                width={20}
-                                                height={20}
-                                            />
+                <Motion variant="fadeUp">
+                    <div className="grid-box">
+                        {data?.map(({ title, icon, description, social, link }, i) => {
+                            return (
+                                <div key={i} className="grid-box-item">
+                                    <div className="flex">
+                                        <figure>
+                                            <Image src={icon} alt="icon" width={44} height={44} />
+                                        </figure>
+                                        <h4>{title}</h4>
+                                        <Link className="desc" href={i === 1 ? "mailto:info@courtyardgroup.in" : i === 2 ? "tel:+919104051518" : "#"}>
+                                            {description}
                                         </Link>
-                                    )}
-                                    {social && (
-                                        <ul className="social">
-                                            {social?.map(({ icon, href }, j) => {
-                                                return (
-                                                    <li key={j}>
-                                                        <Link href={href} target="_blank">
-                                                            <Image
-                                                                src={icon}
-                                                                alt="icon"
-                                                                width={20}
-                                                                height={20}
-                                                            />
-                                                        </Link>
-                                                    </li>
-                                                );
-                                            })}
-                                        </ul>
-                                    )}
+                                        {link && (
+                                            <Link className="redirect" href={link?.href || "#"}>
+                                                {link?.text}
+                                                <Image
+                                                    src="/assets/icon/move-right.svg"
+                                                    alt="icon"
+                                                    width={20}
+                                                    height={20}
+                                                />
+                                            </Link>
+                                        )}
+                                        {social && (
+                                            <ul className="social">
+                                                {social?.map(({ icon, href }, j) => {
+                                                    return (
+                                                        <li key={j}>
+                                                            <Link href={href} target="_blank">
+                                                                <Image
+                                                                    src={icon}
+                                                                    alt="icon"
+                                                                    width={20}
+                                                                    height={20}
+                                                                />
+                                                            </Link>
+                                                        </li>
+                                                    );
+                                                })}
+                                            </ul>
+                                        )}
+                                    </div>
                                 </div>
-                            </div>
-                        );
-                    })}
-                </div>
+                            );
+                        })}
+                    </div>
+                </Motion>
             </div>
         </section>
     );

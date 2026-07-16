@@ -7,7 +7,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
+import Motion from "../../../molecules/Animate";
 import Image from "next/image";
 import ProjectCard from '../ProjectCard';
 
@@ -17,63 +17,66 @@ const MoreProjects = () => {
             <section>
                 <div className="project-detail-secI">
                     <div className="container">
-                        <div className="heading">
-                            <h2>More Projects</h2>
-                            <div className="swiper-nav">
-                                <button className="more-project-prev">
-                                    <Image src="/assets/icon/left-arrow-icon.svg" width={37} height={21} alt="ico" ></Image>
-                                </button>
-                                <button className="more-project-next">
-                                    <Image src="/assets/icon/right-arrow-icon.svg" width={37} height={21} alt="ico" ></Image>
-                                </button>
+                        <Motion variant="fadeUp">
+                            <div className="heading">
+                                <h2>More Projects</h2>
+                                <div className="swiper-nav">
+                                    <button className="more-project-prev">
+                                        <Image src="/assets/icon/left-arrow-icon.svg" width={37} height={21} alt="ico" ></Image>
+                                    </button>
+                                    <button className="more-project-next">
+                                        <Image src="/assets/icon/right-arrow-icon.svg" width={37} height={21} alt="ico" ></Image>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
+                        </Motion>
 
-                        <Swiper
-                            modules={[Navigation]}
-                            className="more-project-swiper"
-                            navigation={{
-                                prevEl: ".more-project-prev",
-                                nextEl: ".more-project-next",
-                            }}
-                            spaceBetween={20}
-                            slidesPerView={1.2}
-                            speed={800}
-                            breakpoints={{
-                                576: {
-                                    slidesPerView: 2,
-                                },
-                                768: {
-                                    slidesPerView: 2.5,
-                                },
-                                992: {
-                                    slidesPerView: 3,
-                                },
-                                1200: {
-                                    slidesPerView: 3,
-                                },
-                            }}
-                        >
-                            {projectData.length > 0 ? (
-                                projectData.map((project, index) => (
-                                    <SwiperSlide>
-                                        <ProjectCard
-                                            key={index}
-                                            detailLink={project.detailLink}
-                                            image={project.image}
-                                            tagName={project.tagName}
-                                            title={project.title}
-                                            subtitle={project.subtitle}
-                                            details={project.details}
-                                            enquireLink={project.enquireLink}
-                                        />
-                                    </SwiperSlide>
-                                ))
-                            ) : (
-                                <p>No projects found.</p>
-                            )}
-
-                        </Swiper>
+                        <Motion variant="fadeUp">
+                            <Swiper
+                                modules={[Navigation]}
+                                className="more-project-swiper"
+                                navigation={{
+                                    prevEl: ".more-project-prev",
+                                    nextEl: ".more-project-next",
+                                }}
+                                spaceBetween={20}
+                                slidesPerView={1.2}
+                                speed={800}
+                                breakpoints={{
+                                    576: {
+                                        slidesPerView: 2,
+                                    },
+                                    768: {
+                                        slidesPerView: 2.5,
+                                    },
+                                    992: {
+                                        slidesPerView: 3,
+                                    },
+                                    1200: {
+                                        slidesPerView: 3,
+                                    },
+                                }}
+                            >
+                                {projectData.length > 0 ? (
+                                    projectData.map((project, index) => (
+                                        <SwiperSlide>
+                                            <ProjectCard
+                                                key={index}
+                                                detailLink={project.detailLink}
+                                                image={project.image}
+                                                tagName={project.tagName}
+                                                title={project.title}
+                                                subtitle={project.subtitle}
+                                                details={project.details}
+                                                enquireLink={project.enquireLink}
+                                            />
+                                        </SwiperSlide>
+                                    ))
+                                ) : (
+                                    <p>No projects found.</p>
+                                )}
+                            </Swiper>
+                        </Motion>
                     </div>
                 </div>
             </section>

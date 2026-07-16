@@ -2,6 +2,7 @@
 
 import { useModalStore } from "../../../../store/modelStore";
 import Image from "next/image";
+import Motion from "../../molecules/Animate";
 
 const Openings = () => {
     const openingsPops = useModalStore((state) => state.openingsPop);
@@ -10,27 +11,31 @@ const Openings = () => {
         <section className="career-secC" id="Opning_section">
             <div className="container">
                 <div className="heading">
-                    <h6>Open positions(16)</h6>
-                    <h2>Find a Position That Suits You</h2>
+                    <Motion variant="fadeUp">
+                        <h6>Open positions(16)</h6>
+                        <h2>Find a Position That Suits You</h2>
+                    </Motion>
                 </div>
-                <div className="grid-box">
-                    {data?.map((item, i) => {
-                        return (
-                            <div key={i} className="open-item" onClick={() => { openingsPops(item.details, item.positionName); }} >
-                                <h6>{item.positionName}</h6>
-                                <p>{item.location}</p>
-                                <figure className="icon">
-                                    <Image
-                                        src="assets/icon/external.svg"
-                                        alt="external"
-                                        width={12}
-                                        height={12}
-                                    />
-                                </figure>
-                            </div>
-                        );
-                    })}
-                </div>
+                <Motion variant="fadeUp">
+                    <div className="grid-box">
+                        {data?.map((item, i) => {
+                            return (
+                                <div key={i} className="open-item" onClick={() => { openingsPops(item.details, item.positionName); }} >
+                                    <h6>{item.positionName}</h6>
+                                    <p>{item.location}</p>
+                                    <figure className="icon">
+                                        <Image
+                                            src="assets/icon/external.svg"
+                                            alt="external"
+                                            width={12}
+                                            height={12}
+                                        />
+                                    </figure>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </Motion>
             </div>
         </section>
     );

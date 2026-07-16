@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
+import Motion from "../../molecules/Animate";
 
 const Journey = () => {
   const [activeTimeline, setActiveTimeline] = useState(0);
@@ -30,84 +31,92 @@ const Journey = () => {
       ></video>
 
       <div className="container">
-        <h2>Journey</h2>
+        <Motion variant="fadeUp">
+          <h2>Journey</h2>
+        </Motion>
         <div className="row">
           <div className="left">
-            <Swiper
-              loop={false}
-              slidesPerView={1}
-              modules={[Navigation]}
-              navigation={{
-                prevEl: ".timeline-prev",
-                nextEl: ".timeline-next",
-              }}
-              spaceBetween={250}
-              speed={2000}
-              onSwiper={setLeftSwiper}
-              allowTouchMove={false}
-            >
-              {data?.map(({ title }, index) => {
-                return (
-                  <SwiperSlide key={index}>
-                    <p>{title}</p>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
+            <Motion variant="fadeUp">
+              <Swiper
+                loop={false}
+                slidesPerView={1}
+                modules={[Navigation]}
+                navigation={{
+                  prevEl: ".timeline-prev",
+                  nextEl: ".timeline-next",
+                }}
+                spaceBetween={250}
+                speed={2000}
+                onSwiper={setLeftSwiper}
+                allowTouchMove={false}
+              >
+                {data?.map(({ title }, index) => {
+                  return (
+                    <SwiperSlide key={index}>
+                      <p>{title}</p>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </Motion>
           </div>
 
           <div className="middle">
-            <Swiper
-              loop={false}
-              direction="vertical"
-              slidesPerView={1}
-              modules={[Navigation]}
-              navigation={{
-                prevEl: ".timeline-prev",
-                nextEl: ".timeline-next",
-              }}
-              spaceBetween={250}
-              speed={2000}
-              onSwiper={setMiddleSwiper}
-              allowTouchMove={false}
-            >
-              {data?.map(({ image, year }, index) => {
-                return (
-                  <SwiperSlide key={index}>
-                    <figure>
-                      <Image src={image} alt={year} width={322} height={364} />
-                      <figcaption>
-                        <p>{year}</p>
-                      </figcaption>
-                    </figure>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
+            <Motion variant="fadeUp">
+              <Swiper
+                loop={false}
+                direction="vertical"
+                slidesPerView={1}
+                modules={[Navigation]}
+                navigation={{
+                  prevEl: ".timeline-prev",
+                  nextEl: ".timeline-next",
+                }}
+                spaceBetween={250}
+                speed={2000}
+                onSwiper={setMiddleSwiper}
+                allowTouchMove={false}
+              >
+                {data?.map(({ image, year }, index) => {
+                  return (
+                    <SwiperSlide key={index}>
+                      <figure>
+                        <Image src={image} alt={year} width={322} height={364} />
+                        <figcaption>
+                          <p>{year}</p>
+                        </figcaption>
+                      </figure>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </Motion>
           </div>
 
           <div className="right">
-            <Swiper
-              loop={false}
-              slidesPerView={1}
-              modules={[Navigation]}
-              navigation={{
-                prevEl: ".timeline-prev",
-                nextEl: ".timeline-next",
-              }}
-              spaceBetween={250}
-              speed={2000}
-              onSwiper={setRightSwiper}
-              allowTouchMove={false}
-            >
-              {data?.map(({ description }, index) => {
-                return (
-                  <SwiperSlide key={index}>
-                    <p>{description}</p>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
+            <Motion variant="fadeUp">
+              <Swiper
+                loop={false}
+                slidesPerView={1}
+                modules={[Navigation]}
+                navigation={{
+                  prevEl: ".timeline-prev",
+                  nextEl: ".timeline-next",
+                }}
+                spaceBetween={250}
+                speed={2000}
+                onSwiper={setRightSwiper}
+                allowTouchMove={false}
+              >
+                {data?.map(({ description }, index) => {
+                  return (
+                    <SwiperSlide key={index}>
+                      <p>{description}</p>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </Motion>
           </div>
         </div>
 
