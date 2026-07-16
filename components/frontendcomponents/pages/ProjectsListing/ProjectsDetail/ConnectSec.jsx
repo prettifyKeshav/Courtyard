@@ -16,7 +16,7 @@ const ConnectSec = () => {
         email: "",
         phone: "",
         message: "",
-        dateTime: null, // date now lives in form state so it submits with everything else
+        dateTime: null,
     });
 
     const handleChange = (e) => {
@@ -32,7 +32,7 @@ const ConnectSec = () => {
             ...formData,
             dateTime: date,
         });
-        setDateActive(!!date); // keep label state in sync with actual value
+        setDateActive(!!date);
     };
 
     useEffect(() => {

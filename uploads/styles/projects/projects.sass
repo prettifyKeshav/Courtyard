@@ -289,11 +289,14 @@ h2
                 --gaplr: 30px
                 --gaptb: 20px
                 label,input,textarea
-                    color: #666666
+                    color: black
+                .form-group:after
+                    background: $black !important
             .circle-btn
                 background: $primary
                 border: 1px solid $primary
                 margin: 20px auto 0
+                z-index: 0
                 &:hover
                     background: $white
                     span
@@ -768,3 +771,117 @@ h2
             height: -webkit-fill-available
             .project-card
                 height: -webkit-fill-available
+
+.emi-calculator 
+    display: flex
+    justify-content: center
+    gap: 50px
+    margin-top: 60px
+    flex-wrap: wrap
+    .emi-calculator__inputs
+        flex: 0 1 50%
+        min-width: 280px
+        .emi-calculator__field 
+            margin-bottom: 28px
+        .emi-calculator__field-top 
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin-bottom: 20px
+            label 
+                font-weight: 500
+                font-size: 16px
+                color: $text
+                font-family: Lato
+            input 
+                border-radius: 4px
+                text-align: center
+                border-radius: 5px
+                padding: 8px 0px
+                border: 1px solid #CCCCCC
+                background: transparent
+                outline: none
+                display: inline-block
+                font-family: Lato
+                font-weight: 500
+                font-size: 16px
+                color: $text
+
+        .emi-calculator__slider 
+            -webkit-appearance: none
+            appearance: none
+            width: 100%
+            height: 5px
+            background: #DCDCDC
+            border-radius: 2px
+            &::-webkit-slider-thumb 
+                -webkit-appearance: none
+                width: 20px
+                height: 20px
+                border-radius: 50%
+                background: #C09F59
+                cursor: pointer
+        .emi-calculator__result
+            label
+                font-family: Lato
+                font-weight: 500
+                font-style: Medium
+                font-size: 16px
+                color: #606060
+        .emi-calculator__result-row 
+            display: flex
+            align-items: center
+            justify-content: space-between
+            margin-top: 12px
+        .emi-calculator__cta 
+            margin-top: 20px
+            font-family: Lato
+            font-weight: 500
+            font-size: 16px
+            border-radius: 25px
+            border: 1px solid $black
+            padding: 8px 25px
+            background: transparent
+            transition: 0.5s ease
+            &:hover
+                border:1px solid $primary
+                background: $primary
+                color: $white
+        .emi-calculator__emi-value 
+            font-family: Lato
+            font-weight: 700
+            font-size: 24px
+            line-height: 24px
+
+
+    .emi-calculator__chart-card 
+        flex: 0 1 36%
+        min-width: 320px
+        background: #fff
+        border-radius: 8px
+        padding: 32px
+        border: 1px solid #CCCCCC
+        .emi-calculator__chart-title 
+            text-align: center
+            color: #6b6b6b
+            margin-bottom: 16px
+        .emi-calculator__gauge 
+            width: 100%
+            max-width: 500px
+            display: block
+            margin: 0 auto
+        .emi-calculator__breakdown-row 
+            display: flex
+            justify-content: space-between
+            padding: 8px 0
+            border-top: 1px solid #f0f0f0
+            span
+                font-family: Lato
+                font-weight: 500
+                font-size: 14px
+                color: $black
+                &:last-child
+                    color: #606060
+
+.react-datepicker
+    width: 328px !important

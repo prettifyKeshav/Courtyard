@@ -4,13 +4,19 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Motion from '../../../molecules/Animate'
 
-const FeelTheLuxury = () => {
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
+const FeelTheLuxury = () => {
+    const [dateActive, setDateActive] = useState(false);
+    const [startDate, setStartDate] = useState(null);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         phone: "",
         message: "",
+        dateTime: null,
+
     });
 
     const handleChange = (e) => {
@@ -18,6 +24,15 @@ const FeelTheLuxury = () => {
             ...formData,
             [e.target.name]: e.target.value,
         });
+    };
+
+    const handleDateChange = (date) => {
+        setStartDate(date);
+        setFormData({
+            ...formData,
+            dateTime: date,
+        });
+        setDateActive(!!date);
     };
 
     useEffect(() => {
@@ -116,13 +131,20 @@ const FeelTheLuxury = () => {
                                             <label>Phone</label>
                                         </div>
 
-                                        <div className="form-group">
-                                            <input
-                                                type="data"
-                                                className="form-control"
-                                                value={formData.date}
+                                        <div className={`form-group ${dateActive ? 'active' : ''}`}>
+                                            <DatePicker
+                                                selected={startDate}
+                                                onChange={handleDateChange}
+                                                onFocus={() => setDateActive(true)}
+                                                onBlur={() => setDateActive(!!startDate)}
+                                                onCalendarOpen={() => setDateActive(true)}
+                                                showTimeSelect
+                                                timeIntervals={15}
+                                                dateFormat="dd/MM/yyyy h:mm aa"
+                                                placeholderText="Select Date & Time"
+                                                className={`form-control ${startDate ? 'valid' : ''}`}
+                                                minDate={new Date()}
                                             />
-                                            <label>Date and time</label>
                                         </div>
 
                                         <button className="btn circle-btn circle-btn-white full">

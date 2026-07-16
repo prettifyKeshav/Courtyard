@@ -367,12 +367,16 @@ h2 {
   --gaptb: 20px;
 }
 .project-detail-secA .colB .form.form-grid label, .project-detail-secA .colB .form.form-grid input, .project-detail-secA .colB .form.form-grid textarea {
-  color: #666666;
+  color: black;
+}
+.project-detail-secA .colB .form.form-grid .form-group:after {
+  background: var(--black) !important;
 }
 .project-detail-secA .colB .form .circle-btn {
   background: var(--primary);
   border: 1px solid var(--primary);
   margin: 20px auto 0;
+  z-index: 0;
 }
 .project-detail-secA .colB .form .circle-btn:hover {
   background: var(--white);
@@ -949,4 +953,135 @@ h2 {
 }
 .project-detail-secI .swiper-wrapper .swiper-slide .project-card {
   height: -webkit-fill-available;
+}
+
+.emi-calculator {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+.emi-calculator .emi-calculator__inputs {
+  flex: 0 1 50%;
+  min-width: 280px;
+}
+.emi-calculator .emi-calculator__inputs .emi-calculator__field {
+  margin-bottom: 28px;
+}
+.emi-calculator .emi-calculator__inputs .emi-calculator__field-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.emi-calculator .emi-calculator__inputs .emi-calculator__field-top label {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--text);
+  font-family: Lato;
+}
+.emi-calculator .emi-calculator__inputs .emi-calculator__field-top input {
+  border-radius: 4px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 8px 0px;
+  border: 1px solid #CCCCCC;
+  background: transparent;
+  outline: none;
+  display: inline-block;
+  font-family: Lato;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--text);
+}
+.emi-calculator .emi-calculator__inputs .emi-calculator__slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  height: 5px;
+  background: #DCDCDC;
+  border-radius: 2px;
+}
+.emi-calculator .emi-calculator__inputs .emi-calculator__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #C09F59;
+  cursor: pointer;
+}
+.emi-calculator .emi-calculator__inputs .emi-calculator__result label {
+  font-family: Lato;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  color: #606060;
+}
+.emi-calculator .emi-calculator__inputs .emi-calculator__result-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.emi-calculator .emi-calculator__inputs .emi-calculator__cta {
+  margin-top: 20px;
+  font-family: Lato;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 25px;
+  border: 1px solid var(--black);
+  padding: 8px 25px;
+  background: transparent;
+  transition: 0.5s ease;
+}
+.emi-calculator .emi-calculator__inputs .emi-calculator__cta:hover {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: var(--white);
+}
+.emi-calculator .emi-calculator__inputs .emi-calculator__emi-value {
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+}
+.emi-calculator .emi-calculator__chart-card {
+  flex: 0 1 36%;
+  min-width: 320px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 32px;
+  border: 1px solid #CCCCCC;
+}
+.emi-calculator .emi-calculator__chart-card .emi-calculator__chart-title {
+  text-align: center;
+  color: #6b6b6b;
+  margin-bottom: 16px;
+}
+.emi-calculator .emi-calculator__chart-card .emi-calculator__gauge {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+.emi-calculator .emi-calculator__chart-card .emi-calculator__breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-top: 1px solid #f0f0f0;
+}
+.emi-calculator .emi-calculator__chart-card .emi-calculator__breakdown-row span {
+  font-family: Lato;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--black);
+}
+.emi-calculator .emi-calculator__chart-card .emi-calculator__breakdown-row span:last-child {
+  color: #606060;
+}
+
+.react-datepicker {
+  width: 328px !important;
 }/*# sourceMappingURL=projects.css.map */
