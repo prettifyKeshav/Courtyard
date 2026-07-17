@@ -679,6 +679,11 @@ h1 {
     font-size: 38px;
   }
 }
+@media only screen and (max-width: 540px) {
+  h1 {
+    font-size: 28px;
+  }
+}
 
 h5 {
   font-family: Lato;
@@ -695,6 +700,17 @@ h2 {
   font-size: 48px;
   line-height: 1;
   color: var(--black);
+}
+@media only screen and (max-width: 768px) {
+  h2 {
+    font-size: 36px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  h2 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
 }
 
 h3 {
@@ -938,6 +954,11 @@ button {
   width: fit-content;
   margin-top: 40px;
 }
+@media only screen and (max-width: 540px) {
+  .btn {
+    padding: 5px 11px;
+  }
+}
 .btn span {
   display: inline-block;
   color: var(--white);
@@ -947,6 +968,11 @@ button {
   line-height: 20px;
   text-align: center;
   transition: 0.5s ease;
+}
+@media only screen and (max-width: 540px) {
+  .btn span {
+    font-size: 14px;
+  }
 }
 .btn img {
   transition: 0.5s ease;

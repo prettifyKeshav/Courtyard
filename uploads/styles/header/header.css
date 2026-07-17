@@ -679,6 +679,11 @@ h1 {
     font-size: 38px;
   }
 }
+@media only screen and (max-width: 540px) {
+  h1 {
+    font-size: 28px;
+  }
+}
 
 h5 {
   font-family: Lato;
@@ -695,6 +700,17 @@ h2 {
   font-size: 48px;
   line-height: 1;
   color: var(--black);
+}
+@media only screen and (max-width: 768px) {
+  h2 {
+    font-size: 36px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  h2 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
 }
 
 h3 {
@@ -938,6 +954,11 @@ button {
   width: fit-content;
   margin-top: 40px;
 }
+@media only screen and (max-width: 540px) {
+  .btn {
+    padding: 5px 11px;
+  }
+}
 .btn span {
   display: inline-block;
   color: var(--white);
@@ -947,6 +968,11 @@ button {
   line-height: 20px;
   text-align: center;
   transition: 0.5s ease;
+}
+@media only screen and (max-width: 540px) {
+  .btn span {
+    font-size: 14px;
+  }
 }
 .btn img {
   transition: 0.5s ease;
@@ -2314,7 +2340,12 @@ header.header-fixed .header-wrapper .ham-btn .dot span {
   background: white;
 }
 header.header-fixed .header-wrapper .colA {
-  flex: 0 1 70px;
+  flex: 0 1 90px;
+}
+@media only screen and (max-width: 540px) {
+  header.header-fixed .header-wrapper .colA {
+    flex: 0 1 50px;
+  }
 }
 header.header-fixed .header-wrapper .colB .phone-ico span {
   color: white;
@@ -2352,6 +2383,11 @@ header .header-wrapper .colA {
   header .header-wrapper .colA {
     margin-left: 0;
     margin-right: auto;
+  }
+}
+@media only screen and (max-width: 540px) {
+  header .header-wrapper .colA {
+    flex: 0 1 70px;
   }
 }
 header .header-wrapper .colA a {
@@ -2555,26 +2591,6 @@ header .colB .right-menu-list li a span {
   display: inline-block;
 }
 
-@media (max-width: 1024px) {
-  header.header-fixed .header-wrapper .colA {
-    flex: 0 1 105px;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-width: 540px) {
-  header.header-fixed .header-wrapper .colA {
-    flex: 0 1 136px;
-  }
-}
-@media (max-width: 1024px) {
-  header .header-wrapper .colA {
-    flex: 0 1 245px;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-width: 540px) {
-  header .header-wrapper .colA {
-    flex: 0 1 175px;
-  }
-}
 @media (max-width: 991px) {
   header .header-wrapper .ham-btn {
     display: flex;
@@ -2689,6 +2705,11 @@ footer::before {
   transform: translateX(-50%);
   z-index: 0;
 }
+@media only screen and (max-width: 540px) {
+  footer::before {
+    left: 60%;
+  }
+}
 footer .top-sec {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1490196078);
   padding: 25px 0;
@@ -2773,19 +2794,19 @@ footer .bottom-sec .grid-box {
 @media only screen and (max-width: 991px) {
   footer .bottom-sec .grid-box {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-gap: 40px;
   }
 }
 @media only screen and (max-width: 768px) {
   footer .bottom-sec .grid-box {
     grid-template-columns: repeat(1, 1fr);
-    max-width: 70%;
+    max-width: 100%;
     margin: auto;
   }
 }
 @media only screen and (max-width: 540px) {
   footer .bottom-sec .grid-box {
-    gap: 20px;
+    gap: 40px;
     max-width: 90%;
   }
 }
@@ -2816,6 +2837,12 @@ footer .bottom-sec .grid-box .grid-box-item:nth-child(2) .flex-box {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+}
+@media only screen and (max-width: 540px) {
+  footer .bottom-sec .grid-box .grid-box-item:nth-child(2) .flex-box {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+  }
 }
 footer .bottom-sec .grid-box .grid-box-item:nth-child(2) .flex-box .col .title {
   font-family: Lato;
@@ -2887,7 +2914,7 @@ footer .bottom-sec .grid-box .grid-box-item:nth-child(2) .flex-box .col:nth-chil
 }
 @media only screen and (max-width: 540px) {
   footer .bottom-sec .grid-box .grid-box-item:nth-child(2) .flex-box .col:nth-child(3) a figure {
-    width: 30%;
+    width: 15%;
   }
 }
 footer .bottom-sec .grid-box .grid-box-item:nth-child(2) .flex-box .col:nth-child(3) a figure img {

@@ -42,6 +42,11 @@
   z-index: 1;
   transform: scaleX(-1);
 }
+@media only screen and (max-width: 768px) {
+  .hero-banner .video-wrapper::before {
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0) 63.46%, rgba(0, 0, 0, 0.8509803922) 100%), linear-gradient(2deg, rgba(0, 0, 0, 0.8) 24.57%, rgba(0, 0, 0, 0) 78.28%);
+  }
+}
 .hero-banner .video-wrapper video, .hero-banner .video-wrapper img {
   width: 100%;
   height: 100%;
@@ -59,15 +64,19 @@
   max-width: 93%;
   margin: auto;
 }
+@media only screen and (max-width: 1024px) {
+  .hero-banner .video-wrapper .bg-wrapper {
+    bottom: 22%;
+  }
+}
 @media only screen and (max-width: 768px) {
   .hero-banner .video-wrapper .bg-wrapper {
-    bottom: 30%;
+    bottom: 12%;
   }
 }
 @media only screen and (max-width: 540px) {
   .hero-banner .video-wrapper .bg-wrapper {
     bottom: 10%;
-    margin-left: 0;
   }
 }
 .hero-banner .video-wrapper .bg-wrapper .swiper {
@@ -86,13 +95,17 @@
   line-height: 56px;
   max-width: 492px;
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 768px) {
   .hero-banner .video-wrapper .bg-wrapper h1 {
-    max-width: 90%;
+    max-width: 80%;
     text-align: center;
     margin: auto;
-    font-size: 55px;
-    line-height: 1;
+    line-height: 1.2;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .hero-banner .video-wrapper .bg-wrapper h1 {
+    font-size: 28px;
   }
 }
 .hero-banner .video-wrapper .bg-wrapper h5 {
@@ -113,12 +126,20 @@
   font-size: 16px;
   line-height: 24px;
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 768px) {
   .hero-banner .video-wrapper .bg-wrapper p {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 20px;
+    margin: 20px auto 0;
+    text-align: center;
+    max-width: 505px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .hero-banner .video-wrapper .bg-wrapper p {
+    max-width: 95%;
+    line-height: 1.3;
   }
 }
 .hero-banner .video-wrapper .bg-wrapper p span:first-child {
@@ -136,6 +157,11 @@
   font-weight: 400;
   font-size: 20px;
 }
+@media only screen and (max-width: 768px) {
+  .hero-banner .video-wrapper .bg-wrapper .btn {
+    margin: 20px auto 0;
+  }
+}
 
 .counter-sec {
   background: #FFF9F2;
@@ -144,6 +170,12 @@
 .counter-sec .grid-box {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+}
+@media only screen and (max-width: 540px) {
+  .counter-sec .grid-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 0;
+  }
 }
 .counter-sec .grid-box .col {
   border-right: 1px solid #D8D8D8;
@@ -155,11 +187,34 @@
 .counter-sec .grid-box .col:nth-child(4) {
   border-right: none;
 }
+@media only screen and (max-width: 1024px) {
+  .counter-sec .grid-box .col {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 10px 17px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .counter-sec .grid-box .col {
+    border: none;
+  }
+}
 .counter-sec .grid-box .col h4 {
   font-weight: 400;
   font-size: 36px;
   line-height: 1;
   color: var(--black);
+}
+@media only screen and (max-width: 768px) {
+  .counter-sec .grid-box .col h4 {
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .counter-sec .grid-box .col h4 {
+    font-size: 24px;
+  }
 }
 .counter-sec .grid-box .col p {
   color: rgba(0, 0, 0, 0.6980392157);
@@ -167,11 +222,21 @@
   font-size: 14px;
   line-height: 1.4;
 }
+@media only screen and (max-width: 540px) {
+  .counter-sec .grid-box .col p {
+    font-size: 13px;
+  }
+}
 
 .testimonial-section {
   overflow: hidden;
   background: #FFF9F2;
   padding: 70px 0;
+}
+@media only screen and (max-width: 540px) {
+  .testimonial-section {
+    padding: 40px 0;
+  }
 }
 .testimonial-section .flex-box {
   display: flex;
@@ -179,18 +244,48 @@
   justify-content: space-between;
   gap: 60px;
 }
+@media only screen and (max-width: 768px) {
+  .testimonial-section .flex-box {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 .testimonial-section .colA {
   width: 35%;
+}
+@media only screen and (max-width: 768px) {
+  .testimonial-section .colA {
+    width: 100%;
+    text-align: center;
+  }
 }
 .testimonial-section .colA h2 {
   margin-bottom: 20px;
   line-height: 1;
+}
+@media only screen and (max-width: 768px) {
+  .testimonial-section .colA p {
+    max-width: 70%;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .testimonial-section .colA p {
+    max-width: 90%;
+    line-height: 1.3;
+  }
 }
 .testimonial-section .colA .swiper-nav {
   display: flex;
   align-items: center;
   gap: 25px;
   margin-top: 50px;
+}
+@media only screen and (max-width: 768px) {
+  .testimonial-section .colA .swiper-nav {
+    margin-top: 20px;
+    display: none;
+  }
 }
 .testimonial-section .colA .home-prev,
 .testimonial-section .colA .home-next {
@@ -235,6 +330,16 @@
   width: 65%;
   overflow: hidden;
 }
+@media only screen and (max-width: 1024px) {
+  .testimonial-section .colB {
+    width: 55%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .testimonial-section .colB {
+    width: 100%;
+  }
+}
 .testimonial-section .colB .swiper .swiper-wrapper .swiper-slide {
   transition: 0.5s ease;
 }
@@ -246,11 +351,29 @@
   padding: 35px;
   min-height: 430px;
 }
+@media only screen and (max-width: 768px) {
+  .testimonial-section .colB .swiper .swiper-wrapper .swiper-slide .testimonial-card {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .testimonial-section .colB .swiper .swiper-wrapper .swiper-slide .testimonial-card {
+    padding: 25px 24px;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+  }
+}
 .testimonial-section .colB .swiper .swiper-wrapper .swiper-slide .testimonial-card .top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 30px;
+}
+@media only screen and (max-width: 540px) {
+  .testimonial-section .colB .swiper .swiper-wrapper .swiper-slide .testimonial-card .top {
+    margin-bottom: 10px;
+  }
 }
 .testimonial-section .colB .swiper .swiper-wrapper .swiper-slide .testimonial-card .top .user {
   border-radius: 50%;
@@ -264,6 +387,11 @@
 .testimonial-section .colB .swiper .swiper-wrapper .swiper-slide .testimonial-card p {
   margin-bottom: 35px;
   max-width: 90%;
+}
+@media only screen and (max-width: 540px) {
+  .testimonial-section .colB .swiper .swiper-wrapper .swiper-slide .testimonial-card p {
+    max-width: 100%;
+  }
 }
 .testimonial-section .colB .swiper .swiper-wrapper .swiper-slide .testimonial-card h4 {
   font-weight: 500;

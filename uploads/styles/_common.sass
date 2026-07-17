@@ -191,6 +191,9 @@ h1
         font-size: 48px
     @include media(768)
         font-size: 38px
+    @include media(540)
+        font-size: 28px
+        
 h5
     font-family: Lato
     font-weight: 500
@@ -204,6 +207,11 @@ h2
     font-size: 48px
     line-height: 1
     color: $black
+    @include media(768)
+        font-size: 36px
+    @include media(540)
+        font-size: 28px
+        line-height: 1.2
 h3
     font-size: 48px
     line-height: 1.2
@@ -356,6 +364,8 @@ button
     gap: 10px
     width: fit-content
     margin-top: 40px
+    @include media(540)
+        padding: 5px 11px
     span
         display: inline-block
         color: $white
@@ -365,6 +375,8 @@ button
         line-height: 20px
         text-align: center
         transition: 0.5s ease
+        @include media(540)
+            font-size: 14px
     img
         transition: 0.5s ease
         width: 24px !important
