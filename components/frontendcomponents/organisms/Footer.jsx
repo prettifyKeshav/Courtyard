@@ -8,6 +8,7 @@ import VideoPop from "../molecules/Modal/VideoPop";
 import OpeningsPop from "../molecules/Modal/OpeningsPop";
 import EnquirePop from "../molecules/Modal/EnquirePop";
 import { useModalStore } from "../../../store/modelStore";
+import FooterStrip from "../molecules/FooterStrip";
 
 const Footer = () => {
     const openEnqui = useModalStore((state) => state.openEnquire);
@@ -144,6 +145,7 @@ const Footer = () => {
             <VideoPop />
             <EnquirePop />
             <OpeningsPop />
+            <FooterStrip />
         </>
     );
 };

@@ -505,4 +505,46 @@
 }
 .hero-banner.not-found-banner .video-wrapper .bg-wrapper a {
   margin: 30px auto 0;
+}
+
+.footer-strip {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  background: var(--black);
+  display: none;
+}
+@media only screen and (max-width: 540px) {
+  .footer-strip {
+    display: block;
+  }
+}
+.footer-strip ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer-strip ul li {
+  flex: 1;
+}
+.footer-strip ul li:not(:last-child) {
+  border-right: 1px solid rgba(192, 149, 89, 0.5);
+}
+.footer-strip ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 5px;
+  color: var(--white);
+  font-weight: 500;
+}
+.footer-strip ul li a svg {
+  width: 25px;
+  height: 25px;
+  fill: var(--white);
+}
+.footer-strip ul li a svg path {
+  fill: var(--white);
 }/*# sourceMappingURL=components.css.map */

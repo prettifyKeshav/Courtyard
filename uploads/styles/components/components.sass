@@ -356,3 +356,35 @@
                 text-align: center
             a
                 margin: 30px auto 0 
+
+
+.footer-strip
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 4
+    background: $black
+    display: none
+    @include media(540)
+        display: block
+    ul
+        @include flex
+        li
+            flex: 1
+            &:not(:last-child)
+                border-right: 1px solid rgb(192 149 89 / 50%)
+            a
+                display: flex
+                flex-direction: column
+                align-items: center
+                padding: 10px
+                gap: 5px
+                color: $white
+                @include font(500)
+                svg
+                    width: 25px
+                    height: 25px
+                    fill: $white
+                    path
+                        fill: $white
