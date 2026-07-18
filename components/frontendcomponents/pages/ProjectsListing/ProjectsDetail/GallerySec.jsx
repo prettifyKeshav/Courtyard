@@ -190,7 +190,7 @@ const GallerySec = () => {
                         speed={800}
                         breakpoints={{
                             576: {
-                                slidesPerView: 1.2,
+                                slidesPerView: 1,
                             },
                             768: {
                                 slidesPerView: 1.2,

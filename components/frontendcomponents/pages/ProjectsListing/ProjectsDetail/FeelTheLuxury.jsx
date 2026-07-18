@@ -4,67 +4,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Motion from '../../../molecules/Animate'
 
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import FormCompo from './FormCompo'
 
 const FeelTheLuxury = () => {
-    const [dateActive, setDateActive] = useState(false);
-    const [startDate, setStartDate] = useState(null);
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-        dateTime: null,
-
-    });
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
-    };
-
-    const handleDateChange = (date) => {
-        setStartDate(date);
-        setFormData({
-            ...formData,
-            dateTime: date,
-        });
-        setDateActive(!!date);
-    };
-
-    useEffect(() => {
-        const inputBoxes = document.querySelectorAll('.form-control');
-
-        const handleFocus = function () {
-            this.closest('.form-group')?.classList.add('active');
-            this.classList.add('valid');
-        };
-
-        const handleBlur = function () {
-            const hasValue = this.value.trim() !== '';
-            if (!hasValue) {
-                this.closest('.form-group')?.classList.remove('active');
-                this.classList.remove('valid');
-            }
-        };
-
-        inputBoxes.forEach(inputBox => {
-            inputBox.addEventListener('focus', handleFocus);
-            inputBox.addEventListener('blur', handleBlur);
-        });
-
-        return () => {
-            inputBoxes.forEach(inputBox => {
-                inputBox.removeEventListener('focus', handleFocus);
-                inputBox.removeEventListener('blur', handleBlur);
-            });
-        };
-    }, []);
-
 
     return (
         <>
@@ -92,68 +34,14 @@ const FeelTheLuxury = () => {
                             <div className="colB">
                                 <Motion variant="fadeUp">
 
-                                    <FormCompo />
-                                    {/* <div className="heading">
+                                    <div className="heading">
                                         <figure>
                                             <Image src="/assets/favicon.svg" width={56} height={60} alt="ico" ></Image>
                                         </figure>
                                         <h4>Connect With Our Property Experts</h4>
                                     </div>
+                                    <FormCompo />
 
-                                    <div className="form form-grid">
-                                        <div className="form-group">
-                                            <input
-                                                type="text"
-                                                name="name"
-                                                className="form-control"
-                                                value={formData.name}
-                                                onChange={handleChange}
-                                            />
-                                            <label>Name *</label>
-                                        </div>
-
-                                        <div className="form-group">
-                                            <input
-                                                type="text"
-                                                name="email"
-                                                className="form-control"
-                                                value={formData.email}
-                                                onChange={handleChange}
-                                            />
-                                            <label>Email</label>
-                                        </div>
-
-                                        <div className="form-group">
-                                            <input
-                                                type="tel"
-                                                name="phone"
-                                                className="form-control"
-                                                value={formData.phone}
-                                                onChange={handleChange}
-                                            />
-                                            <label>Phone</label>
-                                        </div>
-
-                                        <div className={`form-group ${dateActive ? 'active' : ''}`}>
-                                            <DatePicker
-                                                selected={startDate}
-                                                onChange={handleDateChange}
-                                                onFocus={() => setDateActive(true)}
-                                                onBlur={() => setDateActive(!!startDate)}
-                                                onCalendarOpen={() => setDateActive(true)}
-                                                showTimeSelect
-                                                timeIntervals={15}
-                                                dateFormat="dd/MM/yyyy h:mm aa"
-                                                placeholderText="Select Date & Time"
-                                                className={`form-control ${startDate ? 'valid' : ''}`}
-                                                minDate={new Date()}
-                                            />
-                                        </div>
-
-                                        <button className="btn circle-btn circle-btn-white full">
-                                            <span>Submit Now</span>
-                                        </button>
-                                    </div> */}
                                 </Motion>
                             </div>
                         </div>

@@ -89,13 +89,13 @@ const Amenities = () => {
                             576: {
                                 slidesPerView: 2,
                             },
-                            768: {
-                                slidesPerView: 2.5,
+                            764: {
+                                slidesPerView: 5.1,
                             },
-                            992: {
-                                slidesPerView: 3,
+                            1024: {
+                                slidesPerView: 4.5,
                             },
-                            1200: {
+                            1300: {
                                 slidesPerView: 5,
                             },
                         }}
