@@ -6,6 +6,7 @@ import Motion from '../../../molecules/Animate'
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import FormCompo from './FormCompo'
 
 const FeelTheLuxury = () => {
     const [dateActive, setDateActive] = useState(false);
@@ -90,7 +91,9 @@ const FeelTheLuxury = () => {
 
                             <div className="colB">
                                 <Motion variant="fadeUp">
-                                    <div className="heading">
+
+                                    <FormCompo />
+                                    {/* <div className="heading">
                                         <figure>
                                             <Image src="/assets/favicon.svg" width={56} height={60} alt="ico" ></Image>
                                         </figure>
@@ -150,7 +153,7 @@ const FeelTheLuxury = () => {
                                         <button className="btn circle-btn circle-btn-white full">
                                             <span>Submit Now</span>
                                         </button>
-                                    </div>
+                                    </div> */}
                                 </Motion>
                             </div>
                         </div>
