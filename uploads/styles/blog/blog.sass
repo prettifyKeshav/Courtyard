@@ -4,6 +4,9 @@ html
     background: #FFF9F1
 
 .hero-banner.blog-banner
+    height: 70vh
+    @include media(768)
+        height: 50vh
     .video-wrapper
         &::before
             background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 8.75%, rgba(0, 0, 0, 0) 30.19%),linear-gradient(360deg, rgba(0, 0, 0, 0.7) 11.39%, rgba(0, 0, 0, 0) 47.71%)
@@ -27,8 +30,6 @@ html
         grid-template-columns: repeat(3,1fr)
         grid-gap: 30px 20px
         @include media(1024)
-            grid-template-columns: repeat(3,1fr)
-        @include media(768)
             grid-template-columns: repeat(2,1fr)
         @include media(540)
             grid-template-columns: repeat(1,1fr)
@@ -76,24 +77,44 @@ html
 // ========================================================= BLOG DETAILS ========================================================= //
 
 .hero-banner.blog-detail-banner
+    @include media(1024)
+        height: 70vh
+    @include media(768)
+        height: 50vh
     .video-wrapper
         &::before
             background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 36.53%),linear-gradient(360deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 42.5%)
             transform: scale(1)
-        .bg-wrapper 
+            @include media(540)
+                background: linear-gradient(#000000b3 0%, #0000 36.53%), linear-gradient( 360deg, #000000b3 0%, #0000 82.5%)
+
+        .bg-wrapper
+            @include media(1024)
+                bottom: 15%
             h2
                 font-weight: 400
                 font-size: 16px
                 color: $white
                 margin-bottom: 30px
+                @include media(768)
+                    text-align: center
+                    margin-bottom: 20px
             h1
                 font-weight: 500
                 font-size: 32px
                 line-height: 1.2
+                @include media(768)
+                    max-width: 60%
+                    line-height: 1.1
+                @include media(540)
+                    max-width: 100%
+                    line-height: 1
         .play-button
             position: absolute
             right: 2%
             bottom: 2%
+            @include media(540)
+                bottom: -30%
 
    
 .blog-details-secA
@@ -104,6 +125,9 @@ html
         font-family: Lato
         figure
             height: 449px
+            line-height: 0
+            @include media(540)
+                height: fit-content
             img
                 width: 100%
                 height: 100%
@@ -167,6 +191,8 @@ html
         h2
             text-align: center
             margin-bottom: 50px
+            @include media(540)
+                margin-bottom: 20px
         .swiper-nav
             display: flex
             justify-content: center
@@ -174,6 +200,8 @@ html
             position: absolute
             bottom: 0
             right: 0
+            @include media(540)
+                display: none
     .swiper-wrapper
         padding: 10px 0
     

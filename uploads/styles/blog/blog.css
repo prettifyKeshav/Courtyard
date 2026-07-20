@@ -15,6 +15,14 @@ html {
   background: #FFF9F1;
 }
 
+.hero-banner.blog-banner {
+  height: 70vh;
+}
+@media only screen and (max-width: 768px) {
+  .hero-banner.blog-banner {
+    height: 50vh;
+  }
+}
 .hero-banner.blog-banner .video-wrapper::before {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 8.75%, rgba(0, 0, 0, 0) 30.19%), linear-gradient(360deg, rgba(0, 0, 0, 0.7) 11.39%, rgba(0, 0, 0, 0) 47.71%);
   transform: scaleX(1);
@@ -44,11 +52,6 @@ html {
   grid-gap: 30px 20px;
 }
 @media only screen and (max-width: 1024px) {
-  .blog-secA .grid-box {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media only screen and (max-width: 768px) {
   .blog-secA .grid-box {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -125,9 +128,29 @@ html {
   line-height: 1.1;
 }
 
+@media only screen and (max-width: 1024px) {
+  .hero-banner.blog-detail-banner {
+    height: 70vh;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hero-banner.blog-detail-banner {
+    height: 50vh;
+  }
+}
 .hero-banner.blog-detail-banner .video-wrapper::before {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 36.53%), linear-gradient(360deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 42.5%);
   transform: scale(1);
+}
+@media only screen and (max-width: 540px) {
+  .hero-banner.blog-detail-banner .video-wrapper::before {
+    background: linear-gradient(rgba(0, 0, 0, 0.7019607843) 0%, rgba(0, 0, 0, 0) 36.53%), linear-gradient(360deg, rgba(0, 0, 0, 0.7019607843) 0%, rgba(0, 0, 0, 0) 82.5%);
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .hero-banner.blog-detail-banner .video-wrapper .bg-wrapper {
+    bottom: 15%;
+  }
 }
 .hero-banner.blog-detail-banner .video-wrapper .bg-wrapper h2 {
   font-weight: 400;
@@ -135,15 +158,38 @@ html {
   color: var(--white);
   margin-bottom: 30px;
 }
+@media only screen and (max-width: 768px) {
+  .hero-banner.blog-detail-banner .video-wrapper .bg-wrapper h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
 .hero-banner.blog-detail-banner .video-wrapper .bg-wrapper h1 {
   font-weight: 500;
   font-size: 32px;
   line-height: 1.2;
 }
+@media only screen and (max-width: 768px) {
+  .hero-banner.blog-detail-banner .video-wrapper .bg-wrapper h1 {
+    max-width: 60%;
+    line-height: 1.1;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .hero-banner.blog-detail-banner .video-wrapper .bg-wrapper h1 {
+    max-width: 100%;
+    line-height: 1;
+  }
+}
 .hero-banner.blog-detail-banner .video-wrapper .play-button {
   position: absolute;
   right: 2%;
   bottom: 2%;
+}
+@media only screen and (max-width: 540px) {
+  .hero-banner.blog-detail-banner .video-wrapper .play-button {
+    bottom: -30%;
+  }
 }
 
 .blog-details-secA {
@@ -157,6 +203,13 @@ html {
 }
 .blog-details-secA .content figure {
   height: 449px;
+  line-height: 0;
+}
+@media only screen and (max-width: 540px) {
+  .blog-details-secA .content figure {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
 }
 .blog-details-secA .content figure img {
   width: 100%;
@@ -236,6 +289,11 @@ html {
   text-align: center;
   margin-bottom: 50px;
 }
+@media only screen and (max-width: 540px) {
+  .blog-detail-secC .heading h2 {
+    margin-bottom: 20px;
+  }
+}
 .blog-detail-secC .heading .swiper-nav {
   display: flex;
   justify-content: center;
@@ -243,6 +301,11 @@ html {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+@media only screen and (max-width: 540px) {
+  .blog-detail-secC .heading .swiper-nav {
+    display: none;
+  }
 }
 .blog-detail-secC .swiper-wrapper {
   padding: 10px 0;

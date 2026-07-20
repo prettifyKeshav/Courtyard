@@ -39,13 +39,13 @@ const MoreBlogs = () => {
                             speed={800}
                             breakpoints={{
                                 576: {
-                                    slidesPerView: 2,
+                                    slidesPerView: 1.2,
                                 },
                                 768: {
-                                    slidesPerView: 2.5,
+                                    slidesPerView: 2,
                                 },
                                 992: {
-                                    slidesPerView: 3,
+                                    slidesPerView: 2,
                                 },
                                 1200: {
                                     slidesPerView: 3,
