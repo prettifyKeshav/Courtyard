@@ -262,8 +262,12 @@ h2 {
   background: linear-gradient(360deg, rgba(0, 0, 0, 0) 63.46%, rgba(0, 0, 0, 0.85) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 31.73%, rgba(0, 0, 0, 0.85) 94.72%);
   transform: scale(1);
 }
-.hero-banner.projects-detail-banner .video-wrapper video {
+.hero-banner.projects-detail-banner .video-wrapper video, .hero-banner.projects-detail-banner .video-wrapper img {
   transform: scale(1);
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hero-banner.projects-detail-banner .video-wrapper .bg-wrapper {
   bottom: 15%;

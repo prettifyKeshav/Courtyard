@@ -19,10 +19,18 @@
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 36.53%), linear-gradient(360deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 42.5%);
   transform: scale(1);
 }
+.hero-banner.career-banner .video-wrapper .bg-wrapper h1 {
+  max-width: 90%;
+}
 
 .career-secA {
   padding: 70px 0;
   background: var(--bgcolorlight);
+}
+@media only screen and (max-width: 768px) {
+  .career-secA {
+    padding: 50px 0;
+  }
 }
 .career-secA .container .heading {
   margin: 0 auto;
@@ -34,6 +42,16 @@
   margin: 0 auto 16px;
   line-height: 1.2;
 }
+@media only screen and (max-width: 768px) {
+  .career-secA .container .heading h2 {
+    line-height: 1.1;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .career-secA .container .heading h2 {
+    font-size: 26px;
+  }
+}
 .career-secA .container .heading p {
   max-width: 564px;
 }
@@ -42,6 +60,17 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 36px;
+}
+@media only screen and (max-width: 768px) {
+  .career-secA .container .col {
+    margin-top: 50px;
+    gap: 15px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .career-secA .container .col {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .career-secA .container .col .item {
   border-radius: 15px;
@@ -65,10 +94,20 @@
 .career-secA .container .col .item p {
   max-width: 90%;
 }
+@media only screen and (max-width: 540px) {
+  .career-secA .container .col .item p {
+    max-width: 100%;
+  }
+}
 
 .career-secB {
   padding: 20px 0 70px;
   background: var(--bgcolorlight);
+}
+@media only screen and (max-width: 540px) {
+  .career-secB {
+    padding: 20px 0 40px;
+  }
 }
 .career-secB .heading h2 {
   margin: 0 auto 16px;
@@ -81,11 +120,26 @@
   font-weight: 300;
   font-style: italic;
 }
+@media only screen and (max-width: 540px) {
+  .career-secB .heading h2 {
+    font-size: 26px;
+  }
+}
 .career-secB .heading p {
   max-width: 504px;
 }
+@media only screen and (max-width: 540px) {
+  .career-secB .heading p {
+    max-width: 89%;
+  }
+}
 .career-secB .life-swiper {
   margin-top: 70px;
+}
+@media only screen and (max-width: 540px) {
+  .career-secB .life-swiper {
+    margin-top: 40px;
+  }
 }
 .career-secB .life-swiper .swiper-wrapper {
   align-items: stretch;
@@ -103,6 +157,21 @@
   border-radius: 15px;
   max-height: 68vh;
   overflow: hidden;
+}
+@media only screen and (max-width: 1024px) {
+  .career-secB .life-swiper .swiper-wrapper .swiper-slide .item {
+    max-height: 50vh;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .career-secB .life-swiper .swiper-wrapper .swiper-slide .item {
+    max-height: 30vh;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .career-secB .life-swiper .swiper-wrapper .swiper-slide .item {
+    max-height: 20vh;
+  }
 }
 .career-secB .life-swiper .swiper-wrapper .swiper-slide .item img {
   width: 100%;
@@ -137,15 +206,30 @@
   padding: 20px 0 30px;
   background: var(--bgcolorlight);
 }
+@media only screen and (max-width: 1024px) {
+  .career-secC {
+    padding: 20px 0 0;
+  }
+}
 .career-secC .container {
   background: #9D864D;
   border-radius: 15px;
   padding: 62px 32px;
 }
+@media only screen and (max-width: 540px) {
+  .career-secC .container {
+    padding: 20px 15px;
+  }
+}
 .career-secC .container .heading h6, .career-secC .container .heading h2 {
   text-align: left;
   font-family: Lato;
   color: var(--white);
+}
+@media only screen and (max-width: 768px) {
+  .career-secC .container .heading h6, .career-secC .container .heading h2 {
+    text-align: center;
+  }
 }
 .career-secC .container .heading h6 {
   font-size: 18px;
@@ -161,6 +245,25 @@
   grid-template-columns: repeat(4, 1fr);
   margin-top: 50px;
   gap: 20px;
+}
+@media only screen and (max-width: 1024px) {
+  .career-secC .container .grid-box {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0px 0 10px 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .career-secC .container .grid-box {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0px 0 10px 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .career-secC .container .grid-box {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0px 0 10px 0;
+    gap: 10px;
+  }
 }
 .career-secC .container .grid-box .open-item {
   background: #F3F3F3;
@@ -210,6 +313,16 @@
 .testimonial-section .container .flex-box .colA {
   width: 40%;
 }
+@media only screen and (max-width: 768px) {
+  .testimonial-section .container .flex-box .colA {
+    width: 55%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .testimonial-section .container .flex-box .colA {
+    width: 100%;
+  }
+}
 .testimonial-section .container .flex-box .colA h2 {
   font-family: Lato;
   font-size: 36px;
@@ -219,6 +332,11 @@
   font-weight: 300;
   font-style: italic;
 }
+@media only screen and (max-width: 540px) {
+  .testimonial-section .container .flex-box .colA h2 {
+    font-size: 26px;
+  }
+}
 .testimonial-section .container .flex-box .colA .swiper-nav {
   margin-top: 70px;
 }
@@ -227,6 +345,11 @@
   display: flex;
   flex-direction: column;
 }
+@media only screen and (max-width: 768px) {
+  .testimonial-section .container .flex-box .colA .contact {
+    margin-top: 20px;
+  }
+}
 .testimonial-section .container .flex-box .colA .contact h5 {
   font-size: 20px;
   font-weight: 700;
@@ -234,6 +357,11 @@
   text-align: left;
   font-family: Lato;
   line-height: 1;
+}
+@media only screen and (max-width: 768px) {
+  .testimonial-section .container .flex-box .colA .contact h5 {
+    text-align: center;
+  }
 }
 .testimonial-section .container .flex-box .colA .contact a {
   color: var(--black);
@@ -244,6 +372,11 @@
 }
 .testimonial-section .container .flex-box .colB {
   width: 60%;
+}
+@media only screen and (max-width: 768px) {
+  .testimonial-section .container .flex-box .colB {
+    width: 100%;
+  }
 }
 .testimonial-section .container .flex-box .colB .swiper .swiper-wrapper {
   padding: 20px 0 20px 8px;

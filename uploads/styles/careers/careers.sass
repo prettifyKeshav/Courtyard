@@ -8,10 +8,15 @@
         &::before
             background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 36.53%),linear-gradient(360deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 42.5%)
             transform: scale(1)
+        .bg-wrapper
+            h1
+                max-width: 90%
 
 .career-secA
     padding: 70px 0
     background: var(--bgcolorlight)
+    @include media(768)
+        padding: 50px 0
     .container
         .heading
             margin: 0 auto
@@ -21,6 +26,10 @@
                 max-width: 461px
                 margin: 0 auto 16px
                 line-height: 1.2
+                @include media(768)
+                    line-height: 1.1
+                @include media(540)
+                    font-size: 26px
             p
                 max-width: 564px
         .col
@@ -28,6 +37,11 @@
             display: grid
             grid-template-columns: repeat(2, 1fr)
             gap: 36px
+            @include media(768)
+                margin-top: 50px
+                gap: 15px
+            @include media(540)
+                grid-template-columns: repeat(1, 1fr)
             .item
                 border-radius: 15px
                 overflow: hidden
@@ -46,11 +60,15 @@
                         margin-bottom: 28px
                 p
                     max-width: 90%
+                    @include media(540)
+                        max-width: 100%
                     
 
 .career-secB
     padding: 20px 0 70px    
     background: var(--bgcolorlight)
+    @include media(540)
+        padding: 20px 0 40px
     .heading
         h2
             margin: 0 auto 16px
@@ -61,10 +79,17 @@
                 display: block
                 @include font(300)
                 font-style: italic
+            @include media(540)
+                font-size: 26px
         p
             max-width: 504px
+            @include media(540)
+                max-width: 89%
+
     .life-swiper
         margin-top: 70px
+        @include media(540)
+            margin-top: 40px
         .swiper-wrapper
             align-items: stretch 
             .swiper-slide
@@ -79,6 +104,12 @@
                     border-radius: 15px
                     max-height: 68vh
                     overflow: hidden
+                    @include media(1024)
+                        max-height: 50vh
+                    @include media(768)
+                        max-height: 30vh
+                    @include media(540)
+                        max-height: 20vh
                     img
                         width: 100%
                         height: 100%
@@ -99,22 +130,27 @@
             height: 2px
             background: #C5C5C5
             .swiper-pagination-progressbar-fill
-
                 background: $primary
 
 
 .career-secC
     padding: 20px 0 30px
     background: var(--bgcolorlight)
+    @include media(1024)
+        padding: 20px 0 0 
     .container
         background: #9D864D
         border-radius: 15px
         padding: 62px 32px
+        @include media(540)
+            padding: 20px 15px 
         .heading
             h6, h2
                 text-align: left
                 font-family: Lato
                 color: $white
+                @include media(768)
+                    text-align: center
             h6
                 font-size: 18px
                 @include font(600)
@@ -127,6 +163,16 @@
             grid-template-columns: repeat(4, 1fr)
             margin-top: 50px
             gap: 20px
+            @include media(1024)
+                grid-template-columns: repeat(3, 1fr)
+                padding: 0px 0 10px 0 
+            @include media(768)
+                grid-template-columns: repeat(2, 1fr)
+                padding: 0px 0 10px 0 
+            @include media(540)
+                grid-template-columns: repeat(1, 1fr)
+                padding: 0px 0 10px 0 
+                gap: 10px
             .open-item
                 background: #F3F3F3
                 border-radius: 8px
@@ -165,17 +211,15 @@
                     img
                         transition: 0.3s ease
 
-
-
-
-
-
-
 .testimonial-section
     .container
         .flex-box
             .colA
                 width: 40%
+                @include media(768)
+                    width: 55%
+                @include media(540)
+                    width: 100%
                 h2
                     font-family: Lato
                     font-size: 36px
@@ -183,12 +227,16 @@
                     span
                         @include font(300)
                         font-style: italic
+                    @include media(540)
+                        font-size: 26px
                 .swiper-nav
                     margin-top: 70px    
                 .contact
                     margin-top: 70px
                     display: flex
                     flex-direction: column
+                    @include media(768)
+                        margin-top: 20px
                     h5
                         font-size: 20px
                         @include font(700)
@@ -196,6 +244,8 @@
                         text-align: left
                         font-family: Lato
                         line-height: 1
+                        @include media(768)
+                            text-align: center
                     a
                         color: $black
                         font-family: Lato
@@ -204,6 +254,8 @@
                         line-height: 1.2
             .colB
                 width: 60%
+                @include media(768)
+                    width: 100%
                 .swiper
                     .swiper-wrapper
                         padding: 20px 0 20px 8px 
