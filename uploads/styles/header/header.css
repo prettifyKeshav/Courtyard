@@ -2762,6 +2762,11 @@ footer .top-sec .flex-box .col:first-child .inside-flex p {
   line-height: 24px;
   color: #FFFFFF;
 }
+@media only screen and (max-width: 540px) {
+  footer .top-sec .flex-box .col:last-child {
+    display: none;
+  }
+}
 footer .top-sec .flex-box .col:last-child .inside-flex {
   display: flex;
   gap: 20px;

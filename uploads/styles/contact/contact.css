@@ -2309,6 +2309,14 @@ button {
   cursor: no-drop !important;
 }
 
+.hero-banner.contact-banner {
+  height: 70vh;
+}
+@media only screen and (max-width: 768px) {
+  .hero-banner.contact-banner {
+    height: 50vh;
+  }
+}
 .hero-banner.contact-banner .video-wrapper::before {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 28.41%), linear-gradient(360deg, rgba(0, 0, 0, 0.7) 13.12%, rgba(0, 0, 0, 0) 49.94%);
 }
@@ -2336,6 +2344,11 @@ button {
   position: relative;
   overflow: hidden;
   background: #FFF9F1;
+}
+@media only screen and (max-width: 768px) {
+  .contact-secA {
+    padding: 50px 0;
+  }
 }
 .contact-secA::before {
   content: "";
@@ -2370,6 +2383,7 @@ button {
   .contact-secA .grid-box {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 40px;
+    gap: 20px;
   }
 }
 .contact-secA .grid-box .grid-box-item {
@@ -2378,11 +2392,29 @@ button {
   padding: 20px;
   background: linear-gradient(180deg, #FFF9F1 0%, #FFF1DE 100%);
 }
+@media only screen and (max-width: 768px) {
+  .contact-secA .grid-box .grid-box-item:nth-child(3) {
+    grid-column: span 2;
+    width: 50%;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .contact-secA .grid-box .grid-box-item:nth-child(3) {
+    grid-column: span 1;
+    width: 100%;
+  }
+}
 .contact-secA .grid-box .grid-box-item .flex {
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 20px 40px;
+}
+@media only screen and (max-width: 1024px) {
+  .contact-secA .grid-box .grid-box-item .flex {
+    padding: 0;
+  }
 }
 .contact-secA .grid-box .grid-box-item .flex figure {
   margin-bottom: 8px;
@@ -2443,7 +2475,7 @@ button {
 }
 @media only screen and (max-width: 540px) {
   .contact-secB {
-    padding: 50px 0;
+    padding: 20px 0 50px 0;
   }
 }
 .contact-secB .box {
@@ -2477,7 +2509,8 @@ button {
   .contact-secB .box .heading h2 {
     font-size: 25px !important;
     margin-bottom: 10px;
-    line-height: 1.1;
+    line-height: 1.2;
+    max-width: 80%;
   }
 }
 .contact-secB .box .heading p {
