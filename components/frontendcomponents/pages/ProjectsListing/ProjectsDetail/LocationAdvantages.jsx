@@ -15,7 +15,7 @@ const LocationAdvantages = () => {
             Thumbs: false,
         });
         return () => {
-            Fancybox.destroy();
+            Fancybox.unbind("[data-fancybox='gallery1']");
         };
     }, []);
 

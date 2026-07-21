@@ -110,17 +110,14 @@ const GallerySec = () => {
                 : sampleHouseGallery;
 
     useEffect(() => {
-        Fancybox.destroy();
-
         Fancybox.bind("[data-fancybox='gallery2']", {
             Thumbs: false,
         });
 
         return () => {
-            Fancybox.destroy();
+            Fancybox.unbind("[data-fancybox='gallery2']");
         };
     }, [activeTab]);
-
     return (
         <section>
             <div className="project-detail-secF">

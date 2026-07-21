@@ -1,11 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -51,6 +53,16 @@ const floorPlansData = [
 ];
 
 const FloorPlans = () => {
+
+    useEffect(() => {
+        Fancybox.bind("[data-fancybox='gallery3']", {
+            Thumbs: false,
+        });
+
+        return () => {
+            Fancybox.unbind("[data-fancybox='gallery3']");
+        };
+    }, []);
     return (
         <section>
             <div className="project-detail-secE">
@@ -99,26 +111,30 @@ const FloorPlans = () => {
                         >
                             {floorPlansData.map((plan) => (
                                 <SwiperSlide key={plan.id}>
-                                    <Link href={plan.downloadLink} className="floor-card">
-                                        <figure>
-                                            <Image
-                                                src={plan.image}
-                                                width={311}
-                                                height={189}
-                                                alt={plan.title}
-                                            />
-                                            <div className="info">
-                                                <p>{plan.title}</p>
-                                            </div>
-                                        </figure>
+                                    <div className="floor-card">
+                                        <Link href={plan.image} data-fancybox="gallery3">
+                                            <figure>
+                                                <Image
+                                                    src={plan.image}
+                                                    width={311}
+                                                    height={189}
+                                                    alt={plan.title}
+                                                />
+                                                <div className="info">
+                                                    <p>{plan.title}</p>
+                                                </div>
+                                            </figure>
+                                        </Link>
 
-                                        <figcaption>
-                                            <p>{plan.price}</p>
-                                            <button className="btn white-btn">
-                                                <span>Download</span>
-                                            </button>
-                                        </figcaption>
-                                    </Link>
+                                        <Link href={plan.downloadLink}>
+                                            <figcaption>
+                                                <p>{plan.price}</p>
+                                                <button className="btn white-btn">
+                                                    <span>Download</span>
+                                                </button>
+                                            </figcaption>
+                                        </Link>
+                                    </div>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
