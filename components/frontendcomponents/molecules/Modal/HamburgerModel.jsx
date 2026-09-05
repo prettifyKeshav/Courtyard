@@ -11,7 +11,7 @@ const HamburgerModel = () => {
 
     const menuItems = [
         { id: 1, title: "About us ", href: "/about-us" },
-        { id: 2, title: "Careers ", href: "career" },
+        { id: 2, title: "Careers ", href: "/careers" },
         { id: 3, title: "Blogs", href: "/blogs" },
         { id: 4, title: "Contact us", href: "/contact-us" },
         { id: 5, title: "Privacy Policy", href: "/privacy-policy" },
@@ -49,15 +49,15 @@ const HamburgerModel = () => {
 
                 <div className="bottom-list">
                     <div className="social-icons">
-                        <Link href="/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                        <Link href="https://www.facebook.com/courtyardgroupbaroda/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                             <Image src="/assets/icon/linkedin.svg" width={25} height={25} alt="LinkedIn" />
                         </Link>
 
-                        <Link href="/" target="_blank" rel="noopener noreferrer" title="Facebook">
+                        <Link href="https://www.instagram.com/courtyardgroupbaroda/" target="_blank" rel="noopener noreferrer" title="Facebook">
                             <Image src="/assets/icon/facebook.svg" width={25} height={25} alt="Facebook" />
                         </Link>
 
-                        <Link href="/" target="_blank" rel="noopener noreferrer" title="Instagram">
+                        <Link href="https://www.linkedin.com/company/courtyard-group-vadodara/" target="_blank" rel="noopener noreferrer" title="Instagram">
                             <Image src="/assets/icon/instagram.svg" width={25} height={25} alt="Instagram" />
                         </Link>
                     </div>

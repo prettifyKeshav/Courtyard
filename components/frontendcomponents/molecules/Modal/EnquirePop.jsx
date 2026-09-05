@@ -1,29 +1,31 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
-import { useModalStore } from '../../../../store/modelStore';
+import { useModalStore } from "../../../../store/modelStore";
 
 export default function EnquirePop() {
     const isOpen = useModalStore((state) => state.isEnquireOpen);
     const closeEnquire = useModalStore((state) => state.closeEnquire);
 
     const [formData, setFormData] = useState({
-        name: "",
+        firstName: "",
+        lastName: "",
         email: "",
         phone: "",
         message: "",
     });
 
     const handleChange = (e) => {
-        setFormData({
-            ...formData,
+        setFormData((prev) => ({
+            ...prev,
             [e.target.name]: e.target.value,
-        });
+        }));
     };
 
     const handleClose = () => {
         setFormData({
-            name: "",
+            firstName: "",
+            lastName: "",
             email: "",
             phone: "",
             message: "",
@@ -40,31 +42,40 @@ export default function EnquirePop() {
         closeEnquire();
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log(formData);
+
+        // API Call Here
+
+        handleClose();
+    };
+
     useEffect(() => {
-        const inputBoxes = document.querySelectorAll('.form-control');
+        const inputBoxes = document.querySelectorAll(".form-control");
 
         const handleFocus = function () {
-            this.closest('.form-group')?.classList.add('active');
-            this.classList.add('valid');
+            this.closest(".form-group")?.classList.add("active");
+            this.classList.add("valid");
         };
 
         const handleBlur = function () {
-            const hasValue = this.value.trim() !== '';
-            if (!hasValue) {
-                this.closest('.form-group')?.classList.remove('active');
-                this.classList.remove('valid');
+            if (this.value.trim() === "") {
+                this.closest(".form-group")?.classList.remove("active");
+                this.classList.remove("valid");
             }
         };
 
-        inputBoxes.forEach(inputBox => {
-            inputBox.addEventListener('focus', handleFocus);
-            inputBox.addEventListener('blur', handleBlur);
+        inputBoxes.forEach((inputBox) => {
+            inputBox.addEventListener("focus", handleFocus);
+            inputBox.addEventListener("blur", handleBlur);
         });
 
         return () => {
-            inputBoxes.forEach(inputBox => {
-                inputBox.removeEventListener('focus', handleFocus);
-                inputBox.removeEventListener('blur', handleBlur);
+            inputBoxes.forEach((inputBox) => {
+                inputBox.removeEventListener("focus", handleFocus);
+                inputBox.removeEventListener("blur", handleBlur);
             });
         };
     }, []);
@@ -73,7 +84,12 @@ export default function EnquirePop() {
         <div className={`model enquire-pop ${isOpen ? "is-open" : ""}`}>
             <button className="close" onClick={handleClose}>
                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-                    <path d="M0.5 0.5L25.5 25.5M0.5 25.5L25.5 0.5" stroke="black" strokeLinecap="round" strokeLinejoin="round" />
+                    <path
+                        d="M0.5 0.5L25.5 25.5M0.5 25.5L25.5 0.5"
+                        stroke="black"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
                 </svg>
             </button>
 
@@ -82,38 +98,38 @@ export default function EnquirePop() {
                     <h4>Enquire Now</h4>
                 </div>
 
-                <div className="form form-grid">
+                <form className="form form-grid" onSubmit={handleSubmit}>
                     <div className="form-group">
                         <input
                             type="text"
-                            name="name"
+                            name="firstName"
                             className="form-control"
-                            value={formData.name}
+                            value={formData.firstName}
                             onChange={handleChange}
                         />
-                        <label>Full Name*</label>
+                        <label>First Name*</label>
                     </div>
 
                     <div className="form-group">
                         <input
                             type="text"
-                            name="email"
+                            name="lastName"
                             className="form-control"
-                            value={formData.email}
+                            value={formData.lastName}
                             onChange={handleChange}
                         />
-                        <label>Email Address*</label>
+                        <label>Last Name*</label>
                     </div>
 
                     <div className="form-group">
                         <input
-                            type="text"
+                            type="email"
                             name="email"
                             className="form-control"
                             value={formData.email}
                             onChange={handleChange}
                         />
-                        <label>Trading Code/UCC*</label>
+                        <label>Email*</label>
                     </div>
 
                     <div className="form-group">
@@ -124,7 +140,7 @@ export default function EnquirePop() {
                             value={formData.phone}
                             onChange={handleChange}
                         />
-                        <label>Phone</label>
+                        <label>Phone*</label>
                     </div>
 
                     <div className="form-group">
@@ -134,13 +150,13 @@ export default function EnquirePop() {
                             value={formData.message}
                             onChange={handleChange}
                         />
-                        <label>Summary</label>
+                        <label>Message</label>
                     </div>
 
-                    <button className="btn primary-btn">
-                        Submit Now
+                    <button type="submit" className="btn primary-btn">
+                        <span>Submit Now</span>
                     </button>
-                </div>
+                </form>
             </div>
         </div>
     );

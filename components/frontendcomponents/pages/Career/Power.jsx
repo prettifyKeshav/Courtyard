@@ -1,32 +1,37 @@
 import Image from "next/image";
 import React from "react";
+import Motion from "../../molecules/Animate";
 
 const Power = () => {
   return (
     <section className="career-secA">
       <div className="container">
         <div className="heading">
-          <h2>Join a team that's Powering the Future of Real Esate.</h2>
-          <p>
-            We are a team of innovators, problem-solvers, and passionate
-            builders united by a single, ambitious mission. Here’s what it’s
-            like to work at Courtyard Group.
-          </p>
+          <Motion variant="fadeUp">
+            <h2>Join a team that's Powering the Future of Real Esate.</h2>
+            <p>
+              We are a team of innovators, problem-solvers, and passionate
+              builders united by a single, ambitious mission. Here’s what it’s
+              like to work at Courtyard Group.
+            </p>
+          </Motion>
         </div>
 
-        <div className="col">
-          {data?.map(({ title, description, icon }, i) => {
-            return (
-              <div className="item" key={i}>
-                <div className="ttl">
-                  <h3>{title}</h3>
-                  <Image src={icon} alt="icon" width={57} height={57} />
+        <Motion variant="fadeUp">
+          <div className="col">
+            {data?.map(({ title, description, icon }, i) => {
+              return (
+                <div className="item" key={i}>
+                  <div className="ttl">
+                    <h3>{title}</h3>
+                    <Image src={icon} alt="icon" width={57} height={57} />
+                  </div>
+                  <p>{description}</p>
                 </div>
-                <p>{description}</p>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </Motion>
       </div>
     </section>
   );

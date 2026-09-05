@@ -28,7 +28,6 @@ const AboutUs = () => {
                 <div className="home-secA">
                     <div className="container">
                         <div className="flex-box">
-
                             <figcaption>
                                 <Motion variant="fadeUp">
                                     <h2>More than Homes. A Way of Living</h2>

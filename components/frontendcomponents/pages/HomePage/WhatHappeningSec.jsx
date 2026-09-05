@@ -1,9 +1,45 @@
-import React from 'react'
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from 'next/link'
 import Image from 'next/image'
 import Motion from '../../molecules/Animate'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const WhatHappeningSec = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const mobileToggle = () => {
+            setIsMobile(window.innerWidth < 770);
+        };
+
+        mobileToggle();
+
+        window.addEventListener("resize", mobileToggle);
+
+        return () => {
+            window.removeEventListener("resize", mobileToggle);
+        };
+    }, []);
+
+
+    const ImageData = [
+        {
+            ImageSrc: "/assets/images/Home/whats-happening/1.jpg"
+        },
+        {
+            ImageSrc: "/assets/images/Home/whats-happening/2.jpg"
+        },
+        {
+            ImageSrc: "/assets/images/Home/whats-happening/33.jpg"
+        },
+        {
+            ImageSrc: "/assets/images/Home/whats-happening/4.jpg"
+        }
+    ]
     return (
         <>
             <section>
@@ -21,20 +57,37 @@ const WhatHappeningSec = () => {
                         </Motion>
 
                         <Motion variant="fadeUp">
-                            <div className="grid-box">
-                                <div className="col">
-                                    <Image src="/assets/images/Home/whats-happening/1.jpg" width={309} height={227} alt='ico' ></Image>
-                                </div>
-                                <div className="col">
-                                    <Image src="/assets/images/Home/whats-happening/2.jpg" width={309} height={227} alt='ico' ></Image>
-                                </div>
-                                <div className="col">
-                                    <Image src="/assets/images/Home/whats-happening/33.jpg" width={309} height={227} alt='ico' ></Image>
-                                </div>
-                                <div className="col">
-                                    <Image src="/assets/images/Home/whats-happening/4.jpg" width={309} height={227} alt='ico' ></Image>
-                                </div>
-                            </div>
+                            {
+                                isMobile ?
+                                    <Swiper
+                                        slidesPerView={1.4}
+                                        spaceBetween={20}
+                                        speed={800}
+                                    >
+                                        {
+                                            ImageData.map((item, index) => (
+                                                <SwiperSlide key={index}>
+                                                    <div className="col">
+                                                        <Image src={item.ImageSrc} width={309} height={227} alt='ico' ></Image>
+                                                    </div>
+                                                </SwiperSlide>
+                                            ))
+                                        }
+                                    </Swiper> :
+                                    <div className="grid-box">
+                                        {
+                                            ImageData.map((item, i) => {
+                                                return (
+                                                    <div className="col" key={i}>
+                                                        <Image src={item.ImageSrc} width={309} height={227} alt='ico' ></Image>
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                            }
+
+
                         </Motion>
                     </div>
                 </div>

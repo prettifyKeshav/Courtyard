@@ -37,7 +37,9 @@ header
                 span
                     background: white
         .colA
-            flex: 0 1 70px
+            flex: 0 1 90px
+            @include media(540)
+                flex: 0 1 50px
         .colB
             .phone-ico
                 span
@@ -66,6 +68,8 @@ header
             @include media(991)
                 margin-left: 0
                 margin-right: auto
+            @include media(540)
+                flex: 0 1 70px
             a
                 display: block
             img
@@ -247,17 +251,6 @@ header
                         transition: 0.7s ease
                         display: inline-block
 
-@media (max-width: 1024px)
-    header.header-fixed .header-wrapper .colA
-        flex: 0 1 105px
-        @include media(540)
-            flex: 0 1 136px
-@media (max-width: 1024px)
-    header .header-wrapper .colA
-        flex: 0 1 245px
-        @include media(540)
-            flex: 0 1 175px
-
 @media (max-width: 991px)
     header .header-wrapper .ham-btn
         display: flex
@@ -360,6 +353,8 @@ footer
         left: 30%
         transform: translateX(-50%)
         z-index: 0
+        @include media(540)
+            left: 60%
     .top-sec
         border-bottom: 1px solid #00000026
         padding: 25px 0
@@ -400,6 +395,8 @@ footer
                         line-height: 24px
                         color: #FFFFFF
             .col:last-child
+                @include media(540)
+                    display: none
                 .inside-flex
                     display: flex
                     gap: 20px
@@ -435,13 +432,13 @@ footer
                 grid-template-columns: 0.6fr 1fr
             @include media(991)
                 grid-template-columns: repeat(2, 1fr)
-                grid-gap: 20px
+                grid-gap: 40px
             @include media(768)
                 grid-template-columns: repeat(1, 1fr)
-                max-width: 70%
+                max-width: 100%
                 margin: auto
             @include media(540)
-                gap: 20px
+                gap: 40px
                 max-width: 90%
             .grid-box-item:nth-child(1)
                 @include media(768)
@@ -463,6 +460,9 @@ footer
                     display: flex
                     justify-content: space-between
                     gap: 10px
+                    @include media(540)
+                        display: grid
+                        grid-template-columns: repeat( 1fr)
                     .col
                         .title
                             font-family: Lato
@@ -515,7 +515,7 @@ footer
                                 display: flex
                                 align-items: center
                                 @include media(540)
-                                    width: 30%
+                                    width: 15%
                                 img
                                     width: 100%
                                     height: 100%
@@ -563,8 +563,8 @@ footer
         @include media(768)
             justify-content: center
         @include media(540)
-            padding-top: 30px 
-            padding-bottom: 90px
+            padding-top: 20px 
+            padding-bottom: 80px
         .content
             align-items: center
             display: flex
@@ -778,31 +778,17 @@ footer
                     max-width: 300px
         .form
             --gaptb: 15px
+            --borderafter: black
             input:not(.no-focus):focus ~ label,textarea:not(.no-focus):focus ~ label
-            //   color: $white
+              color: $black
             label,input
-                font-family: Lato
-            //   color: $white
+                font-family: Lato !important
+                color: $black
+                
         button
-            padding: 8px 40px
-            font-weight: 600
-            font-size: 16px
-            text-align: center
-            border-radius: 25px            
-            z-index: 1
-            border: 1px solid $black
             width: fit-content
             margin: auto
             margin-top: 40px
-            transition: 0.5s ease
-            font-family: Lato
-            &:hover
-                border: 1px solid #EEBF91
-                color: $black
-                background: #EEBF91
-                &::before
-                    bottom: 0
-                    z-index: -1
 
 .video-pop
     left: 0
@@ -901,6 +887,188 @@ footer
             aspect-ratio: 1.9
             border: 2px solid $white
             background: $white
+
+.openings-pop
+    left: 0
+    right: 0
+    background: #00000000
+    // background: #03052e7d
+    z-index: 90
+    max-width: 100%
+    transform: translateY(100%)
+    transition: .5s ease
+    &.is-open
+        transform: translateY(0%)
+    .close-video
+        position: absolute
+        bottom: calc(100% + 20px)
+        top: 20px
+        right: 20px
+        height: 20px
+        width: 20px
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: .5s ease
+        @include media(675)
+            right: 0
+        svg
+            height: 100%
+            width: 100%
+        path
+            stroke-width: 2
+            stroke: #230606
+    .model-body
+        position: absolute
+        top: 50%
+        left: 50%
+        translate: -50% -50%
+        width: 100%
+        max-width: 50%
+        background: #FFFFFF
+        max-width: 1192px
+        width: 100%
+        height: calc( 100vh - 80px )
+        border-radius: 15px
+        padding: 30px
+        overflow: auto
+        @include media(675)
+            max-width: 95%
+        .openings-flex-box
+            display: flex
+            justify-content: space-between
+            height: 100%
+            @include media(540)
+                flex-direction: column
+                height: 150%
+            h1,h2,h3,h4,h5,h6,span,li,a,b
+                font-family: Lato
+            input,label
+                font-family: Poppins
+            .left
+                flex: 0 1 50%
+                border-right: 1px solid #0000002E
+                padding-right: 50px
+                overflow-x: auto
+                @include media(768)
+                    padding-right: 20px
+                h3
+                    
+                    font-weight: 600
+                    font-size: 24px
+                    color: black
+                    line-height: 1.1
+                    text-align: left
+                    margin-bottom: 4px
+                span
+                    font-weight: 500
+                    text-align: left
+                    color: $text
+                    font-size: 14px
+                    line-height: 16px
+                p
+                    margin: 10px 0 
+                ul
+                    padding-left: 20px
+                    margin: 20px 0
+                    li
+                        font-weight: 400
+                        font-size: 16px
+                        color: $text
+                        position: relative
+                        padding-left: 15px
+                        &::before
+                            content: ""                
+                            position: absolute
+                            top: 8px
+                            left: -10px
+                            width: 11px
+                            height: 11px
+                            border-radius: 50%
+                            background: #9D864D
+            .right
+                flex: 0 1 50%
+                padding: 50px 0 0 50px
+                @include media(768)
+                    padding: 50px 0 0 20px
+                .heading
+                    margin-bottom: 40px
+                    h2
+                        font-weight: 600
+                        font-size: 30px
+                        text-align: left
+                        span
+                            font-weight: 300
+                            font-style: italic
+                .form
+                    display: grid
+                    grid-template-columns: repeat(2,1fr)
+                    gap: 18px 20px
+                    @include media(540)
+                        display: flex
+                        flex-direction: column
+                    .disabled-btn
+                        opacity: 0.3
+                        cursor: no-drop
+                    .custom-form-group
+                        @include media(540)
+                            width: 100%
+                        &.full
+                            grid-column: span 2
+                            input
+                                display: block
+                                width: 100%
+                        label
+                            font-weight: 500
+                            color: $text
+                            font-size: 16px
+                            display: inline-block
+                            margin-bottom: 10px
+                            line-height: 1
+                        input
+                            border: none
+                            outline: none
+                            background: #E8E8E8
+                            border-radius: 7px
+                            padding: 7px 10px
+                            width: 100%
+                        .file-input
+                            border: none
+                            outline: none
+                            background: #E8E8E8
+                            border-radius: 7px
+                            padding: 7px 10px
+                            width: 100%
+                            position: relative
+                            display: flex
+                            justify-content: space-between
+                            align-items: center
+                            p
+                                font-size: 16px
+                                font-weight: 400
+                                color: #818181
+                            img
+                                width: 18px
+                            input
+                                position: absolute
+                                inset: 0
+                                width: 100%
+                                height: 100%
+                                opacity: 0
+                                cursor: pointer
+
+                    .submit-btn
+                        button
+                            margin-top: 20px
+                            &:hover
+                                img
+                                    filter: brightness(0) contrast(100%)
+                            img
+                                filter: brightness(0) invert(1)
+                                height: 20px
+                                transition: 0.5s ease
+
+                  
 
 .about-pop
     left: 0
@@ -1313,6 +1481,3 @@ footer
                             stroke: $white
                         &[fill]
                             fill: $white
-
-
-

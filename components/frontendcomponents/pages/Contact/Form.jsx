@@ -18,7 +18,7 @@ const Form = () => {
           <div className="form form-grid">
             <div className="form-group">
               <input type="text" />
-              <label htmlFor="">Full Name*</label>
+              <label htmlFor="">First Name*</label>
             </div>
 
             <div className="form-group">

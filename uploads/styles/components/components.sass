@@ -22,7 +22,9 @@
             background: linear-gradient(360deg, rgba(0, 0, 0, 0) 63.46%, rgba(0, 0, 0, 0.85) 100%), linear-gradient(270deg, rgba(0, 0, 0, 0.8) 24.57%, rgba(0, 0, 0, 0) 78.28%)
             z-index: 1
             transform: scaleX(-1)
-        video
+            @include media(768)
+                background: linear-gradient(360deg, #0000 63.46%, #000000d9 100%), linear-gradient(2deg, #000c 24.57%, #0000 78.28%)
+        video,img
             width: 100%
             height: 100%
             object-fit: cover
@@ -36,11 +38,16 @@
             bottom: 13%
             max-width: 93%
             margin: auto
+            // @include media(1024)
+            //     bottom: 22%
+            // @include media(768)
+            //     bottom: 30%
+            @include media(1024)
+                bottom: 22%
             @include media(768)
-                bottom: 30%
+                bottom: 12%
             @include media(540)
                 bottom: 10%
-                margin-left: 0
             .swiper
                 height: 104px
                 @include media(540)
@@ -52,12 +59,13 @@
                 font-size: 48px
                 line-height: 56px
                 max-width: 492px
-                @include media(540)
-                    max-width: 90%
+                @include media(768)
+                    max-width: 80%
                     text-align: center
                     margin: auto
-                    font-size: 55px
                     line-height: 1
+                @include media(540)
+                    font-size: 28px
             h5
                 color: $white
                 @include media(540)
@@ -71,11 +79,16 @@
                 font-weight: 400
                 font-size: 16px
                 line-height: 24px
-                @include media(540)
+                @include media(768)
                     display: flex
                     flex-direction: column
                     gap: 10px
-                    margin-top: 20px
+                    margin: 20px auto 0 
+                    text-align: center
+                    max-width: 505px
+                @include media(540)
+                    max-width: 95%
+                    line-height: 1.3
                 span:first-child
                     font-weight: 450
                     font-size: 16px
@@ -86,6 +99,9 @@
                 span:last-child
                     font-weight: 400
                     font-size: 20px
+            .btn
+                @include media(768)
+                    margin: 20px auto  0
 
 .counter-sec
     background: #FFF9F2
@@ -93,6 +109,9 @@
     .grid-box
         display: grid
         grid-template-columns: repeat(4, 1fr)
+        @include media(540)
+            grid-template-columns: repeat(2, 1fr)
+            gap: 20px 0
         .col    
             border-right: 1px solid #D8D8D8
             display: flex
@@ -101,38 +120,68 @@
             padding: 10px 27px
             &:nth-child(4)
                 border-right: none
-            // &:nth-child(1)
-            //     padding: 0 40px 0 40px
+            @include media(1024)
+                flex-direction: column
+                text-align: center
+                gap: 10px
+                padding: 10px 17px
+            @include media(540)
+                border: none
+                    
             h4
                 font-weight: 400
                 font-size: 36px
                 line-height: 1
                 color: $black
+                @include media(768)
+                    font-size: 28px
+                @include media(540)
+                    font-size: 24px
             p
                 color:#000000B2
                 font-weight: 500
                 font-size: 14px
                 line-height: 1.4
+                @include media(540)
+                    font-size: 13px
 
 .testimonial-section
     overflow: hidden
     background: #FFF9F2
     padding: 70px 0 
+    @include media(540)
+        padding: 40px 0 
     .flex-box
         display: flex
         align-items: center
         justify-content: space-between
         gap: 60px
+        @include media(768)
+            flex-direction: column
+            gap: 20px
     .colA
         width: 35%
+        @include media(768)
+            width: 100%
+            text-align: center
         h2
             margin-bottom: 20px
             line-height: 1
+        p
+            @include media(768)
+                max-width: 70%
+                margin: auto
+            @include media(540)
+                max-width: 90%
+                line-height: 1.3
         .swiper-nav
             display: flex
             align-items: center
             gap: 25px
             margin-top: 50px
+            @include media(768)
+                margin-top: 20px
+                display: none
         .home-prev,
         .home-next
             width: 48px
@@ -169,6 +218,10 @@
     .colB
         width: 65%
         overflow: hidden
+        @include media(1024)
+            width: 55%
+        @include media(768)
+            width: 100%
         .swiper
             .swiper-wrapper
                 .swiper-slide
@@ -180,19 +233,30 @@
                         padding: 35px
                         min-height: 430px
                         // box-shadow: 0px 8px 24px 0px #959DA533
+                        @include media(768)
+                            height: fit-content
+                        @include media(540)
+                            padding: 25px 24px
+                            min-height: fit-content
                         .top
                             display: flex
                             justify-content: space-between
                             align-items: flex-start
                             margin-bottom: 30px
+                            @include media(540)
+                                margin-bottom: 10px
+                            .user
+                                border-radius: 50%
+                                overflow: hidden
                             .quote
                                 font-size: 80px
                                 color: #c5ab72
                                 line-height: 1
-
                         p
                             margin-bottom: 35px
                             max-width: 90%
+                            @include media(540)
+                                max-width: 100%
                         h4
                             font-weight: 500
                             font-size: 20px
@@ -201,3 +265,130 @@
                             font-family: Lato
                             font-weight: 500
                             font-size: 14px
+
+.accordian-wrapper
+    background: $white
+    border-radius: 10px
+    width: 100%
+    border: 1px solid #E9E9E9
+    margin-bottom: 20px
+    cursor: pointer
+    position: relative
+    transition: 0.5s ease
+    &::before
+        content: ""
+        position: absolute
+        top: 35px
+        right: 24px
+        width: 16px
+        height: 2px
+        border-radius: 2px
+        background: #00000066
+        z-index: 1
+    &::after
+        content: ""
+        position: absolute
+        top: 35px
+        right: 24px
+        width: 16px
+        height: 2px
+        border-radius: 2px
+        background: #00000066
+        z-index: 1
+        transform: rotate(90deg)
+        transition: 0.4s ease
+    &.open
+        border: 1px solid #9D864D
+        &::before
+            background: #9D864D
+        &::after
+            transform: rotate(0deg)
+            background: #9D864D
+        .title
+            margin-bottom: 10px
+            h4
+                color: #9D864D
+                padding: 24px 24px 10px 24px
+    .title
+        display: flex
+        justify-content: space-between
+        transition: 0.4s ease
+        width: 100%
+        h4
+            font-weight: 600
+            font-size: 18px
+            line-height: 24px
+            color: #00000066
+            padding: 24px
+            transition: 0.4s ease
+            @include media(540)
+                max-width: 88%
+    .description
+        p
+            padding: 0px 24px 24px 24px
+            font-weight: 400
+            font-size: 16px
+            line-height: 1.4
+            max-width: 100%
+            font-family: Poppins
+            @include media(540)
+                font-size: 14px
+
+
+    figure
+        height: 429px
+        border-radius: 10px
+        overflow: hidden
+        line-height: 0
+        margin: 0 24px 24px 24px
+        img
+            height: 100%
+            width: 100%
+            object-fit: cover
+
+.hero-banner.not-found-banner
+    .video-wrapper 
+        &::before
+            background: linear-gradient(360deg, #0000 63.46%, #000000d9 100%), linear-gradient(359deg, #000c 24.57%, #0000 78.28%)
+        .bg-wrapper
+            h1
+                margin: auto
+                text-align: center
+            p
+                max-width: 300px
+                margin: auto
+                text-align: center
+            a
+                margin: 30px auto 0 
+
+
+.footer-strip
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 4
+    background: $black
+    display: none
+    @include media(540)
+        display: block
+    ul
+        @include flex
+        li
+            flex: 1
+            &:not(:last-child)
+                border-right: 1px solid rgb(192 149 89 / 50%)
+            a
+                display: flex
+                flex-direction: column
+                align-items: center
+                padding: 10px
+                gap: 5px
+                color: $white
+                @include font(500)
+                svg
+                    width: 25px
+                    height: 25px
+                    fill: $white
+                    path
+                        fill: $white
